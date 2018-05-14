@@ -1,0 +1,1006 @@
+\documentclass[]{spie}  %>>> use for US letter paper
+%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
+%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
+
+\renewcommand{\baselinestretch}{1.0} % Change to 1.65 for double spacing
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+% user added packages
+\usepackage{xcolor}
+\usepackage{adjustbox}
+% \usepackage{natbib}
+
+% user added commands
+\newcommand{\comr}[1]{\textcolor{red}{#1}}
+\newcommand{\comb}[1]{\textcolor{blue}{#1}}
+\newcommand{\dgr}{$^\circ$}
+
+% journal abbreviations for bibtex
+\def\aap{\it{A\&A}}
+\def\apj{\it{ApJ}}                 % Astrophysical Journal
+\def\apjl{\it{ApJ}}                % Astrophysical Journal, Letters
+\def\apjs{\it{ApJS}}               % Astrophysical Journal, Supplement
+\def\ao{\it{Appl.~Opt.}}           % Applied Optics
+
+
+\title{Optical Design of PICO, a Concept for a Space Mission to Probe Inflation and Cosmic Origins}
+
+\author[a]{Karl Young}      %UMN
+\author[b]{Marcelo Alvarez}  % University of California Berkeley, USA
+\author[c]{Nicholas Battaglia}  %  Princeton
+\author[d]{Jamie Bock}       % Caltech
+\author[e]{Jullian Borrill}  % LBNL
+\author[f]{David Chuss}  % Villanova  University, USA
+\author[g]{Brendan Crill}    % JPL
+\author[h]{Jacques Delabrouille}  % APC
+\author[i]{Mark Devlin}  % U Penn
+\author[j]{Laura Fissel}  % NRAO, USA
+\author[k]{Raphael Flauger} % UC san diego 
+\author[l]{Daniel Green}  % University of Toronto, Canada
+\author[g]{Kris Gorksi}  % JPL
+\author[a]{Shaul Hanany} % UMN
+\author[m]{Richard Hills} % Cambridge
+\author[n]{Johannes Hubmayr} % NIST, USA
+\author[o]{Bradley Johnson}  % Columbia University, New York
+\author[c]{Bill Jones}  %Princeton 
+\author[p]{Lloyd Knox}  % UC Davis
+\author[q]{Al Kogut}  %Goddard
+\author[g]{Charles Lawrence}  % JPL
+\author[r]{Tomotake Matsumura} % IPMU, Tokyo
+\author[g]{Jim McGuire}  % JPL
+\author[s]{Jeff McMahon}  % U of MI
+\author[g]{Roger O'Brient} %JPL
+\author[a]{Clem Pryke}  % UMN
+\author[a]{Xin Zhi Tan}  % UMN
+\author[g]{Amy Trangsrud}  % JPL
+\author[a]{Qi Wen}  % UMN
+\author[t]{Gianfranco de Zotti}  % padova, Osservatorio Astronomico di Padova, Italy
+
+%Brian?
+
+\affil[a]{University of Minnesota, USA}
+\affil[b]{University of California Berkeley, USA}
+\affil[d]{California Institute of Technology, USA}
+\affil[e]{Lawrence Berkeley National Laboratory, USA}
+\affil[f]{Villanova  University, USA}
+\affil[g]{Jet Propulsion Laboratory, California Institute of Technology, USA}
+\affil[h]{Laboratoire AstroParticule et Cosmologie adn CEA/DAP, France}
+\affil[i]{University of Pennsylvania, USA}
+\affil[j]{NRAO, USA}
+\affil[k]{University of California, USA}
+\affil[l]{University of Toronto, Canada}
+\affil[m]{Cavendish Laboratory, University of Cambridge, UK}
+\affil[n]{NIST, USA}
+\affil[o]{Columbia University, USA}
+\affil[c]{Princeton University, USA}
+\affil[p]{University of California Davis, USA}
+\affil[q]{Goddard Space Flight Center, USA}
+\affil[r]{Kalvi IPMU, University of Tokyo, Japan}
+\affil[s]{University of Michigan, USA}
+\affil[t]{Osservatorio Astronomico di Padova, Italy}
+
+\authorinfo{\comr{To be added} Further author information: (Send correspondence to A.A.A.)\\A.A.A.: E-mail: aaa@tbk2.edu, Telephone: 1 505 123 1234\\  B.B.A.: E-mail: bba@cmp.com, Telephone: +33 (0)1 98 76 54 32}
+
+% Option to view page numbers
+\pagestyle{empty} % change to \pagestyle{plain} for page numbers   
+\setcounter{page}{1} % Set start page numbering at e.g. 301
+ 
+\begin{document} 
+\maketitle
+
+\begin{abstract}
+\comr{Abstract Submitted Nov. 2017, needs polishing.}
+
+The Probe of Inflation and Cosmic Origins (PICO) is a probe-class mission concept currently under study by NASA.  PICO will probe the physics of the Big Bang and the energy scale of inflation, constrain the sum of neutrino masses, measure the growth of structure in the universe, and constrain its reionization history by making full sky maps of the cosmic microwave background with sensitivity 70 times higher than the Planck space mission. With broad frequency coverage from a few tens to hundreds of GHz, PICO will make polarization maps of galactic synchrotron and dust emission, thus elucidating the role of galactic magnetic fields in the process of star formation. 
+
+We describe the PICO instrument, including the 1.4 meter telescope, the frequency coverage, the detector technology, and the intended survey of the sky.  We will discuss the choice of optical system, present the design of the focal plane, and give the expected noise level. 
+
+%his document is prepared using LaTeX2e\cite{Lamport94} and shows the desired format and appearance of a manuscript prepared for the Proceedings of the SPIE.\footnote{The basic format was developed in 1995 by Rick Hermann (SPIE) and Ken Hanson (Los Alamos National Lab.).} It contains general formatting instructions and hints about how to use LaTeX.  The LaTeX source file that produced this document, {\ttfamily article.tex} (Version 3.4), provides a template, used in conjunction with {\ttfamily spie.cls} (Version 3.4). These files are available on the Internet at \url{https://www.overleaf.com}.  The font used throughout is the LaTeX default font, Computer Modern Roman, which is equivalent to the Times Roman font available on many systems.  
+\end{abstract}
+
+% Include a list of keywords after the abstract 
+\keywords{Cosmic microwave background, cosmology, mm-wave optics, polarimetry, instrument design, satellite, mission concept}
+
+
+
+\section{INTRODUCTION}
+\label{sec:intro}  
+
+\comr{Probe study language copied directly from Brian's paper (May 6th).  What level of repeat is useful and what is appropriate?}
+
+In astronomy and astrophysics, NASA currently flies small and medium Explorer missions ($<$\$250M), as well as multi-billion-dollar flagship observatories like JWST and WFIRST. There are a number of science opportunities that are beyond the scope of the Explorer program, but don't require flagship-level funding. To explore these opportunities, NASA has funded studies of 10 `Probe' class (\$400M-\$1B) mission concepts. The Probe of Inflation and Cosmic Origins (PICO) is one of these mission studies. Reports of these mission studies are due to NASA at the end of the 2018 and NASA's plan is to forward the reports for consideration by the next Astronomy and Astrophysics Decadal panel. This paper comes part way through the PICO study, and describes a snapshot of the  instrument design at this time in the study.
+
+
+\comr{Brian's science section copied in .tex document. Repeating all of that here seems inappropriate. I have attempted to summarize. Mostly this is the first paragraph from Brian's paper.}
+
+Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of information about 
+the formation, evolution, and current structure of the Universe.  Much of the large scale cosmological and fundamental physics information, such as 
+evidence of inflation, the effect of the first stars and galaxies, constraints on neutrino masses, and limits on new light particles beyond 
+the standard model, is contained in the temperature and polarization anisotropies of the cosmic microwave background (CMB).  Information 
+about the role of magnetic fields in star formation and galactic evolution is obtainable by observing the polarized emission of Galactic dust, which 
+traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with unprecedented polarization sensitivity 
+in 21 bands centered at 21--799~GHz.  Details of these science targets and expected constraints from PICO are in a companion paper, Ref.~\citenum{brian_spie}. 
+In this paper we discuss the optical system, focal plane, and expected sensitivity of PICO.
+
+% Astrophysical electromagnetic radiation in the millimeter and sub-millimeter wavelength band contains a wealth of information about the origin, structure, and evolution of the Universe. With 21 frequency bands centered between 21 and 799 GHz and polarization sensitivity across this spectrum, PICO has unprecedented sensitivity to the properties of the cosmic microwave background (CMB) radiation and to Galactic emissions. Measurements of these sources will reveal new information about the structure and dynamics of the Milky Way, detect the signature (or constrain models of) inflation, measure the properties of the fundamentals particles of nature, and provide key information on the evolution of Galactic and extragalactic structures across cosmic time.
+
+% Quantum fluctuations of the space-time metric at times as short as 10-35 seconds after the big bang are predicted to generate gravity waves that imprint a signature on the polarization of the CMB. A detection of this signature sets the energy scale at which an inflationary period occurred near the big bang, and thus provides constraints on the physics of inflation. These constraints are not attainable in other ways. PICO will detect the energy scale of inflation with high confidence if it is above 6.6×1015 GeV. If the signal is not detected, the upper limit will exclude broad classes of potentials as the driving force for inflation.
+
+% The first stars in the Universe formed within about 1 billion years after the big bang. As they formed they ionized the surrounding medium, which was dominated by neutral hydrogen. Many details of this process of ‘reionization’ are not known. PICO will determine the history of star formation in the Universe through its measurement of the optical depth to reionization τ. The measurement requires scanning large portions of the sky, a requirement particularly well suited for space missions. PICOs measurement uncertainty σ(τ) = 0.002 will be limited by cosmic statistics not instrument noise.  
+
+% Structure formation in the Universe depends on the masses of neutrinos. Lensing of CMB photons as they traverse the Universe reveal the properties of cosmic structures, and is thus a sensitive probe of the masses of neutrinos, specifically the sum of neutrino masses Σmν. Available data indicates that 58 meV ≤ Σmν ≤ 140 meV [Lattanzi][Palanque]. But achieving lower limit on Σmν through its effect on lensing also requires higher precision measurements of the matter density in the Universe and of τ. PICO is expected to make a ~4σ measurement if Σmν =58 meV, rising to higher confidence if Σmν is larger. This forecast relies on PICO’s own high precision measurement of τ and on measurement of the matter density forthcoming from the DESI experiment. PICO’s measurement of Σmν could distinguish between the normal and inverted neutrino mass hierarchies.
+
+% In addition to the three known neutrino families, the Universe may harbor other similar light relics. The number of such relic species is quantified through the parameter Neff, for which the current measured value is 3.04 ± 0.18 ([Lattanzi]. The theoretical value in the presence of only three neutrino families is 3.046, and the smallest increment, if other relic species existed in early Universe, is 0.027. A sensitive way to probe for additional relic species is through their effect on the spatial anisotropy of the polarization of the CMB. PICO will improve current uncertainty by a factor of 6 reaching σ(Neff) = 0.03.
+
+% Both magnetic fields and turbulence regulate the rate of star formation in our galaxy, but their relative roles are not well understood. Detailed mapping of the magnetic field structure on a broad range of scales will transform our understanding of star formation and of the role of magnetic fields in Galactic evolution. Ellipsoidal Galactic dust grains are aligned by the magnetic fields and emit polarized radiation in sub-mm wavelengths. PICO will map the structure of magnetic fields by detecting this polarized emission. It will map dust polarized emission with resolution of 5’ over the entire sky with fractional polarization of less than 0.3\% over 70\% of the sky with resolution of 1’.  It will resolve the magnetic field structure on molecular cloud core scale of 0.1 pc in 8 nearby clouds and on filament scale of 0.5 pc in 10 nearby clouds. It will resolve the magnetic field structure on 1 pc scale for more than 2000 clouds. Currently there is no equivalent information available for scales less than 1 pc, and information at the 1 pc scale is available for only 14 clouds.
+
+% PICO will produce a complete census of cold dust in the nearby universe as well as rich catalog of newly discovered extra-galactic sources distributed over the entire sky. These sources include about 5000 highly magnified dusty galaxies with redshifts up to z>5, and tens of thousands of proto-clusters at z of up to 4-4.5, detected via the sub-mm emission of their member galaxies. PICO will produce a catalog of galaxy clusters that is on the order of 105 objects via the thermal Sunyaev-Zel'dovich out to z=2. PICO will also characterize the polarization properties of several thousands of radio and FIR emitting galaxies. This rich catalog, which will increase the numbers of known sources by more than an order of magnitude, will be used to probe star formation history, determine galaxy and cluster formation and evolution, learn about the properties of dark matter, and study radio jets in radio loud sources.
+
+% \begin{itemize}
+% \item Reminder of main science drivers.  Very similar to Brian's paper. 
+% \subitem r and inflation 
+% \subitem neutrino masses and tau
+% \subitem Extragalactic science. galaxy formation and evolution, SZ effect 
+% \subitem Galactic science. magnetic fields, star formation, and dust
+% \item PICO definition as concept study
+% \subitem explanation of what this means and purpose of study
+% \item \comr{Do we include quantitative goals?}
+% \end{itemize}
+
+% %(check LB's intro?, although I probably won't like that.)
+
+% %(Do I need a 'real' intro? i.e. motivating science.)
+
+
+% %The Probe of Inflation and Cosmic Orgins (PICO) is the mission concept study of a future mm/sub-mm sattelite. The primary science goal
+% %of PICO is to definitively measure cosmological B-modes and constrain inflationary theories.  This requires high sensitivity polarization
+% %measurements of the Cosmic Microwave Background with low, well controlled systematics.  (understood sytematics?)
+
+
+
+\section{SPACECRAFT AND MISSION}
+\label{sec:spacecraft}
+
+%  This could all be in the intro instead. Purpose is to show constraints on the optics to motivate decisions discussed later.  
+
+The PICO mission plan is to conduct scientific observations for five years from the Earth-Sun L2 Lagrange point. The spacecraft design impacts 
+the optical design and sensitivity in two primary ways; volume constraints limit the physical size of the telescope and optical component 
+temperatures impact noise levels.  We discuss these major drivers here, other details are given in Ref.~\citenum{brian_spie}.  
+
+The maximum size of the spacecraft is limited by the assumed launch vehicle, the Falcon 9, which carries payloads up to 4.6~m in diameter. 
+This diameter limit sets the V-groove size which, along with the scan strategy, defines the `shadow cone' in Figure~\ref{fig:cad}.  
+The shadow cone is the volume which is never illuminated by the sun and all optical components must remain within it. The shadow cone and 
+inner V-grooves define an available volume for the telescope which is.
+
+The temperatures of all optical elements are given in Figure~\ref{fig:cad}.  The primary is passively cools to 40 K, as was 
+seen for \textit{Planck}\cite{planck2011_hfi_temp}.  The secondary, optics box, and aperture stop are actively cooled to \comr{6~K}.  The focal plane is cooled 
+by a continuous ADR to 100~mK.
+
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\includegraphics[height=9cm]{PICO_CAD_annotated.png}
+%\end{tabular}
+\end{center}
+\caption { \label{fig:cad} 
+Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Ref.~\citenum{brian_spie}. 
+\comr{Update temperatures with final numbers from JPL}}
+\end{figure} 
+
+% \begin{itemize}
+% \item Sketch out satellite systems. Include CAD model figure and table of system parameters
+% \subitem thermal systems and surface temperatures (NOTE! a bunch of these in Brian's paper don't match what we have used.  filters 1 K, stop 4.5-6 K, secondary 10 K, Primary 20 K, maybe others. Unclear how much of this will be in final version.
+% \subitem sunshields and scan strategy
+% \subitem observing frequency ranges 
+% \item Summarize mission 
+% \subitem L2 orbit, for earth-moon viewing angles
+% \subitem 5 yrs active time frame
+% \subitem launch vehicle is Falcon 9 
+% \end{itemize}
+
+% \vspace{4in}
+
+\section{OPTICAL SYSTEM}
+\label{sec:optics}
+
+The PICO telescope is a 1.4~m modified Open Dragone.  This choice was driven by a combination of science requirements and the physical limits 
+discussed in Section~\ref{sec:spacecraft}.  The science requirements are; a large diffraction limited field of view (DLFOV) sufficient to 
+support $\mathcal{O}(10^4)$ detectors, arcminute resolution at 799~GHz, low instrumental polarization, and low sidelobe response. Additionally, 
+the transition edge sensor bolometers baselined for PICO require a telecentric focal plane which is sufficiently flat that it can be tiled by 
+10~cm detector wafers without reduction in optical quality. These requirements suggest an off-axis Dragone system\cite{dragone} similar 
+to what has been used for \textit{Planck}\cite{planck2000_optics}, various ground based systems such as ACT\cite{ACT2011_optics} and SPT\cite{SPT2008_optics}, 
+and in the CORE\cite{core2018_inst} and LiteBIRD\cite{LB2016_optics} designs.
+
+The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics} and the ray trace in Figure~\ref{fig:ray}. The 
+system is diffraction limited, Strehl greater than 0.8, at the center of the field of view for 799~GHz and has a DLFOV of 82.4~deg$^2$ at 
+155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. The slightly concave, 4.55~m radius of curvature, 
+focal plane is telecentric to within 0.12~deg across the entire surface.
+
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\includegraphics[height=7.5cm]{jpl_ray_strehl.png}
+%\end{tabular}
+\end{center}
+\caption { \label{fig:ray} \label{fig:strehl} 
+Raytrace (left) and Strehl~$=0.8$ contours (right) for the PICO optical design. \comr{strehl needs a legend to give frequencies}
+}
+\end{figure} 
+
+\begin{table}[ht]
+\centering
+\caption{Telescope parameters \comr{needs cleaning and some more numbers looked up.  Are Zernike coefficients even useful?} \label{tab:optics}}
+\begin{adjustbox}{width=1.1\textwidth}
+\begin{tabular}{|l|llll||ll|}
+\hline
+\multicolumn{5}{|c||}{PICO optical system}                                                            & \multicolumn{2}{c|}{Initial Open Dragone}        \\ \hline
+                          & Primary           & Secondary         & Telescope parameters      &     & \multicolumn{2}{c|}{Fundamental design parameters}  \\
+Size (cm)                 & $268 \times 206$ ?check? & $160 \times 158$ ?check? & Aperture (m)              & 1.4     & Aperture (m)                   & 1.4   \\
+Radius of curvature (cm)  & $\infty$         & 136.6             & Focal ratio, F            & 1.42    & $\theta_0$ (degrees)              & 90    \\
+Conic constant, $k$       & 0                 & -0.926            & h (cm)                    & 430?    & $\theta_e$ (degrees)              & 20    \\
+Normalization radius      & 524.8             & 194.1             & $\alpha$                  & ?       & $\theta_p$ (degrees)              & 140   \\
+4th Zernike Coefficient   & 2018.4            & -61.1             & $\beta$                   &  ?      & L (cm)                         & 240   \\
+9th Zernike Coefficient   & -37.0             & 16.7              & L                         &   ?     & \multicolumn{2}{c|}{Derivative parameters}  \\
+10th Zernike Coefficient  & -2919.8           & -15.1             & d$_{SR-FP}$               &    ?    & Focal ratio, F                 & 1.42  \\
+11th Zernike Coefficient  & -1292.7           & 22.3              &                           &         & h (cm)                         & 624.2 \\
+12th Zernike Coefficient  & 120.6             & -3.8              &   \multicolumn{2}{c||}{Focal Plane}  & $\alpha$                          & 38.6  \\
+13th Zernike Coefficient  & -74.5             & 4.9               & FP diameter (cm)          & 69 x 45  & $\beta$                           & 101.4 \\
+19th Zernike Coefficient  & -75.8             & 3.4               & FP diamter (deg)          & 19 x 13  & Primary, $f$ (cm)             & 312.1 \\
+20th Zernike Coefficient  & -398.9            & 6.3               & FP tilt (deg)            & ?check?  & Secondary, $e$                & 1.802 \\
+21st Zernike Coefficient  & -319.5            & 23.3              &                           &         & Secondary, $a$ (cm)          & 131   \\
+22nd Zernike Coefficient  & -276.6            & -8.5              &                           &         &                                &       \\
+23rd Zernike Coefficient  & -201.6            & -3.2              &                           &         &                                &       \\
+24th Zernike Coefficient  & -127.4            & -1.9              &                           &         &                                &       \\
+25th Zernike Coefficient  & -55.0             & 0.1               &                           &         &                                &       \\\hline
+\multicolumn{7}{l}{\footnotesize  \comr{need some explanatory footnotes.}} \\
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+To arrive at the final design we modify an Open Dragone.  We follow Ref.~\citenum{Granet 2001} to design the initial 
+Open Dragone. We find a solution which satisfies the volume constraints and has a large DLFOV.  We force a circular aperture stop 
+between the primary and secondary mirrors and numerically optimized its angle and position to obtain the best 
+optical performance.  The stop diameter was chosen to provide an effective 1.4~m aperture on the primary for the center feed.  
+Adding a stop in this way increases the size of the primary mirror, effectively the primary is unevenly illuminated at various 
+field angles, but reduces detector noise, see Section~\ref{sec:noise}, and helps control sidelobes.  At this stage the system still meets 
+the Dragone condition and is defined by the `Initial Open Dragone' parameters in Table~\ref{tab:optics}.
+% beta, basic, primative, prototype, foundational, foundation
+
+To increase the optical performance we use CodeV to numerically optimize the system.  To adjust the mirror shapes, we add a low order, 
+4th and 9th-13th, Zernike polynomial correction to each conic surface.  We allow focal plane curvature, a focal plane tilt angle, 
+and the focal plane to secondary distance to vary.  The primary-secondary distance, primary offset $h$, and the primary and secondary 
+rotation angles, $\alpha$ and $\beta$, are varied as well. The optimization metric is the rms spot size across the field of view, with 
+additional weighted constraints requiring telecentricity and maintaining the x- and y-focal lengths.  We also added Lagrange constraints 
+to enforce beam clearences and put an upper limit on overall system size.  Once the optimization coveraged to an acceptable optical 
+system, we added the higher order Zernike terms, 19th-25th, and refined the mirror shapes using the same metric and constraints.
+
+%. . . \\ \comr{in email communication with Jim. This paragraph is a work in progress.}
+%\comr{Following a procedure outlined by Richard Hills . . . turning dragone to polynomial surfaces, optimizing polynomial.}
+%\comr{Jim took XY polynomial system, converted it to Zernike (that makes sense), and optimized. Maybe!!  Allowing additional angles to vary 
+%as well.} \\
+%. . .
+%convert the mirror surface into Zernike polynomials. then run CodeV's numerical optimization allowing the xx zernike terms, the mirror angles alpha beta, the offsets, the primary-secondary distance, the focal plane curvature, the xxxx to vary while fixing the focal length, the xxx and xxxx.  
+
+In Figure~\ref{fig:compare} we show the final optimized system compared with the `Initial Open Dragone' and give the Strehl~$=0.8$ contours.  One sees 
+the optimization reduced the overall telescope volume, allowing it to fit more easily within the shadow cone and increased the DLFOV.  The most important increase in the DLFOV is
+at 155 and 186~GHz.  This added area allows us to add `C' and `D' pixels which are the main CMB workhorses and 
+drive PICO's sensitivity. Being able to pack 100's of these pixels into the focal plane is what allows PICO to reach unprecedented levels of sensitivity.
+
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\includegraphics[height=7cm]{jpl_vs_V3D.png}
+%\end{tabular}
+\end{center}
+\caption { \label{fig:compare} 
+Comparison between optimized and unoptimized Open Dragones.  The raytraces (left) are aligned at the chief ray impact point on the primary. 
+The optimized system (red rays, solid mirrors) is smaller vertically and has a slightly flatter primary than the unoptimized version 
+(blue rays, dash-dot mirrors)\comr{need to change mirror lines}. The overlaid Strehl~$=0.8$ contours (right) show the improvement at 
+all frequencies in the optimized (solid lines) over the unoptimized (dash-dot lines) system. \comr{strehl needs a legend to give frequencies}
+}
+\end{figure} 
+
+An additional benefit of the optimization is the concave focal plane. The Open Dragone's focal surface is naturally curved, so matching this 
+curvature reduces defocus and increases the DLFOV as well as increasing telecentricity.  The unoptimized system is telecentric to within 
+2.5\dgr while the optimized version is telecentric to within 0.12\dgr.
+
+We considered two additional Dragone systems; a Gregorian Dragone like that used for \textit{Planck} and a Crossed Dragone similar to that planned 
+for CORE or LiteBIRD.  The Gregorian Dragone has insufficient DLFOV\cite{core2018_inst}, roughly $3\times$ less in area for a similar system, so was rejected.  
+The Crossed Dragone has an intrinsically larger DLFOV than the Open, but it has well 
+known issues with sidelobes as shown in Figure~\ref{fig:sidelobes} and always has a larger F-number than the Open system.  The larger 
+F-number results in a larger telescope that fits poorly into the shadow cone. The largest Crossed Dragone that meets the PICO volumen contraints has 
+a 1.2~m aperture while a 1.4~m Open Dragone fits. The large F-number of the Crossed system also increases 
+the physical focal plane size, and therefore mass and cost, for a fixed number of pixels.  These disadvantages and the success of the optimized 
+Open Dragone led us to the final PICO optical system detailed in Table~\ref{tab:optics} and shown in Figure~\ref{fig:ray}.
+
+
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\includegraphics[height=6.5cm]{sidelobes.png}
+%\end{tabular}
+\end{center}
+\caption { \label{fig:sidelobes} 
+Comparison of sidelobes for example Crossed (left) and Open (right) Dragones.  Rays are traced from the center of the focal plane toward the sky.
+For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles.  However, the clipping sidelobe and direct 
+sky view in the Crossed system require a long forebaffle or large F-number to mitigate, both of which were problematic in the PICO case.}
+\end{figure} 
+
+
+%add anything about total focal plane area?  It's visible in the figures.
+%
+%Alignment? probably not.
+%
+%Grasp? maybe.  Beam and sidelobe would be pleasent.
+%
+%--------------------
+%% Shaul's suggestion
+%System that was made.
+ %- dragone params from Granet 2001
+%
+%performance there of
+%
+%process to get there
+%
+%Other systems considered were . . .
+%comparison to other options.
+%
+%
+%
+%not greg -- too small
+%not crossed -- too sidelobey   plots!
+%open  -- just right
+%
+%basic open
+%
+%optimized open (show overlayed strehls. 1 color per contour?) to get growth at 150.
+%
+%both ray traces (or mirror outlines at least) to show size change.
+%
+%
+%\begin{itemize}
+%\item Design constraints and goals.
+%\subitem availible volume, limited by sunshields and shadow cone
+%\subitem no stray light i.e.\ low sidelobes
+%\subitem large throughput, large FOV
+%\subitem maximize strehl $\sim150$ GHz while maintaining quality at 800~GHz and large area at 20~GHz.
+%\item Design process: open dragone to optimized open dragone
+%\subitem Include crossed dragone and its problems also? Tradeoffs with crossed?
+%\subitem connection with focal plane size and mirror size. Volume limited.
+%\subitem show open dragone performance and physical size  (fig. ray trace)
+%\subitem show optimized performance, improvements, and physical size (fig. ray trace, and strehl or WFE)
+%\subsubitem Both above show performance at subset of bands (maybe) as metric for deciding what system to use.
+%\subsubitem Incremental steps? curved mirrors then curved focal plane.
+%\item final design and performance, strehl ratios and/or wavefront error
+%\subitem Table of physical parameters (D, F/\#, angles, apertures, etc.)
+%\subitem strehl ratios by frequency. total availible focal plane area.
+%\item alignment sensitivity (presentation 2017 11 21) 
+%\item GRASP related items
+%\subitem show simulated system, differences to actuall satellite.
+%\subitem primary mirror and/or stop illumination
+%\subitem mainbeam cuts and beamsize. compare beamsize to ray trace prediction
+%\subitem sidelobe response, 4$\pi$ beam
+%\subitem \comr{How much GRASP to include? Don't want to add significant additional analysis.}
+%\end{itemize}
+%
+%%The PICO optical system is based on an Open Dragone design.\cite{dragone}  The various types of Dragone telescopes which meet
+%%the Mizuguchi-Dragone condition have low cross polarization and large diffraction limited fields of view. The Crossed and Open Dragones
+%%have especially large fields of view making them appealing for CMB telescopes.  SPT? ACT? ?? use Crossed Dragone systems. The Open Dragone
+%%gives similar
+%
+%%One disadvantage of the large field of view is a large secondary and primary mirror . . .?  something about primary oversized? no too subtle.
+
+
+
+\section{FOCAL PLANE}
+\label{sec:focalplane}
+
+Modern mm/sub-mm detectors are photon noise limited, so the primary way to increase sensitivity is to increase the number of detectors on sky. 
+The PICO focal plane has 12,996 detectors, a factor of 175 more than \textit{Planck}. PICO achieves this by having a large DLFOV and using 
+multichroic pixels (MCP)\cite{Suzuki2014_samps}.  Multichroic pixels are a recent mm-wave pixel technology made up of a broad-bandwidth 
+polarization sensitive antenna lithographed onto a silicon substrate which couples to microstrip transmission lines to carry the signal 
+to a channelizing filter. The filter divides the broadband signal into individual bands and 
+directs it to separate transition edge sensor (TES) bolometers. The architecture assumed for PICO uses three bands per pixel; each 
+pixel contains two single polarization bolometers per band and therefore six bolometers total. Using MCP increases 
+the number of bolometers by a factor of six without increasing the required focal plane area.  
+
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\includegraphics[height=6cm]{bands_label.png}
+%\end{tabular}
+\end{center}
+\caption { \label{fig:bands} 
+Frequency coverage of the PICO bands. Each color (except magenta) denotes a different MCP, labeled A-F. The bar height 
+indicates the number of detectors per band.  Width gives the bandwidth, all are top-hats with 
+25\% fractional bandwidth; the $x$-axis is logarithmic.  The three highest frequencies (magenta) are single color pixels G, H, I.
+\comr{Confusion likely because 'E' is blue in this plot, but cyan in the focal plane. Need to address this.}
+}
+\end{figure} 
+
+We designed PICO with 21 overlapping bands centered at 21--799~GHz and divided amongst nine pixel types, A-I, shown in Figure~\ref{fig:bands}, 
+These bands provide the broad fequency coverage needed to seperate the CMB, Galactic dust, and various foreground using their differing spectra.  
+The PICO bands are 
+logarithmically spaced with 25\% fractional bandwidth.  The bandwidth is broader than the interband spacing meaning the bands 
+overlap and neighboring bands must be in separate pixels.  For example, bands 1, 3, and 5 are in pixel A while bands 2, 4, and 6 are in pixel B.  This 
+complicates the pixel design and focal plane layout, but allows broader brands to increase total sensitivity.  The exceptions to this MCP architecture 
+are the highest three bands.  These three bands are single frequency, because they are above the superconducting band gap of niobium meaning the standard 
+niobium transmission lines and filters cannot be used.  Instead we will use absorber coupled bolometers at these frequencies.  
+
+The PICO focal plane is designed to take maximum advantage of the large field of view.  As discussed in Section~\ref{sec:optics}, the optical quality peaks at the 
+focal plane center and falls off with radius.  This pattern dictates the layout shown in Figure~\ref{fig:focal_plane}, with the highest frequency 
+pixels centered in the focal plane and low frequency pixels around the edge. The maximum radial distance for a given pixel is the point where 
+the Strehl ratio for the highest frequency band within that pixel equals 0.8.  Interior to these contours, the ellipses in 
+Figure~\ref{fig:focal_plane}, the Strehl ratio increases ensuring pixels are diffraction limited.
+
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\includegraphics[height=7.5cm]{version3_focal_plane.png}
+%\end{tabular}
+\end{center}
+\caption { \label{fig:focal_plane} 
+PICO focal plane layout with Strehl~$=0.8$ contours for each pixel type. The pixel and Strehl contour colors match the band colors, A-I, 
+in Figure~\ref{fig:bands} \comr{Strehls make in more visible format, certainly cyan contours.}}
+\end{figure} 
+
+Optimizing the pixel size is a balance between number of pixels and the efficiency with which they couple to the telescope. Smaller pixels pack more densely 
+on the focal plane, number scaling as $1/D_{px}^2$, but over illuminate the stop which reduces total efficiency and adds thermal load.  
+%Since PICO has a cold stop additional load is minimized, reducing the penalty for smaller pixels.  
+We choose a pixel spacing of $2.1$F$\lambda$, giving an edge taper on the stop of 10~dB, for the center 
+band of each pixel. Due to the multichroic nature of the pixels this edge taper varies with band, details in Section~\ref{sec:noise}. We hex-pack pixels onto 
+94~mm hexagonal wafers to minimize wasted space for the mid-frequency pixels. The three central wafers have the same 94~mm hexagon footprint but are split into 
+3 rhombi as seen in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different detector technology and will need to be 
+fabricated separately.  Laying out the focal plane we assume lenslets \cite{Suzuki2014_samps} will be used to couple the antennas to free space, 
+but the exact coupling scheme has not been finalized.  
+However, the pixel size, number, and spacing is relatively agnostic to the coupling scheme, so we do not expect significant changes to the 
+current layout even if horn or phased array coupling is used in the final design.
+
+%To obtain full polarization information a point on the sky must be measured at we have pixels oriented at $\pm 90$\dgr, sensitive to Stokes Q
+%Q/U ? and syst.
+\comr{Discuss Q/U orientation?}
+% \begin{figure} [ht]
+% \begin{center}
+% %\begin{tabular}{c} %% tabular useful for creating an array of images 
+% \includegraphics[height=5cm]{QU_wafer.png}
+% %\end{tabular}
+% \end{center}
+% \caption { \label{fig:QU} 
+% Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) for an example wafer.}
+% \end{figure}
+
+Reading out 12,996 TES bolometers requires significant multiplexing.  Time domain (TDM) and frequency domain (FDM) 
+multiplexing were explored for PICO, tradeoff details are in Ref.~\citenum{brian_spie}.  The current PICO baseline is TDM, 
+but the choice is not a driver for the focal plane layout or noise discussed in this paper.
+
+
+%comment about area?
+
+%realtive number . . . largest area by 100s. driven by science . . .
+
+%For PICO the highest sensitivity is needed around 220~GHz, near the peak of the CMB anisotropy signal, because the inflationary signal is extremely faint.  
+
+
+% \begin{itemize}
+% \item Bands and multichroic pixels
+% \item availible areas for pixels, focal plane layout
+% \subitem Q/U orientations
+% \item edge taper choices (cold stop and resolution tradeoffs)
+% \subitem cold stop allows higher edge taper value. This means lower effeciency and small on-sky beam.
+% \subitem edge taper varies with band due to MCPs
+% \item technology types assumed for this study
+% \subitem SAMPS, TES bolos, TDM readout
+% \item for readout cite Brian's paper. -- description there is less comprehensive than roger's first version. May need some detail here.
+% \subitem \comr{Do we want wafer level CAD sketch of cold readout? Probably too much detail for here.}
+% \end{itemize}
+
+
+
+\section{NOISE MODEL}
+\label{sec:noise}
+\comr{comment somewhere in this section that these noise numbers are CBE. no margins.}
+
+We developed an end to end white noise only model of the PICO instrument to predict full mission sensitivity and 
+provide a metric by which to evaluate optical, mechanical, and mission design tradeoffs.  
+To simplify the model, we assume TES bolometers as the detector at all frequencies, even though other technologies may be better suited to the lowest bands.  
+Any suitable technology will be photon noise dominated as the TESs are, so total noise levels in the lowest bands should be relatively unaffected by 
+the use of a different detector technology.
+We constructed the model following the methods in Ref.~\citenum{suzuki2013_thesis} and~\citenum{aubin2013_thesis}; estimate the 
+optical load, calculate properties of the TES bolometers, calculate noise equivalent power (NEP) for each source, combine all NEP  
+terms to get detector noise, and finally calculate full mission sensitivity.  Each of these steps includes various assumptions and design decisions, 
+which are discussed in this section.  The assumptions are summarized in Table~\ref{tab:assume}.
+% comment on photon dominated?
+
+\begin{table}[ht]
+\centering
+\caption{Noise model assumptions, see text for details. \comr{listing still in flux}}
+\label{tab:assume}
+%
+\begin{tabular}{|l|l|}
+\hline
+                                 &                                                  \\
+Throughput                       & single moded, $\lambda^2$          \\
+Fractional Bandwidth             & 25\%                                             \\
+Mirror emissivity                & $\epsilon = \epsilon_0\sqrt{\nu/\text{150~GHz}}, \epsilon_0 = 0.07\%$ \\
+Aperture stop emissivity         & 1                                                \\
+Low pass filter reflection loss  & 8\%                                                \\
+Low pass filter absorption loss  & frequency dependent, $\approx 2\%  $ \comr{change to appropriate range}             \\
+Bolometer absorption efficiency  & 70\%                                             \\
+T$_e$ for middle band in pixel (dB) & 10                                               \\
+Mission length (years)           & 5                                                \\
+Observing efficiency             & 95\%                                             \\
+Safety factor, P$_{sat}$/P$_{abs}$      & 2                                                \\
+Bose noise fraction, $\xi$       & 1                                                \\
+$T_o$ (mK)                      & 100                                              \\
+$T_c$ (mK)                      & 187                                              \\
+Thermal power law index, $n$    & 2                                                \\
+SQUID noise (aW/$\sqrt{\text{Hz}}$)   & 3.5    (FDM), ?? (TDM)                       \\
+TES operating resistance, ohm    & 1 (FDM), 0.03 (TDM)                              \\
+TES transition slope, alpha      & 100 (TDM)                                        \\
+TES loop gain                    & 25 (FDM), 14 (TDM)                               \\
+\comr{other?}                    &                                                  \\
+\comr{\footnotesize footnote to explain LP filter absorption}  &                                                  \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Single bolometer noise}
+\label{sec:det_noise}
+
+The sources of optical load are the CMB, primary and secondary mirrors, the aperture stop, and a low pass optical filter.  These elements 
+are shown schematically in Figure~\ref{fig:load}. 
+We assume the primary is 40~K, the stop and secondary 4~K, and the low pass filter 100~mK. % for details of the thermal design see \citenum{brian_spie}.  
+The emissivity of the mirrors depends on frequency, $\epsilon(\nu) =  \epsilon_0\sqrt{\nu / (\text{150~GHz})}$. At 150~GHz we assume an emissivity of 
+0.07\% \cite{planck2011_hfi_temp,planck2018_lfi_mirrors}. 
+%Emissivity of the stop and low pass filter was 1 at all frequencies.
+%; temperatures and emissivities are given in Table~\ref{tab:noise_model}. 
+
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\hspace{1cm} \includegraphics[height=5cm]{load_calc_MCP.png}
+%\end{tabular}
+\end{center}
+\caption[load] { \label{fig:load} 
+Schematic representation of the prediction of optical load.  Power emitted by each element is modified by the efficiency of the following elements 
+and added to the total expected load.  The multichroic pixel illuminates the stop differently for each of the three bands.
+}
+\end{figure} 
+
+The total load absorbed at the bolometer is the sum of the power emitted by each element reduced by the optical efficiency of the elements between 
+the emitting surface and the bolometer.  For example, the CMB power is reduced by the optical efficiency of the entire instrument, 
+$\eta_{opt} = \eta_{PRI}\eta_{stop}\eta_{SEC}\eta_{filter}\eta_{bolo}$, while the power emitted by the low pass filter is reduced only by $\eta_{bolo}$.
+The absorbed power is,
+\begin{equation}
+\label{eq:load}
+P_{abs} =  (((( P_{CMB} \eta_{PRI} + P_{PRI} ) \eta_{stop} + P_{stop}(1-\eta_{stop}) ) \eta_{SEC} + P_{SEC})\eta_{filter} + P_{filter}) \eta_{bolo},
+\end{equation} 
+%_{i=Filter}^{CMB}
+% maybe change PRI to M1, SEC to M2 ??
+where $P_{elem}$ is the in band power emitted by a given element for a single polarization and $\eta_{elem}$ is the efficiency 
+of the element. We assumed 25\% 
+fractional bandwidth top-hat bands and throughput of $\lambda^2$. Power from the stop is a special case. We multiply $P_{stop}$ by 
+$(1-\eta_{stop})$ because $\eta_{stop}$ is spillover efficiency, the fraction of the throughput which passes through the stop, so $(1-\eta_{stop})$ 
+is the fraction of the throughput which views the stop.  
+
+\begin{figure} [ht]
+\begin{center}
+\begin{tabular}{ccc} %% tabular useful for creating an array of images 
+%\includegraphics[height=8cm]{P_optical.png}
+\hspace{-1.4cm} \includegraphics[height=4.9cm]{system_Popt.png} & \hspace{-0.7cm} \includegraphics[height=4.9cm]{system_NEP.png} &\hspace{-0.7cm}  \includegraphics[height=4.9cm]{system_NET.png} 
+\end{tabular}
+\end{center}
+\caption{ \label{fig:popt} \label{fig:noise} \label{fig:net} 
+Left: Expected optical loads for single polarization PICO bolometers. 
+Center: 
+ Breakdown of NEP across the PICO frequency range.  Photon noise dominates even at the lowest frequencies. 
+% %All noise values are quoted in $\mu$K$_{CMB}$-arcmin because CMB science was a major design driver.  -- say this in a noise figure/table caption.
+Right: Per detector NET, temperature sensitivity,  across the PICO bands. \comr{could add CORE NETs here for comparison. could add zoom around 150 GHz.}
+}
+\end{figure} 
+
+For PICO, the CMB and stop are the major load at low frequencies while and mirror emission 
+% stop is ~1/3 of the load for 0.68 bands. 
+is the majority above 460~GHz due to their differing temperatures, see Figure~\ref{fig:popt}. 
+The jumps in load between neighboring bands in Figure~\ref{fig:popt}, around 70 and 200~GHz are due to $\eta_{stop}$ changing with frequency.  This is 
+driven by the use of multichroic pixels whose angular beam pattern is dependent on the pixel diameter\cite{suzuki2013_thesis},
+\begin{equation}
+\label{eq:mcp_beam}
+\theta_{1/e^2} = \frac{2.95 \lambda}{\pi D_{px}}. 
+\end{equation} 
+The edge taper, T$_e$, of the middle frequency band in each pixel is chosen to be 10~dB. For the upper and lower bands T$_e$ is calculated using 
+Equation~\ref{eq:mcp_beam}. This changing illumination of the stop is shown schematically by the dashed rays in Figure~\ref{fig:load}. 
+For each MCP, A-H, T$_e$ is 4.8, 10, and 20.7~dB for the lower, middle, and upper bands, respectively.  These 
+edge tapers correspond to $\eta_{stop}$ of 0.68, 0.90, and 0.99.
+% meaning 32\% of the lowest band's throughput couples to the cold stop while only 1\% of the high frequency band's throughput copules to the stop.  
+The changing $\eta_{stop}$ has thee main effects; uneven optical load between bands, varying NEP to noise equivalent temperture (NET) conversion 
+between bands, and telescope beam size not scaling smoothly with $\lambda$.
+
+From $P_{abs}$ we calculate the TES bolometer properties for each band.  We assume a safety factor of 2, $P_{sat}/P_{abs}=2$; $P_{sat}$ is the 
+saturation power of the bolometer.  The PICO focal plane temperature, $T_o$, of 100~mK sets an optimal superconducting transition temperature, 
+$T_c$, of 187~mK.  We assume thermal conductivity scales as a power law, $G \propto T^n$,  with $n=2$.  The required thermal conductivity for 
+a given bolometer is set by the $P_{sat}$,
+%any need to cite power law, G \propto T^n, assumption?
+\begin{equation}
+\label{eq:G}
+G = \frac{P_{sat}}{T_c} (n+1) \frac{1}{1-\left({T_o}{T_c}\right)^{n+1} }. 
+\end{equation} 
+%\comr{need to say anything about C? tau? no real effect for FDM. if tau too long does matter for TDM. need to look in more detail. Roger assumed C = 1 pJ/K }
+
+We consider three noise sources per bolometer; photon, phonon, and readout.  Photon noise depends on the absorbed power\cite{richards1994}, 
+\begin{equation}
+\label{eq:photon}
+NEP_{\gamma}^2 = \int\limits_{band} 2h\nu p \, d\nu + 2\xi \int\limits_{band} p^2 d\nu,
+\end{equation} 
+where $p$ is the power spectral density for a single polarization absorbed at the bolometer and $\xi$ is the fraction of correlated Bose 
+photon noise. We assume $\xi=1$. For PICO, NEP$_{Bose}$/NEP$_{Poisson}= 1.3 $ in the lowest band but since Bose noise does not scale with 
+$\sqrt{\nu}$ as Poisson does NEP$_{Bose}$/NEP$_{Poisson} <10\%$ at 268~GHz.\comr{check if this is NEP/NEP or NEP$^2$} %Photon noise dominates at all frequencies for PICO.
+The second largest noise term is phonon noise\cite{mather1982} in the thermal connection to $T_o$,
+\begin{equation}
+\label{eq:phonon}
+NEP_{phonon}^2 = 4 \gamma k_b T_c^2 G,
+\end{equation} 
+where $\gamma$ is a unitless factor depending on $T_o$, $T_c$, and $n$. For PICO $\gamma=0.5$.
+Readout noise depends on the assumption of FDM or TDM readout and includes all remaining noise sources, the Johnson noise of the TES as well as 
+all components not intrinsic to the bolometers.  
+For both multiplexing schemes NEP$_{readout}$ is dominated by the SQUID amplifier with moderate contributions from various resistors 
+and amplifiers in the readout chain. We calculate noise for both FDM and TDM systems, though TDM is the current baseline, and find both to 
+be below both photon and phonon 
+noise for all bands.  Both systems give similar noise levels, with total noise differing by less than 3\% in all bands.
+% which is below the fidelity of the current study. 
+Some thought has been put into optimizing the readout systems for space, but since the expected noise is already sufficiently low this was not pursued 
+in detail. 
+For TDM and FDM the noise primarily scales with TES bias voltage which depends on the electrical power needed to operate the TES, 
+%\begin{gather}
+\begin{equation} 
+\begin{split}
+\label{eq:readout}
+NEP_{readout}^2 &\propto V_{bias}^2 \propto  P_{e}, \text{ and}\\
+P_{e} &= P_{sat} - P_{abs}.
+%\end{gather}
+\end{split}
+\end{equation}
+This neglects the details of our readout noise models, but is an illustrative approximation usefull for this paper.
+% Maybe only true for FDM? True for both. basically conversion of current noise to power.
+
+% for citations see roger's PCIO workshop presentation.
+
+% \begin{figure} [ht]
+% \begin{center}
+% %\begin{tabular}{c} %% tabular useful for creating an array of images 
+% \includegraphics[height=5cm]{NEPs.png}
+% %\end{tabular}
+% \end{center}
+% \caption { \label{fig:noise} 
+% Breakdown of NEP across the PICO frequency range.  Photon noise dominates even at the lowest frequencies. \comr{add total noise and a zoom 
+% at low frequency. maybe combine this with $P_{abs}$ and NET into a 3 panel figure.}
+% %All noise values are quoted in $\mu$K$_{CMB}$-arcmin because CMB science was a major design driver.  -- say this in a noise figure/table caption.
+% }
+% \end{figure}
+
+
+%discussion of primary scalings and drivers? Popt does it all. choices like 100 mK and P/P = 2.
+The noise breakdown in Figure~\ref{fig:noise} drives various aspects of the PICO design. Since photon noise dominates at all frequencies and 
+photon noise scales with $\sqrt{P_{abs}}$, Equation~\ref{eq:photon}, the primary driver of noise is optical load.   The second largest source 
+of noise is phonon noise.  Combining
+Equations~\ref{eq:G} and~\ref{eq:phonon} we see $NEP_{phonon}$ scales with $\sqrt{T_C}$ and $\sqrt{P_{sat}}$.  Cooling the focal plane to 100~mK 
+reduces $T_c$ since $T_c \propto T_o$.  The saturation power depends on the choice of safety factor, $P_{sat}/P_{abs}$, as well as on optical load.  
+We choose safety factor of two to lower noise, while providing margin for unexpected loads or variations in $G$ of the fabricated 
+bolometers. Readout noise scales with $\sqrt{P_{sat} - P_{abs}}$, Equation~\ref{eq:readout}, which is reduced by reducing the safety factor or $P_{abs}$.  
+From this analysis we see that all noise sources depend on $P_{abs}$, either directly or through how load drives bolometer properties.  Therefore the 
+most straightforward way to reduce noise is to limit all optical loads other than the CMB.  This motivates the simple, few element telescope we 
+have designed with the aperture stop and secondary mirror actively cooled to reduce excess load and photon noise. 
+
+\subsection{Combined array noise}
+
+Using single detector NEPs as per Section~\ref{sec:det_noise} and the detector counts from Section~\ref{sec:focalplane} we 
+calculate the combined NEP of the detector array for each band.  Generally, combining detectors simply reduces noise by $\sqrt{N}$.  The one 
+exception is Bose photon noise. For the lowest band of each MCP the pixels oversample the PSF, pixel spacing is $0.4$F$\lambda$, resulting in correlated 
+Bose noise bewteen pixels.  Accounting for this effect gives a \comr{XX\%} increase in the combined array $NEP$ of the lowest band, 21~GHz, and only 
+a \comr{XX\%} increase in the highest band, 799~GHz.  
+
+From the array $NEP$ we convert to $NET$ per band,
+\begin{equation}
+\label{eq:NET}
+NET = \frac{NEP}{\sqrt{2}\eta_{opt} \int\limits_{band}\frac{dP}{dT}\Bigr|_{T_{CMB}} d\nu }.
+\end{equation} 
+The $\eta_{opt}$ term contributes to the `jumps' in $NET$ seen in Figure~\ref{fig:net} since $\eta_{opt}$ varies band to band.  We use CMB temperature 
+units for all bands, even though this isn't particularly suitable for the highest bands, because the CMB is the most stringent requirement on sensitivity.
+
+All the above calculations have been for sensitivity to temperature and are given in Table~\ref{tab:noise}.  Assuming evenly weighted observations 
+of the full sky and 5 years observing at 95\% efficiency we calculate full mission map sensitivities in polarization; final column in Table~\ref{tab:noise}.
+Combining all bands gives a total CMB map depth for the entire PICO mission of \comr{0.67}~$\mu$K$_{CMB}$-arcmin.
+
+\begin{table}[ht]
+\centering
+\caption{PICO frequency channels and noise. \comr{this assumes 4K, 40K, filter. may need to change}}
+\label{tab:noise}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+Pixel  & Band  & FWHM   & Bolometer NEP & Bolometer NET        & N$_{bolo}$ & Array NET            & Polarization map depth  \\
+Type   & GHz   & arcmin & aW/$\sqrt{Hz}$ & $\mu$K$_{CMB}\sqrt{s}$ &           & $\mu$K$_{CMB}\sqrt{s}$ & $\mu$K$_{CMB}$-arcmin      \\ \hline
+A   & 21    & 38.4   & 4.23          & 97.0                 & 120         & 10.88                & 15.32                    \\
+B   & 25    & 32.0   & 4.60          & 88.8                 & 200         & 7.64                 & 10.75                   \\
+A   & 30    & 28.3   & 4.67          & 56.4                 & 120         & 5.30                 & 7.46                     \\
+B   & 36    & 23.6   & 5.07          & 51.6                 & 200         & 3.75                 & 5.27                    \\
+A   & 43    & 22.2   & 5.31          & 41.6                 & 120         & 3.79                 & 5.34                    \\
+B   & 52    & 18.4   & 5.71          & 38.2                 & 200         & 2.70                 & 3.81                     \\
+C   & 62    & 12.8   & 6.99          & 58.3                 & 732         & 2.44                 & 3.44                    \\
+D   & 75    & 10.7   & 7.50          & 54.6                 & 1020        & 1.90                 & 2.67                   \\
+C   & 90    & 9.5    & 7.22          & 35.0                 & 732         & 1.31                 & 1.84                     \\
+D   & 108   & 7.9    & 7.54          & 33.3                 & 1020        & 1.05                 & 1.48                      \\
+C   & 129   & 7.4    & 7.34          & 27.8                 & 732         & 1.03                 & 1.45                 \\
+D   & 155   & 6.2    & 7.36          & 27.5                 & 1020        & 0.86                 & 1.21                    \\
+E   & 186   & 4.3    & 9.04          & 52.1                 & 960         & 1.72                 & 2.43                     \\
+F   & 223   & 3.6    & 8.85          & 58.6                 & 900         & 1.99                 & 2.80                     \\
+E   & 268   & 3.2    & 6.93          & 44.4                 & 960         & 1.43                 & 2.02                    \\
+F   & 321   & 2.6    & 6.35          & 60.3                 & 900         & 2.01                 & 2.83                   \\
+E   & 385   & 2.5    & 5.38          & 82.1                 & 960         & 2.65                 & 3.73                    \\
+F   & 462   & 2.1    & 5.55          & 184.1                & 900         & 6.14                 & 8.64                     \\
+G   & 555   & 1.5    & 6.22          & 632.3                & 440         & 30.15                & 42.44                   \\
+H   & 666   & 1.3    & 7.08          & 2728.5               & 400         & 136.44               & 192.06                  \\
+I   & 799   & 1.1    & 8.24          & 17297.3              & 360         & 911.70               & 1283.36                 \\ \hline
+Total &        &               &                      & 12996       & 0.46              & 0.57               \\ \hline
+\end{tabular}
+\end{table}
+%https://www.tablesgenerator.com/
+
+
+% %calculation assumptions / values.  table? -- yes
+
+% \begin{itemize}
+% \item Noise components; 
+% \subitem photon, goal for this to dominate
+% \subitem phonon, typically 2nd largest source. Intrinsic to bolo.
+% \subitem readout (FDM) 
+% \subsubitem johnson noise and Franky's code
+% \subitem readout (TDM)
+% \subsubitem johnson noise handled differently. use Roger's code.
+% \item how calculation works. high level assumtions
+% \subitem element by element for loading. temperatures and emissivities
+% \subitem assumes optimized bolometers
+
+% \item Major drivers of noise levels. quantative magnitude of effect included
+% \subitem Math of noise scaling with rt(power load). Also how NET scales. \comr{These aren't new, maybe useful? maybe not.}
+% \subitem stop temperature
+% \subitem safety factor, why 2 and what impacts this has
+% \subitem effeciencies, optics, bolo absorption, stop
+% %\item Detail band by band comparison to Planck, CORE, or LiteBIRD numbers?
+% \end{itemize}
+
+\section{CONCLUSIONS/SUMMARY}
+
+\begin{itemize}
+\item Total full sky map sensitivity, compare to Planck, LB, and S4? or do so in intro?
+\end{itemize}
+simple telescope. low noise? low systematics? - systematics not discussed elsewhere (yet)
+
+
+\section{ACKNOWLEDGEMENTS}
+
+This Probe mission concept study is funded by NASA grant xxxxxxxx.
+
+
+\bibliography{refs} % bibliography data in report.bib
+\bibliographystyle{spiebib} % makes bibtex use spiebib.bst
+
+\end{document} 
+
+
+% below is template guidelines to be deleted.
+
+Begin the Introduction below the Keywords. The manuscript should not have headers, footers, or page numbers. It should be in a one-column format. References are often noted in the text and cited at the end of the paper.
+
+\begin{table}[ht]
+\caption{Fonts sizes to be used for various parts of the manuscript.  Table captions should be centered above the table.  When the caption is too long to fit on one line, it should be justified to the right and left margins of the body of the text.} 
+\label{tab:fonts}
+\begin{center}       
+\begin{tabular}{|l|l|} %% this creates two columns
+%% |l|l| to left justify each column entry
+%% |c|c| to center each column entry
+%% use of \rule[]{}{} below opens up each row
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Article title & 16 pt., bold, centered  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Author names and affiliations & 12 pt., normal, centered   \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Keywords & 10 pt., normal, left justified   \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Abstract Title & 11 pt., bold, centered   \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Abstract body text & 10 pt., normal, justified   \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Section heading & 11 pt., bold, centered (all caps)  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Subsection heading & 11 pt., bold, left justified  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Sub-subsection heading & 10 pt., bold, left justified  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Normal text & 10 pt., normal, justified  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Figure and table captions & \, 9 pt., normal \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Footnote & \, 9 pt., normal \\
+\hline 
+\rule[-1ex]{0pt}{3.5ex}  Reference Heading & 11 pt., bold, centered   \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Reference Listing & 10 pt., normal, justified   \\
+\hline
+\end{tabular}
+\end{center}
+\end{table} 
+
+\begin{table}[ht]
+\caption{Margins and print area specifications.} 
+\label{tab:Paper Margins}
+\begin{center}       
+\begin{tabular}{|l|l|l|} 
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Margin & A4 & Letter  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Top margin & 2.54 cm & 1.0 in.   \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Bottom margin & 4.94 cm & 1.25 in.  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Left, right margin & 1.925 cm & .875 in.  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Printable area & 17.15 x 22.23 cm & 6.75 x 8.75 in.  \\
+\hline 
+\end{tabular}
+\end{center}
+\end{table}
+
+LaTeX margins are related to the document's paper size. The paper size is by default set to USA letter paper. To format a document for A4 paper, the first line of this LaTeX source file should be changed to \verb|\documentclass[a4paper]{spie}|.   
+
+Authors are encouraged to follow the principles of sound technical writing, as described in Refs.~\citenum{Alred03} and \citenum{Perelman97}, for example.  Many aspects of technical writing are addressed in the {\em AIP Style Manual}, published by the American Institute of Physics.  It is available on line at \url{https://publishing.aip.org/authors}. A spelling checker is helpful for finding misspelled words. 
+
+An author may use this LaTeX source file as a template by substituting his/her own text in each field.  This document is not meant to be a complete guide on how to use LaTeX.  For that, please see the list of references at \url{http://latex-project.org/guides/} and for an online introduction to LaTeX please see \citenum{Lees-Miller-LaTeX-course-1}. 
+
+\section{FORMATTING OF MANUSCRIPT COMPONENTS}
+
+This section describes the normal structure of a manuscript and how each part should be handled.  The appropriate vertical spacing between various parts of this document is achieved in LaTeX through the proper use of defined constructs, such as \verb|\section{}|.  In LaTeX, paragraphs are separated by blank lines in the source file. 
+
+At times it may be desired, for formatting reasons, to break a line without starting a new paragraph.  This situation may occur, for example, when formatting the article title, author information, or section headings.  Line breaks are inserted in LaTeX by entering \verb|\\| or \verb|\linebreak| in the LaTeX source file at the desired location.  
+
+\subsection{Title and Author Information}
+\label{sec:title}
+
+The article title appears centered at the top of the first page.  The title font is 16 point, bold.  The rules for capitalizing the title are the same as for sentences; only the first word, proper nouns, and acronyms should be capitalized.  Avoid using acronyms in the title.  Keep in mind that people outside your area of expertise might read your article. At the first occurrence of an acronym, spell it out, followed by the acronym in parentheses, e.g., noise power spectrum (NPS). 
+
+The author list is in 12-pt. regular, centered. Omit titles and degrees such as Dr., Prof., Ph.D., etc. The list of affiliations follows the author list. Each author's affiliation should be clearly noted. Superscripts may be used to identify the correspondence between the authors and their respective affiliations.  Further author information, such as e-mail address, complete postal address, and web-site location, may be provided in a footnote by using \verb|\authorinfo{}|, as demonstrated above.
+
+\subsection{Abstract and Keywords}
+The title and author information is immediately followed by the Abstract. The Abstract should concisely summarize the key findings of the paper.  It should consist of a single paragraph containing no more than 250 words.  The Abstract does not have a section number.  A list of up to eight keywords should immediately follow the Abstract after a blank line.  These keywords will be included in a searchable database at SPIE.
+
+\subsection{Body of Paper}
+The body of the paper consists of numbered sections that present the main findings.  These sections should be organized to best present the material.  See Sec.~\ref{sec:sections} for formatting instructions.
+
+\subsection{Appendices}
+Auxiliary material that is best left out of the main body of the paper, for example, derivations of equations, proofs of theorems, and details of algorithms, may be included in appendices.  Appendices are enumerated with uppercase Latin letters in alphabetic order, and appear just before the Acknowledgments and References. Appendix~\ref{sec:misc} contains more about formatting equations and theorems.
+
+\subsection{Acknowledgments}
+In the Acknowledgments section, appearing just before the References, the authors may credit others for their guidance or help.  Also, funding sources may be stated.  The Acknowledgments section does not have a section number.
+
+\subsection{References}
+SPIE is able to display the references section of your paper in the SPIE Digital Library, complete with links to referenced journal articles, proceedings papers, and books, when available. This added feature will bring more readers to your paper and improve the usefulness of the SPIE Digital Library for all researchers. The References section does not have a section number.  The references are numbered in the order in which they are cited.  Examples of the format to be followed are given at the end of this document.  
+
+The reference list at the end of this document is created using BibTeX, which looks through the file {\ttfamily report.bib} for the entries cited in the LaTeX source file.  The format of the reference list is determined by the bibliography style file {\ttfamily spiebib.bst}, as specified in the \verb|\bibliographystyle{spiebib}| command.  Alternatively, the references may be directly formatted in the LaTeX source file.
+
+For books\cite{Lamport94,Alred03,Goossens97}, the listing includes the list of authors, book title, publisher, city, page or chapter numbers, and year of publication.  A reference to a journal article\cite{Metropolis53} includes the author list, title of the article (in quotes), journal name (in italics, properly abbreviated), volume number (in bold), inclusive page numbers, and year.  By convention\cite{Lamport94}, article titles are capitalized as described in Sec.~\ref{sec:title}.  A reference to a proceedings paper or a chapter in an edited book\cite{Gull89a} includes the author list, title of the article (in quotes), volume or series title (in italics), volume number (in bold), if applicable, inclusive page numbers, publisher, city, and year.  References to an article in the SPIE Proceedings may include the conference name (in italics), as shown in Ref.~\citenum{Hanson93c}. For websites\cite{Lees-Miller-LaTeX-course-1} the listing includes the list of authors, title of the article (in quotes), website name, article date, website address either enclosed in chevron symbols ('\(<\)' and '\(>\)'),  underlined or linked, and the date the website was accessed. 
+
+If you use this formatting, your references will link your manuscript to other research papers that are in the CrossRef system. Exact punctuation is required for the automated linking to be successful. 
+
+Citations to the references are made using superscript numerals, as demonstrated in the above paragraph.  One may also directly refer to a reference within the text, e.g., ``as shown in Ref.~\citenum{Metropolis53} ...''
+
+\subsection{Footnotes}
+Footnotes\footnote{Footnotes are indicated as superscript symbols to avoid confusion with citations.} may be used to provide auxiliary information that doesn't need to appear in the text, e.g., to explain measurement units.  They should be used sparingly, however.  
+
+Only nine footnote symbols are available in LaTeX. If you have more than nine footnotes, you will need to restart the sequence using the command  \verb|\footnote[1]{Your footnote text goes here.}|. If you don't, LaTeX will provide the error message {\ttfamily Counter too large.}, followed by the offending footnote command.
+
+\section{SECTION FORMATTING}
+\label{sec:sections}
+
+Section headings are centered and formatted completely in uppercase 11-point bold font.  Sections should be numbered sequentially, starting with the first section after the Abstract.  The heading starts with the section number, followed by a period.  In LaTeX, a new section is created with the \verb|\section{}| command, which automatically numbers the sections.
+
+Paragraphs that immediately follow a section heading are leading paragraphs and should not be indented, according to standard publishing style\cite{Lamport94}.  The same goes for leading paragraphs of subsections and sub-subsections.  Subsequent paragraphs are standard paragraphs, with 14-pt.\ (5 mm) indentation.  An extra half-line space should be inserted between paragraphs.  In LaTeX, this spacing is specified by the parameter \verb|\parskip|, which is set in {\ttfamily spie.cls}.  Indentation of the first line of a paragraph may be avoided by starting it with \verb|\noindent|.
+ 
+\subsection{Subsection Attributes}
+
+The subsection heading is left justified and set in 11-point, bold font.  Capitalization rules are the same as those for book titles.  The first word of a subsection heading is capitalized.  The remaining words are also capitalized, except for minor words with fewer than four letters, such as articles (a, an, and the), short prepositions (of, at, by, for, in, etc.), and short conjunctions (and, or, as, but, etc.).  Subsection numbers consist of the section number, followed by a period, and the subsection number within that section.  
+
+\subsubsection{Sub-subsection attributes}
+The sub-subsection heading is left justified and its font is 10 point, bold.  Capitalize as for sentences.  The first word of a sub-subsection heading is capitalized.  The rest of the heading is not capitalized, except for acronyms and proper names.  
+
+\section{FIGURES AND TABLES}
+
+Figures are numbered in the order of their first citation.  They should appear in numerical order and on or after the same page as their first reference in the text.  Alternatively, all figures may be placed at the end of the manuscript, that is, after the Reference section.  It is preferable to have figures appear at the top or bottom of the page.  Figures, along with their captions, should be separated from the main text by at least 0.2 in.\ or 5 mm.  
+
+Figure captions are centered below the figure or graph.  Figure captions start with the figure number in 9-point bold font, followed by a period; the text is in 9-point normal font; for example, ``{\footnotesize{Figure 3.}  Original image...}''.  See Fig.~\ref{fig:example} for an example of a figure caption.  When the caption is too long to fit on one line, it should be justified to the right and left margins of the body of the text.  
+
+Tables are handled identically to figures, except that their captions appear above the table. 
+
+% Note: If compiling with LaTeX+dvipdf, please ensure images generated from 
+% other software packages have their bounding boxes set correctly.
+   \begin{figure} [ht]
+   \begin{center}
+   \begin{tabular}{c} %% tabular useful for creating an array of images 
+   \includegraphics[height=5cm]{mcr3b.eps}
+   \end{tabular}
+   \end{center}
+   \caption[example] 
+%>>>> use \label inside caption to get Fig. number with \ref{}
+   { \label{fig:example} 
+Figure captions are used to describe the figure and help the reader understand it's significance.  The caption should be centered underneath the figure and set in 9-point font.  It is preferable for figures and tables to be placed at the top or bottom of the page. LaTeX tends to adhere to this standard.}
+   \end{figure} 
+
+\section{MULTIMEDIA FIGURES - VIDEO AND AUDIO FILES}
+
+Video and audio files can be included for publication. See Tab.~\ref{tab:Multimedia-Specifications} for the specifications for the mulitimedia files. Use a screenshot or another .jpg illustration for placement in the text. Use the file name to begin the caption. The text of the caption must end with the text ``http://dx.doi.org/doi.number.goes.here'' which tells the SPIE editor where to insert the hyperlink in the digital version of the manuscript. 
+
+Here is a sample illustration and caption for a multimedia file:
+
+   \begin{figure} [ht]
+   \begin{center}
+   \begin{tabular}{c} 
+   \includegraphics[height=5cm]{MultimediaFigure.jpg}
+	\end{tabular}
+	\end{center}
+   \caption[example] 
+   { \label{fig:video-example} 
+A label of “Video/Audio 1, 2, …” should appear at the beginning of the caption to indicate to which multimedia file it is linked . Include this text at the end of the caption: \url{http://dx.doi.org/doi.number.goes.here}}
+   \end{figure} 
+   
+   \begin{table}[ht]
+\caption{Information on video and audio files that must accompany a manuscript submission.} 
+\label{tab:Multimedia-Specifications}
+\begin{center}       
+\begin{tabular}{|l|l|l|}
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Item & Video & Audio  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  File name & Video1, video2... & Audio1, audio2...   \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Number of files & 0-10 & 0-10  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  Size of each file & 5 MB & 5 MB  \\
+\hline
+\rule[-1ex]{0pt}{3.5ex}  File types accepted & .mpeg, .mov (Quicktime), .wmv (Windows Media Player) & .wav, .mp3  \\
+\hline 
+\end{tabular}
+\end{center}
+\end{table}
+
+\appendix    %>>>> this command starts appendixes
+
+\section{MISCELLANEOUS FORMATTING DETAILS}
+\label{sec:misc}
+
+It is often useful to refer back (or forward) to other sections in the article.  Such references are made by section number.  When a section reference starts a sentence, Section is spelled out; otherwise use its abbreviation, for example, ``In Sec.~2 we showed...'' or ``Section~2.1 contained a description...''.  References to figures, tables, and theorems are handled the same way.
+
+\subsection{Formatting Equations}
+Equations may appear in line with the text, if they are simple, short, and not of major importance; e.g., $\beta = b/r$.  Important equations appear on their own line.  Such equations are centered.  For example, ``The expression for the field of view is
+\begin{equation}
+\label{eq:fov}
+2 a = \frac{(b + 1)}{3c} \, ,
+\end{equation}
+where $a$ is the ...'' Principal equations are numbered, with the equation number placed within parentheses and right justified.  
+
+Equations are considered to be part of a sentence and should be punctuated accordingly. In the above example, a comma follows the equation because the next line is a subordinate clause.  If the equation ends the sentence, a period should follow the equation.  The line following an equation should not be indented unless it is meant to start a new paragraph.  Indentation after an equation is avoided in LaTeX by not leaving a blank line between the equation and the subsequent text.
+
+References to equations include the equation number in parentheses, for example, ``Equation~(\ref{eq:fov}) shows ...'' or ``Combining Eqs.~(2) and (3), we obtain...''  Using a tilde in the LaTeX source file between two characters avoids unwanted line breaks.
+
+\subsection{Formatting Theorems}
+
+To include theorems in a formal way, the theorem identification should appear in a 10-point, bold font, left justified and followed by a period.  The text of the theorem continues on the same line in normal, 10-point font.  For example, 
+
+\noindent\textbf{Theorem 1.} For any unbiased estimator...
+
+Formal statements of lemmas and algorithms receive a similar treatment.
+
+\acknowledgments % equivalent to \section*{ACKNOWLEDGMENTS}       
+ 
+This unnumbered section is used to identify those who have aided the authors in understanding or accomplishing the work presented and to acknowledge sources of funding.  
+
+% References
