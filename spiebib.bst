@@ -236,14 +236,25 @@ FUNCTION {format.names}
     { s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=   % last name first
 %%%kmh    { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
       nameptr #1 >
-	{ namesleft #1 >
+	{ 
+          nameptr #3 % 9 new lines to try to get et al to work.
+          #1 + =
+          numnames #5
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
+          %namesleft #1 >
+
 	    { ", " * t * }
 	    { numnames #2 >
 		{ "," * }
 		'skip$
 	      if$
 	      t "others" =
-%%%kmh		{ " {\em et~al.}" * }
+%%%kmh	%	{ " {\em et~al.}" * }
 		{ " et~al." * }
 		{ " and " * t * }
 	      if$

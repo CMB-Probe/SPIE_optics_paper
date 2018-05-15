@@ -10,7 +10,7 @@
 % user added packages
 \usepackage{xcolor}
 \usepackage{adjustbox}
-% \usepackage{natbib}
+%\usepackage{natbib}
 
 % user added commands
 \newcommand{\comr}[1]{\textcolor{red}{#1}}
@@ -116,12 +116,12 @@ In astronomy and astrophysics, NASA currently flies small and medium Explorer mi
 \comr{Brian's science section copied in .tex document. Repeating all of that here seems inappropriate. I have attempted to summarize. Mostly this is the first paragraph from Brian's paper.}
 
 Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of information about 
-the formation, evolution, and current structure of the Universe.  Much of the large scale cosmological and fundamental physics information, such as 
+the formation, evolution, and current structure of the Universe.  Large scale cosmological and fundamental physics information, such as 
 evidence of inflation, the effect of the first stars and galaxies, constraints on neutrino masses, and limits on new light particles beyond 
 the standard model, is contained in the temperature and polarization anisotropies of the cosmic microwave background (CMB).  Information 
 about the role of magnetic fields in star formation and galactic evolution is obtainable by observing the polarized emission of Galactic dust, which 
 traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with unprecedented polarization sensitivity 
-in 21 bands centered at 21--799~GHz.  Details of these science targets and expected constraints from PICO are in a companion paper, Ref.~\citenum{brian_spie}. 
+in 21 bands centered at 21--799~GHz.  Details of these science targets and expected constraints from PICO are in a companion paper, Sutin~et~al.\cite{brian_spie} 
 In this paper we discuss the optical system, focal plane, and expected sensitivity of PICO.
 
 % Astrophysical electromagnetic radiation in the millimeter and sub-millimeter wavelength band contains a wealth of information about the origin, structure, and evolution of the Universe. With 21 frequency bands centered between 21 and 799 GHz and polarization sensitivity across this spectrum, PICO has unprecedented sensitivity to the properties of the cosmic microwave background (CMB) radiation and to Galactic emissions. Measurements of these sources will reveal new information about the structure and dynamics of the Milky Way, detect the signature (or constrain models of) inflation, measure the properties of the fundamentals particles of nature, and provide key information on the evolution of Galactic and extragalactic structures across cosmic time.
@@ -167,14 +167,14 @@ In this paper we discuss the optical system, focal plane, and expected sensitivi
 
 The PICO mission plan is to conduct scientific observations for five years from the Earth-Sun L2 Lagrange point. The spacecraft design impacts 
 the optical design and sensitivity in two primary ways; volume constraints limit the physical size of the telescope and optical component 
-temperatures impact noise levels.  We discuss these major drivers here, other details are given in Ref.~\citenum{brian_spie}.  
+temperatures impact noise levels.  We discuss these major drivers here, other details are given be Sutin~et~al.\cite{brian_spie} % Ref.~\citenum{brian_spie}.  
 
 The maximum size of the spacecraft is limited by the assumed launch vehicle, the Falcon 9, which carries payloads up to 4.6~m in diameter. 
 This diameter limit sets the V-groove size which, along with the scan strategy, defines the `shadow cone' in Figure~\ref{fig:cad}.  
-The shadow cone is the volume which is never illuminated by the sun and all optical components must remain within it. The shadow cone and 
-inner V-grooves define an available volume for the telescope which is.
+The shadow cone is the volume which is protected from solar illumination, and all optical components must remain within it. The shadow cone and 
+inner V-grooves define an available volume for the telescope.
 
-The temperatures of all optical elements are given in Figure~\ref{fig:cad}.  The primary is passively cools to 40 K, as was 
+The temperatures of all optical elements are given in Figure~\ref{fig:cad}.  The primary passively cools to \comr{40 K}, as was 
 seen for \textit{Planck}\cite{planck2011_hfi_temp}.  The secondary, optics box, and aperture stop are actively cooled to \comr{6~K}.  The focal plane is cooled 
 by a continuous ADR to 100~mK.
 
@@ -185,7 +185,7 @@ by a continuous ADR to 100~mK.
 %\end{tabular}
 \end{center}
 \caption { \label{fig:cad} 
-Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Ref.~\citenum{brian_spie}. 
+Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Sutin~et~al.\cite{brian_spie}%Ref.~\citenum{brian_spie}. 
 \comr{Update temperatures with final numbers from JPL}}
 \end{figure} 
 
@@ -207,7 +207,7 @@ Mechanical design of the PICO satellite. Components relevant to this paper are l
 
 The PICO telescope is a 1.4~m modified Open Dragone.  This choice was driven by a combination of science requirements and the physical limits 
 discussed in Section~\ref{sec:spacecraft}.  The science requirements are; a large diffraction limited field of view (DLFOV) sufficient to 
-support $\mathcal{O}(10^4)$ detectors, arcminute resolution at 799~GHz, low instrumental polarization, and low sidelobe response. Additionally, 
+support $\mathcal{O}(10^4)$ detectors, arcminute resolution at 800~GHz, low instrumental polarization, and low sidelobe response. Additionally, 
 the transition edge sensor bolometers baselined for PICO require a telecentric focal plane which is sufficiently flat that it can be tiled by 
 10~cm detector wafers without reduction in optical quality. These requirements suggest an off-axis Dragone system\cite{dragone} similar 
 to what has been used for \textit{Planck}\cite{planck2000_optics}, various ground based systems such as ACT\cite{ACT2011_optics} and SPT\cite{SPT2008_optics}, 
@@ -215,7 +215,7 @@ and in the CORE\cite{core2018_inst} and LiteBIRD\cite{LB2016_optics} designs.
 
 The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics} and the ray trace in Figure~\ref{fig:ray}. The 
 system is diffraction limited, Strehl greater than 0.8, at the center of the field of view for 799~GHz and has a DLFOV of 82.4~deg$^2$ at 
-155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. The slightly concave, 4.55~m radius of curvature, 
+155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. The %slightly concave, 4.55~m radius of curvature, 
 focal plane is telecentric to within 0.12~deg across the entire surface.
 
 \begin{figure} [ht]
@@ -259,7 +259,7 @@ Normalization radius      & 524.8             & 194.1             & $\alpha$    
 \end{adjustbox}
 \end{table}
 
-To arrive at the final design we modify an Open Dragone.  We follow Ref.~\citenum{Granet 2001} to design the initial 
+To arrive at the final design we modify an Open Dragone.  We follow Ref.~\citenum{granet2001} to design the initial 
 Open Dragone. We find a solution which satisfies the volume constraints and has a large DLFOV.  We force a circular aperture stop 
 between the primary and secondary mirrors and numerically optimized its angle and position to obtain the best 
 optical performance.  The stop diameter was chosen to provide an effective 1.4~m aperture on the primary for the center feed.  
@@ -324,7 +324,7 @@ Open Dragone led us to the final PICO optical system detailed in Table~\ref{tab:
 \end{center}
 \caption { \label{fig:sidelobes} 
 Comparison of sidelobes for example Crossed (left) and Open (right) Dragones.  Rays are traced from the center of the focal plane toward the sky.
-For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles.  However, the clipping sidelobe and direct 
+For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles.  However, the sidelobe and direct 
 sky view in the Crossed system require a long forebaffle or large F-number to mitigate, both of which were problematic in the PICO case.}
 \end{figure} 
 
@@ -742,7 +742,7 @@ F   & 462   & 2.1    & 5.55          & 184.1                & 900         & 6.14
 G   & 555   & 1.5    & 6.22          & 632.3                & 440         & 30.15                & 42.44                   \\
 H   & 666   & 1.3    & 7.08          & 2728.5               & 400         & 136.44               & 192.06                  \\
 I   & 799   & 1.1    & 8.24          & 17297.3              & 360         & 911.70               & 1283.36                 \\ \hline
-Total &        &               &                      & 12996       & 0.46              & 0.57               \\ \hline
+Total &        &         &             &              & 12996         & 0.46              & 0.57               \\ \hline
 \end{tabular}
 \end{table}
 %https://www.tablesgenerator.com/
@@ -783,8 +783,9 @@ simple telescope. low noise? low systematics? - systematics not discussed elsewh
 This Probe mission concept study is funded by NASA grant xxxxxxxx.
 
 
-\bibliography{refs} % bibliography data in report.bib
 \bibliographystyle{spiebib} % makes bibtex use spiebib.bst
+\bibliography{refs} % bibliography data in report.bib
+
 
 \end{document} 
 
