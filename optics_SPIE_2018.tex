@@ -225,7 +225,7 @@ focal plane is telecentric to within 0.12~deg across the entire surface.
 %\end{tabular}
 \end{center}
 \caption { \label{fig:ray} \label{fig:strehl} 
-Raytrace (left) and Strehl~$=0.8$ contours (right) for the PICO optical design. \comr{strehl needs a legend to give frequencies}
+Raytrace (left) and Strehl~$=0.8$ contours (right) for the PICO optical design.
 }
 \end{figure} 
 
@@ -270,6 +270,8 @@ Adding a stop in this way increases the size of the primary mirror, effectively 
 field angles, but reduces detector noise, see Section~\ref{sec:noise}, and controls sidelobes.  At this stage the system still meets 
 the Dragone condition and is defined by the `Initial Open Dragone' parameters in Table~\ref{tab:optics}.
 
+% do we add ~ 2 paragraphs about Richard's method.
+
 To increase the optical performance we use CodeV to numerically optimize the system.  To adjust the mirror shapes, we add a low order, 
 4th and 9th-13th, Zernike polynomial correction to each conic surface.  We allow focal plane curvature, a focal plane tilt angle, 
 and the focal plane to secondary distance to vary.  The primary-secondary distance, primary offset $h$, and the primary and secondary 
@@ -280,10 +282,6 @@ system, we added the higher order Zernike terms, 19th-25th, and refined the mirr
 
 %. . . \\ \comr{in email communication with Jim. This paragraph is a work in progress.}
 %\comr{Following a procedure outlined by Richard Hills . . . turning dragone to polynomial surfaces, optimizing polynomial.}
-%\comr{Jim took XY polynomial system, converted it to Zernike (that makes sense), and optimized. Maybe!!  Allowing additional angles to vary 
-%as well.} \\
-%. . .
-%convert the mirror surface into Zernike polynomials. then run CodeV's numerical optimization allowing the xx zernike terms, the mirror angles alpha beta, the offsets, the primary-secondary distance, the focal plane curvature, the xxxx to vary while fixing the focal length, the xxx and xxxx.  
 
 Figure~\ref{fig:compare} 
 %we show the final optimized system compared with the `Initial Open Dragone' and give the Strehl~$=0.8$ contours.  One sees 
@@ -301,8 +299,8 @@ plane is what allows PICO to reach unprecedented levels of CMB sensitivity.
 \caption { \label{fig:compare} 
 Comparison between optimized and unoptimized Open Dragones.  The raytraces (left) are aligned at the chief ray impact point on the primary. 
 The optimized system (red rays, solid mirrors) is smaller vertically and has a slightly flatter primary than the unoptimized version 
-(blue rays, dash-dot mirrors)\comr{need to change mirror lines}. The overlaid Strehl~$=0.8$ contours (right) show the improvement at 
-all frequencies in the optimized (solid lines) over the unoptimized (dash-dot lines) system. \comr{strehl needs a legend to give frequencies}
+(blue rays, dash-dot mirrors). The overlaid Strehl~$=0.8$ contours (right) show the improvement at 
+all frequencies in the optimized (solid lines) over the unoptimized (dash-dot lines) system. 
 }
 \end{figure} 
 
@@ -313,9 +311,9 @@ wafers would result in large defocus at the edges of these wafers.  This is not 
 results in a defocus of 0.1~mm for the edge of a 10~cm wafer. 
 
 We considered two additional Dragone systems; a Gregorian Dragone like that used for \textit{Planck} and a Crossed Dragone similar to that planned 
-for CORE or LiteBIRD.  With only $3\times$ the diffraciton limited area of the Open Dragone,\cite{core2018_inst} the Gregorian Dragone is 
+for CORE or LiteBIRD.  With half the diffraciton limited focal plane area of the Open Dragone,\cite{core2018_inst} the Gregorian Dragone is 
 unable to support $\mathcal{O}(10^4)$ detectors, so was rejected.  
-The Crossed Dragone has roughly twice the diffraction limited focal plane area of the Open, but it has well 
+The Crossed Dragone has roughly $4\times$ the diffraction limited focal plane area of the Open, but it has well 
 known issues with sidelobes as shown in Figure~\ref{fig:sidelobes} and always has a larger F-number than the Open system.  The larger 
 F-number results in a larger telescope that fits poorly into the shadow cone. The largest Crossed Dragone that meets the PICO volume contraints has 
 a 1.2~m aperture while the largest Open Dragone is 1.4~m. The large F-number of the Crossed system also increases 
