@@ -167,16 +167,20 @@ In this paper we discuss the optical system, focal plane, and expected sensitivi
 
 The PICO mission plan is to conduct scientific observations for five years from the Earth-Sun L2 Lagrange point. The spacecraft design impacts 
 the optical design and sensitivity in two primary ways; volume constraints limit the physical size of the telescope and optical component 
-temperatures impact noise levels.  We discuss these major drivers here, other details are given be Sutin~et~al.\cite{brian_spie} % Ref.~\citenum{brian_spie}.  
+temperatures impact noise levels.  
 
 The maximum size of the spacecraft is limited by the assumed launch vehicle, the Falcon 9, which carries payloads up to 4.6~m in diameter. 
 This diameter limit sets the V-groove size which, along with the scan strategy, defines the `shadow cone' in Figure~\ref{fig:cad}.  
 The shadow cone is the volume which is protected from solar illumination, and all optical components must remain within it. The shadow cone and 
-inner V-grooves define an available volume for the telescope.
+inner V-grooves define an available volume for the telescope.  
 
-The temperatures of all optical elements are given in Figure~\ref{fig:cad}.  The primary passively cools to \comr{40 K}, as was 
-seen for \textit{Planck}\cite{planck2011_hfi_temp}.  The secondary, optics box, and aperture stop are actively cooled to \comr{6~K}.  The focal plane is cooled 
-by a continuous ADR to 100~mK.
+The temperatures of all optical elements are given in Figure~\ref{fig:cad}.  The optics box, secondary, and focal plane are actively cooled, 
+details of the thermal system are given in Sutin~et~al.\cite{brian_spie} % Ref.~\citenum{brian_spie}.  
+
+%The primary cools to \comr{15 K}.
+%, as was seen for \textit{Planck}\cite{planck2011_hfi_temp}.  
+%The secondary, optics box, and aperture stop are actively cooled to \comr{6~K}.  The focal plane is cooled 
+%by a continuous ADR to 100~mK.
 
 \begin{figure} [ht]
 \begin{center}
@@ -411,7 +415,7 @@ multichroic pixels (MCP)\cite{Suzuki2014_samps}.
 %polarization sensitive antenna lithographed onto a silicon substrate which couples to microstrip transmission lines to carry the signal 
 %to a channelizing filter. The filter divides the broadband signal into individual bands and 
 %directs it to separate transition edge sensor (TES) bolometers. 
-The architecture assumed for PICO uses three bands per pixel; each 
+The MCP architecture assumed for PICO uses three bands per pixel. Each 
 pixel contains two single polarization transition edge sensor (TES) bolometers bolometers per band and therefore six bolometers total. 
 We assume the MCP are coupled to free space using lenslets\cite{Suzuki2014_samps}, however the pixel size, number, and spacing is 
 relatively agnostic to the coupling scheme, so current layout would not change significantly if horn or phased array coupling was used 
@@ -428,7 +432,6 @@ instead.
 Frequency coverage of the PICO bands. Each color (excluding magenta) denotes a different MCP, labeled A-F. The bar height 
 indicates the number of detectors per band.  Width gives the bandwidth, all are top-hats with 
 25\% fractional bandwidth; the $x$-axis is logarithmic.  The three highest frequencies (magenta) are single color pixels G, H, I.
-\comr{Confusion likely because 'E' is blue in this plot, but cyan in the focal plane. Need to address this.}
 }
 \end{figure} 
 
@@ -458,7 +461,7 @@ Figure~\ref{fig:focal_plane}, the Strehl ratio increases ensuring pixels are dif
 \end{center}
 \caption { \label{fig:focal_plane} 
 PICO focal plane layout with Strehl~$=0.8$ contours for each pixel type. The pixel and Strehl contour colors match the band colors, A-I, 
-in Figure~\ref{fig:bands} \comr{Strehls make in more visible format, certainly cyan contours.}}
+in Figure~\ref{fig:bands} }
 \end{figure} 
 
 Optimizing the pixel size is a balance between the total number of pixels, $N_{px}$, and the efficiency with which they couple to the telescope. 
@@ -527,18 +530,20 @@ but the choice is not a driver for the focal plane layout or noise discussed in 
 
 
 
-\section{NOISE MODEL}
+\section{INSTRUMENT NOISE}
 \label{sec:noise}
-\comr{comment somewhere in this section that these noise numbers are CBE. no margins.}
+%\comr{comment somewhere in this section that these noise numbers are CBE. no margins.}
 
-We developed an end to end white noise only model of the PICO instrument to predict full mission sensitivity and 
-provide a metric by which to evaluate optical, mechanical, and mission design tradeoffs.  
-To simplify the model, we assume TES bolometers as the detector at all frequencies, even though other technologies may be better suited to the lowest bands.  
-Any suitable technology will be photon noise dominated as the TESs are, so total noise levels in the lowest bands should be relatively unaffected by 
-the use of a different detector technology.
-We constructed the model following the methods in Ref.~\citenum{suzuki2013_thesis} and~\citenum{aubin2013_thesis}; estimate the 
-optical load, calculate properties of the TES bolometers, calculate noise equivalent power (NEP) for each source, combine all NEP  
-terms to get detector noise, and finally calculate full mission sensitivity.  Each of these steps includes various assumptions and design decisions, 
+We develope an end to end white noise model of the PICO instrument to predict full mission sensitivity and 
+provide a metric by which to evaluate optical, mechanical, and mission design tradeoffs.  This model does not include 
+1/f noise or estimates of possible systematic effects.  We assume TES bolometers read out using time domain multiplexing (TDM). 
+%To simplify the model, we assume TES bolometers as the detector at all frequencies, even though other technologies may be better suited to the lowest bands.  
+%Any suitable technology will be photon noise dominated as the TESs are, so total noise levels in the lowest bands should be relatively unaffected by 
+%the use of a different detector technology.
+To construct the model we follow the standard steps\cite{suzuki2013_thesis,aubin2013_thesis} of estimating the 
+optical load, calculating properties of the TES bolometers, calculating noise equivalent power (NEP) by source, 
+combining all NEP terms to get detector noise, and finally combining all detectors to get full mission sensitivity.  
+Each of these steps includes various assumptions and design decisions, 
 which are discussed in this section.  The assumptions are summarized in Table~\ref{tab:assume}.
 % comment on photon dominated?
 
@@ -569,6 +574,8 @@ Intrinsic SQUID noise (aW/$\sqrt{\text{Hz}}$)   & 3                        \\
 TES operating resistance, $\Omega$    &  0.03                               \\
 TES transition slope, $\alpha$    & 100                                         \\
 TES loop gain                    & 14                                \\
+%Multiplexing factor              &
+%Number of rows/columns/whichever matters . .. 
 %\comr{other?}                    &                                                  \\
 \hline
 \multicolumn{2}{l}{\footnotesize $^a$Assumes seperate metal mesh in polypropylene filters for each wafer.}
@@ -579,13 +586,32 @@ TES loop gain                    & 14                                \\
 \subsection{Single bolometer noise}
 \label{sec:det_noise}
 
-The sources of optical load are the CMB, primary and secondary mirrors, the aperture stop, and a low pass optical filter.  These elements 
+\subsubsection{Model}
+
+The sources of optical load are the CMB, primary and secondary mirrors, aperture stop, and a low pass optical filter.  These elements 
 are shown schematically in Figure~\ref{fig:load}. 
-We assume the primary is 40~K, the stop and secondary 4~K, and the low pass filter 100~mK. % for details of the thermal design see \citenum{brian_spie}.  
-The emissivity of the mirrors depends on frequency, $\epsilon(\nu) =  \epsilon_0\sqrt{\nu / (\text{150~GHz})}$. At 150~GHz we assume an emissivity of 
-0.07\% \cite{planck2011_hfi_temp,planck2018_lfi_mirrors}. 
+%We assume the primary is 15~K, the stop 6and secondary 4~K, and the low pass filter 100~mK. % for details of the thermal design see \citenum{brian_spie}.  
+%The emissivity of the mirrors depends on frequency, $\epsilon(\nu) =  \epsilon_0\sqrt{\nu / (\text{150~GHz})}$. At 150~GHz we assume an emissivity of 0.07\% 
+%\cite{planck2011_hfi_temp,planck2018_lfi_mirrors}. 
 %Emissivity of the stop and low pass filter was 1 at all frequencies.
 %; temperatures and emissivities are given in Table~\ref{tab:noise_model}. 
+%
+The total load absorbed at the bolometer is the sum of the power emitted by each element reduced by the optical efficiency of the elements between 
+the emitting surface and the bolometer.  
+%For example, the CMB power is reduced by the optical efficiency of the entire instrument, 
+%$\eta_{opt} = \eta_{PRI}\eta_{stop}\eta_{SEC}\eta_{filter}\eta_{bolo}$, while the power emitted by the low pass filter is reduced only by $\eta_{bolo}$.
+The absorbed power is,
+\begin{equation}
+\label{eq:load}
+P_{abs} =  (((( P_{CMB} \eta_{PRI} + P_{PRI} ) \eta_{stop} + P_{stop}(1-\eta_{stop}) ) \eta_{SEC} + P_{SEC})\eta_{filter} + P_{filter}) \eta_{bolo},
+\end{equation} 
+%_{i=Filter}^{CMB}
+% maybe change PRI to M1, SEC to M2 ??
+where $P_{elem}$ is the in band power emitted by a given element for a single polarization and $\eta_{elem}$ is the efficiency 
+of the element. %We assumed 25\% fractional bandwidth top-hat bands and throughput of $\lambda^2$. 
+Power emitted by the stop is a special case. We multiply $P_{stop}$ by 
+$(1-\eta_{stop})$ because $\eta_{stop}$ is spillover efficiency, the fraction of the throughput which passes through the stop, so $(1-\eta_{stop})$ 
+is the fraction of the throughput which views the stop.  
 
 \begin{figure} [ht]
 \begin{center}
@@ -598,22 +624,25 @@ Schematic representation of the prediction of optical load.  Power emitted by ea
 and added to the total expected load.  The multichroic pixel illuminates the stop differently for each of the three bands.
 }
 \end{figure} 
+%
 
-The total load absorbed at the bolometer is the sum of the power emitted by each element reduced by the optical efficiency of the elements between 
-the emitting surface and the bolometer.  For example, the CMB power is reduced by the optical efficiency of the entire instrument, 
-$\eta_{opt} = \eta_{PRI}\eta_{stop}\eta_{SEC}\eta_{filter}\eta_{bolo}$, while the power emitted by the low pass filter is reduced only by $\eta_{bolo}$.
-The absorbed power is,
+For PICO, the CMB and stop dominate the optical loading as shown in Figure~\ref{fig:popt}.  %at low frequencies while and mirror emission 
+% stop is ~1/3 of the load for 0.68 bands. 
+%is the majority above 460~GHz due to their differing temperatures, see Figure~\ref{fig:popt}. 
+The jumps in load between neighboring bands, seen in Figure~\ref{fig:popt} around 70 and 200~GHz, are due to $\eta_{stop}$ changing with frequency 
+which is a consequence of using MCPs.  
+The MCP angular beam width is dependent on the wavelength and pixel diameter\cite{suzuki2013_thesis},
 \begin{equation}
-\label{eq:load}
-P_{abs} =  (((( P_{CMB} \eta_{PRI} + P_{PRI} ) \eta_{stop} + P_{stop}(1-\eta_{stop}) ) \eta_{SEC} + P_{SEC})\eta_{filter} + P_{filter}) \eta_{bolo},
+\label{eq:mcp_beam}
+\theta_{1/e^2} = \frac{2.95 \lambda}{\pi D_{px}}. 
 \end{equation} 
-%_{i=Filter}^{CMB}
-% maybe change PRI to M1, SEC to M2 ??
-where $P_{elem}$ is the in band power emitted by a given element for a single polarization and $\eta_{elem}$ is the efficiency 
-of the element. We assumed 25\% 
-fractional bandwidth top-hat bands and throughput of $\lambda^2$. Power from the stop is a special case. We multiply $P_{stop}$ by 
-$(1-\eta_{stop})$ because $\eta_{stop}$ is spillover efficiency, the fraction of the throughput which passes through the stop, so $(1-\eta_{stop})$ 
-is the fraction of the throughput which views the stop.  
+The edge taper, T$_e$, of the middle frequency band in each pixel is chosen to be 10~dB. For the upper and lower bands T$_e$ is calculated using 
+Equation~\ref{eq:mcp_beam}. This changing illumination of the stop is shown schematically by the dashed rays in Figure~\ref{fig:load}. 
+For each MCP, A-H, T$_e$ is 4.8, 10, and 20.7~dB for the lower, middle, and upper bands, respectively.  These 
+edge tapers correspond to $\eta_{stop}$ of 0.68, 0.90, and 0.99.
+% meaning 32\% of the lowest band's throughput couples to the cold stop while only 1\% of the high frequency band's throughput copules to the stop.  
+The changing $\eta_{stop}$ has three main effects; uneven optical load between bands, varying NEP to noise equivalent temperture (NET) conversion 
+between bands, and telescope beam size not scaling smoothly with $\lambda$.
 
 \begin{figure} [ht]
 \begin{center}
@@ -624,118 +653,111 @@ is the fraction of the throughput which views the stop.
 \end{center}
 \caption{ \label{fig:popt} \label{fig:noise} \label{fig:net} 
 Left: Expected optical loads for single polarization PICO bolometers. 
-Center: 
- Breakdown of NEP across the PICO frequency range.  Photon noise dominates even at the lowest frequencies. 
-% %All noise values are quoted in $\mu$K$_{CMB}$-arcmin because CMB science was a major design driver.  -- say this in a noise figure/table caption.
-Right: Per detector NET, temperature sensitivity,  across the PICO bands. \comr{could add CORE NETs here for comparison. could add zoom around 150 GHz.}
+Center: Breakdown of NEP across the PICO frequency range.  Photon noise dominates even at the lowest frequencies. 
+Right: Single detector NET, temperature sensitivity,  across the PICO bands. \comr{could add CORE NETs here for comparison. could add zoom around 150 GHz.}
 }
 \end{figure} 
 
-For PICO, the CMB and stop are the major load at low frequencies while and mirror emission 
-% stop is ~1/3 of the load for 0.68 bands. 
-is the majority above 460~GHz due to their differing temperatures, see Figure~\ref{fig:popt}. 
-The jumps in load between neighboring bands in Figure~\ref{fig:popt}, around 70 and 200~GHz are due to $\eta_{stop}$ changing with frequency.  This is 
-driven by the use of multichroic pixels whose angular beam pattern is dependent on the pixel diameter\cite{suzuki2013_thesis},
-\begin{equation}
-\label{eq:mcp_beam}
-\theta_{1/e^2} = \frac{2.95 \lambda}{\pi D_{px}}. 
-\end{equation} 
-The edge taper, T$_e$, of the middle frequency band in each pixel is chosen to be 10~dB. For the upper and lower bands T$_e$ is calculated using 
-Equation~\ref{eq:mcp_beam}. This changing illumination of the stop is shown schematically by the dashed rays in Figure~\ref{fig:load}. 
-For each MCP, A-H, T$_e$ is 4.8, 10, and 20.7~dB for the lower, middle, and upper bands, respectively.  These 
-edge tapers correspond to $\eta_{stop}$ of 0.68, 0.90, and 0.99.
-% meaning 32\% of the lowest band's throughput couples to the cold stop while only 1\% of the high frequency band's throughput copules to the stop.  
-The changing $\eta_{stop}$ has thee main effects; uneven optical load between bands, varying NEP to noise equivalent temperture (NET) conversion 
-between bands, and telescope beam size not scaling smoothly with $\lambda$.
-
-From $P_{abs}$ we calculate the TES bolometer properties for each band.  We assume a safety factor of 2, $P_{sat}/P_{abs}=2$; $P_{sat}$ is the 
-saturation power of the bolometer.  The PICO focal plane temperature, $T_o$, of 100~mK sets an optimal superconducting transition temperature, 
-$T_c$, of 187~mK.  We assume thermal conductivity scales as a power law, $G \propto T^n$,  with $n=2$.  The required thermal conductivity for 
-a given bolometer is set by the $P_{sat}$,
+%From $P_{abs}$ we calculate the TES bolometer properties for each band.  
+%We assume a safety factor of 2, $P_{sat}/P_{abs}=2$; $P_{sat}$ is the 
+%saturation power of the bolometer.  The PICO focal plane temperature, $T_o$, of 100~mK sets an optimal superconducting transition temperature, 
+%$T_c$, of 187~mK.  We assume thermal conductivity scales as a power law, $G \propto T^n$,  with $n=2$.  The required thermal conductivity for 
+%a given bolometer is set by the $P_{sat}$,
 %any need to cite power law, G \propto T^n, assumption?
-\begin{equation}
-\label{eq:G}
-G = \frac{P_{sat}}{T_c} (n+1) \frac{1}{1-\left({T_o}{T_c}\right)^{n+1} }. 
-\end{equation} 
+%\begin{equation}
+%\label{eq:G}
+%G = \frac{P_{sat}}{T_c} (n+1) \frac{1}{1-\left({T_o}{T_c}\right)^{n+1} }. 
+%\end{equation} 
 %\comr{need to say anything about C? tau? no real effect for FDM. if tau too long does matter for TDM. need to look in more detail. Roger assumed C = 1 pJ/K }
 
-We consider three noise sources per bolometer; photon, phonon, and readout.  Photon noise depends on the absorbed power\cite{richards1994}, 
+We consider four noise sources per bolometer; photon, phonon, TES Johnson, and readout. 
+Photon noise depends on the absorbed power\cite{richards1994}, 
 \begin{equation}
 \label{eq:photon}
-NEP_{\gamma}^2 = \int\limits_{band} 2h\nu p \, d\nu + 2\xi \int\limits_{band} p^2 d\nu,
+NEP_{\gamma}^2 = \int\limits_{band} 2h\nu p_{\nu} \, d\nu + 2\xi \int\limits_{band} p_{\nu}^2 \,  d\nu,
 \end{equation} 
-where $p$ is the power spectral density for a single polarization absorbed at the bolometer and $\xi$ is the fraction of correlated Bose 
-photon noise. We assume $\xi=1$. For PICO, NEP$_{Bose}$/NEP$_{Poisson}= 1.5 $ in the lowest band, but since Bose noise does not scale with 
-$\sqrt{\nu}$ as Poisson does NEP$_{Bose}$/NEP$_{Poisson} <10\%$ at 321~GHz. % this is NEP/NEP NOT squared.  Squared is 2.2 at 21 GHz and 0.01 at 321. < 10 at 129 GHz.  in NEP to NEP bose = poisson at 30 GHz
-%Photon noise dominates at all frequencies for PICO.
-The second largest noise term is phonon noise\cite{mather1982} in the thermal connection to $T_o$,
-\begin{equation}
-\label{eq:phonon}
-NEP_{phonon}^2 = 4 \gamma k_b T_c^2 G,
-\end{equation} 
-where $\gamma$ is a unitless factor depending on $T_o$, $T_c$, and $n$. For PICO $\gamma=0.5$.
-Readout noise depends on the assumption of FDM or TDM readout and includes all remaining noise sources, the Johnson noise of the TES as well as 
-all components not intrinsic to the bolometers.  
-For both multiplexing schemes NEP$_{readout}$ is dominated by the SQUID amplifier with moderate contributions from various resistors 
-and amplifiers in the readout chain. We calculate noise for both FDM and TDM systems, though TDM is the current baseline, and find both to 
-be below both photon and phonon 
-noise for all bands.  Both systems give similar noise levels, with total noise differing by less than 3\% in all bands.
-% which is below the fidelity of the current study. 
-Some thought has been put into optimizing the readout systems for space, but since the expected noise is already sufficiently low this was not pursued 
-in detail. 
-For TDM and FDM the noise primarily scales with TES bias voltage which depends on the electrical power needed to operate the TES, 
-%\begin{gather}
-\begin{equation} 
-\begin{split}
-\label{eq:readout}
-NEP_{readout}^2 &\propto V_{bias}^2 \propto  P_{e}, \text{ and}\\
-P_{e} &= P_{sat} - P_{abs}.
+where $p_{\nu}$ is the power spectral density for a single polarization absorbed at the bolometer and $\xi$ is the fraction of correlated Bose 
+photon noise. The extra factor of 2 in the Bose noise term is because we have single polarization bolometers.  
+%
+%
+From $P_{abs}$ we calculate the TES bolometer properties and phonon noise.\cite{mather1982}  
+%The second largest noise term is phonon noise\cite{mather1982} in the thermal connection to $T_o$,
+%\begin{equation}
+%\label{eq:phonon}
+%NEP_{phonon}^2 = 4 \gamma k_b T_c^2 G,
+%\end{equation} 
+%where $\gamma$ is a unitless factor depending on $T_o$, $T_c$, and $n$. For PICO $\gamma=0.5$.
+The last noise term intrinsic to the bolometer is the TES Johnson noise. All noise sources in the cold and warm readout 
+electronics are lumped under the readout term.  The NEP for each noise source is shown in Figure~\ref{fig:noise}.
+% something about the detailed readout model?  or in results?
+
+
+% useful??
+%\begin{equation} 
+%\begin{split}
+%\label{eq:readout}
+%NEP_{readout}^2 &\propto V_{bias}^2 \propto  P_{e}, \text{ and}\\
+%P_{e} &= P_{sat} - P_{abs}.
 %\end{gather}
-\end{split}
-\end{equation}
-This neglects the details of our readout noise models, but is an illustrative approximation usefull for this paper.
-% Maybe only true for FDM? True for both. basically conversion of current noise to power.
+%\end{split}
+%\end{equation}
+%This neglects the details of our readout noise models, but is an illustrative approximation usefull for this paper.
+% True for both. basically conversion of current noise to power.
 
-% for citations see roger's PCIO workshop presentation.
+% commentary.
+\subsubsection{Results}  % not the best word to distinguish these two subsubsections.
 
-% \begin{figure} [ht]
-% \begin{center}
-% %\begin{tabular}{c} %% tabular useful for creating an array of images 
-% \includegraphics[height=5cm]{NEPs.png}
-% %\end{tabular}
-% \end{center}
-% \caption { \label{fig:noise} 
-% Breakdown of NEP across the PICO frequency range.  Photon noise dominates even at the lowest frequencies. \comr{add total noise and a zoom 
-% at low frequency. maybe combine this with $P_{abs}$ and NET into a 3 panel figure.}
-% %All noise values are quoted in $\mu$K$_{CMB}$-arcmin because CMB science was a major design driver.  -- say this in a noise figure/table caption.
-% }
-% \end{figure}
+%  RESULTS
+For PICO, photon noise dominates at all frequencies as shown in Figure~\ref{fig:noise}. Bose noise is most significant 
+at lower frequencies with NEP$_{Bose}$/NEP$_{Poisson}= 1.5 $ in the lowest band.  However, Poisson noise increases as 
+$\sqrt{\nu}$, equalling Bose noise at 30~GHz and dominating at higher bands; NEP$_{Bose}$/NEP$_{Poisson} <10\%$ at 321~GHz. 
+% this is NEP/NEP NOT squared.  Squared is 2.2 at 21 GHz and 0.01 at 321. < 10 at 129 GHz.  in NEP to NEP bose = poisson at 30 GHz
 
+For TDM readout phonon and readout noise are roughly equal, with TES Johnson noise being insigficant.  We also modeled 
+frequency domain multiplexing (FDM) readout.  For FDM the TES Johnson noise is higher, 2/3 of the readout NEP, but the readout 
+noise is lower.  Comparing the combinined Johnson and readout NEPs for TDM and FDM we find essentially indentical performance 
+with total noise differing by less than 3\% across all bands.  For either system we require a focal plane temperature, $T_o$, of 
+100~mK and a bolometer safety factor of 2 to remain photon noise dominated at the lowest bands.
+
+
+
+% RESULTS 
+% Readout noise depends on the assumption of FDM or TDM readout and includes all remaining noise sources, the Johnson noise of the TES as well as 
+% all components not intrinsic to the bolometers.  
+% For both multiplexing schemes NEP$_{readout}$ is dominated by the SQUID amplifier with moderate contributions from various resistors 
+% and amplifiers in the readout chain. We calculate noise for both FDM and TDM systems, though TDM is the current baseline, and find both to 
+% be below both photon and phonon 
+% noise for all bands.  Both systems give similar noise levels, with total noise differing by less than 3\% in all bands.
+%  which is below the fidelity of the current study. 
+% Some thought has been put into optimizing the readout systems for space, but since the expected noise is already sufficiently low this was not pursued 
+% in detail. 
+% For TDM and FDM the noise primarily scales with TES bias voltage which depends on the electrical power needed to operate the TES, 
 
 %discussion of primary scalings and drivers? Popt does it all. choices like 100 mK and P/P = 2.
-The noise breakdown in Figure~\ref{fig:noise} drives various aspects of the PICO design. Since photon noise dominates at all frequencies and 
-photon noise scales with $\sqrt{P_{abs}}$, Equation~\ref{eq:photon}, the primary driver of noise is optical load.   The second largest source 
-of noise is phonon noise.  Combining
-Equations~\ref{eq:G} and~\ref{eq:phonon} we see $NEP_{phonon}$ scales with $\sqrt{T_C}$ and $\sqrt{P_{sat}}$.  Cooling the focal plane to 100~mK 
-reduces $T_c$ since $T_c \propto T_o$.  The saturation power depends on the choice of safety factor, $P_{sat}/P_{abs}$, as well as on optical load.  
-We choose safety factor of two to lower noise, while providing margin for unexpected loads or variations in $G$ of the fabricated 
-bolometers. Readout noise scales with $\sqrt{P_{sat} - P_{abs}}$, Equation~\ref{eq:readout}, which is reduced by reducing the safety factor or $P_{abs}$.  
-From this analysis we see that all noise sources depend on $P_{abs}$, either directly or through how load drives bolometer properties.  Therefore the 
-most straightforward way to reduce noise is to limit all optical loads other than the CMB.  This motivates the simple, few element telescope we 
-have designed with the aperture stop and secondary mirror actively cooled to reduce excess load and photon noise. 
+% The noise breakdown in Figure~\ref{fig:noise} drives various aspects of the PICO design. Since photon noise dominates at all frequencies and 
+% photon noise scales with $\sqrt{P_{abs}}$, Equation~\ref{eq:photon}, the primary driver of noise is optical load.   The second largest source 
+% of noise is phonon noise.  Combining
+% Equations~\ref{eq:G} and~\ref{eq:phonon} we see $NEP_{phonon}$ scales with $\sqrt{T_C}$ and $\sqrt{P_{sat}}$.  Cooling the focal plane to 100~mK 
+% reduces $T_c$ since $T_c \propto T_o$.  The saturation power depends on the choice of safety factor, $P_{sat}/P_{abs}$, as well as on optical load.  
+% We choose safety factor of two to lower noise, while providing margin for unexpected loads or variations in $G$ of the fabricated 
+% bolometers. Readout noise scales with $\sqrt{P_{sat} - P_{abs}}$, Equation~\ref{eq:readout}, which is reduced by reducing the safety factor or $P_{abs}$.  
+% From this analysis we see that all noise sources depend on $P_{abs}$, either directly or through how load drives bolometer properties.  
+% Therefore the 
+% most straightforward way to reduce noise is to limit all optical loads other than the CMB.  This motivates the simple, few element telescope we 
+% have designed with the aperture stop and secondary mirror actively cooled to reduce excess load and photon noise. 
 
-\subsection{Combined array noise}
+\subsection{Combined  array noise}
 
 Using single detector NEPs as per Section~\ref{sec:det_noise} and the detector counts from Section~\ref{sec:focalplane} we 
 calculate the combined NEP of the detector array for each band.  Generally, combining detectors simply reduces noise by $\sqrt{N}$.  The one 
 exception is Bose photon noise. For the lowest band of each MCP the pixels oversample the PSF, pixel spacing is $0.4$F$\lambda$, resulting in correlated 
-Bose noise bewteen pixels.  Accounting for this effect gives a \comr{XX\%} increase in the combined array $NEP$ of the lowest band, 21~GHz, and only 
-a \comr{XX\%} increase in the highest band, 799~GHz.  
+Bose noise bewteen pixels.  Accounting for this effect gives a 26\% increase in the combined array $NEP$ of the lowest band, 21~GHz, and only 
+a 0.003\% increase in the highest band, 799~GHz.  
 
 From the array $NEP$ we convert to $NET$ per band,
 \begin{equation}
 \label{eq:NET}
-NET = \frac{NEP}{\sqrt{2}\eta_{opt} \int\limits_{band}\frac{dP}{dT}\Bigr|_{T_{CMB}} d\nu }.
+NET = \frac{NEP}{\sqrt{2}\eta_{opt} \int\limits_{band}\frac{dp_{\nu}}{dT}\Bigr|_{T_{CMB}} d\nu }.
 \end{equation} 
 The $\eta_{opt}$ term contributes to the `jumps' in $NET$ seen in Figure~\ref{fig:net} since $\eta_{opt}$ varies band to band.  We use CMB temperature 
 units for all bands, even though this isn't particularly suitable for the highest bands, because the CMB is the most stringent requirement on sensitivity.
@@ -771,8 +793,8 @@ F     & 321 & 2.6  & 8.16  & 77.6    & 900   & 2.59   & 3.64   \\
 E     & 385 & 2.5  & 4.54  & 69.1    & 960   & 2.23   & 3.14   \\
 F     & 462 & 2.1  & 4.00  & 132.6   & 900   & 4.42   & 6.22   \\
 G     & 555 & 1.5  & 6.47  & 657.8   & 440   & 31.4  & 44.1  \\
-H     & 666 & 1.3  & 5.74  & 2212  & 400   & 111 & 156 \\
-I     & 799 & 1.1  & 4.97  & 10430 & 360   & 550 & 774 \\ 
+H     & 666 & 1.3  & 5.74  & 2212    & 400   & 111 & 156 \\
+I     & 799 & 1.1  & 4.97  & 10430   & 360   & 550 & 774 \\ 
 \hline
 Total &     &      &       &         & 12996 & 0.44   & 0.62  \\
 \hline
@@ -780,28 +802,6 @@ Total &     &      &       &         & 12996 & 0.44   & 0.62  \\
 \end{table}
 %https://www.tablesgenerator.com/
 
-
-% %calculation assumptions / values.  table? -- yes
-
-% \begin{itemize}
-% \item Noise components; 
-% \subitem photon, goal for this to dominate
-% \subitem phonon, typically 2nd largest source. Intrinsic to bolo.
-% \subitem readout (FDM) 
-% \subsubitem johnson noise and Franky's code
-% \subitem readout (TDM)
-% \subsubitem johnson noise handled differently. use Roger's code.
-% \item how calculation works. high level assumtions
-% \subitem element by element for loading. temperatures and emissivities
-% \subitem assumes optimized bolometers
-
-% \item Major drivers of noise levels. quantative magnitude of effect included
-% \subitem Math of noise scaling with rt(power load). Also how NET scales. \comr{These aren't new, maybe useful? maybe not.}
-% \subitem stop temperature
-% \subitem safety factor, why 2 and what impacts this has
-% \subitem effeciencies, optics, bolo absorption, stop
-% %\item Detail band by band comparison to Planck, CORE, or LiteBIRD numbers?
-% \end{itemize}
 
 \section{CONCLUSIONS/SUMMARY}
 
@@ -811,16 +811,29 @@ Total &     &      &       &         & 12996 & 0.44   & 0.62  \\
 simple telescope. low noise? low systematics? - systematics not discussed elsewhere (yet)
 
 
+% some of this phrasing here.
+% From this analysis we see that all noise sources depend on $P_{abs}$, either directly or through how load drives bolometer properties.  
+% Therefore the 
+% most straightforward way to reduce noise is to limit all optical loads other than the CMB.  This motivates the simple, few element telescope we 
+% have designed with the aperture stop and secondary mirror actively cooled to reduce excess load and photon noise. 
+
+
 \section{ACKNOWLEDGEMENTS}
 
 This Probe mission concept study is funded by NASA grant xxxxxxxx.
 
 
 \bibliographystyle{spiebib} % makes bibtex use spiebib.bst
-\bibliography{refs} % bibliography data in report.bib
+\bibliography{refs} % bibliography data in refs.bib
 
 
 \end{document} 
+
+
+
+
+
+
 
 
 % below is template guidelines to be deleted.
