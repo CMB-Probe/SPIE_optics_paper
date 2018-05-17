@@ -231,29 +231,30 @@ Raytrace (left) and Strehl~$=0.8$ contours (right) for the PICO optical design.
 
 \begin{table}[ht]
 \centering
-\caption{Telescope parameters \comr{needs cleaning and some more numbers looked up.  Are Zernike coefficients even useful?} \label{tab:optics}}
+\caption{Telescope geometric parameters  \label{tab:optics}}
+\hspace{-1cm}
 \begin{adjustbox}{width=1.1\textwidth}
 \begin{tabular}{|l|llll||ll|}
 \hline
 \multicolumn{5}{|c||}{PICO optical system}                                    & \multicolumn{2}{c|}{Initial Open Dragone$^b$}     \\ \hline
-                          & Primary           & Secondary         & Telescope parameters$^b$   &     & \multicolumn{2}{c|}{Fundamental design parameters}  \\
-Size$^a$ (cm)                 & $268 \times 206$ ?check? & $160 \times 158$ ?check? & Aperture (cm)        & 140     & Aperture (cm)            & 140   \\
-Radius of curvature (cm)  & $\infty$         & 136.6             & Focal ratio, F            & 1.42    & $\theta_0$ (degrees)              & 90    \\
-Conic constant, $k$       & 0                 & -0.926            & h (cm)                    & 430?    & $\theta_e$ (degrees)              & 20    \\
-Normalization radius (cm) & 524.8             & 194.1             & $\alpha$                  & ?       & $\theta_p$ (degrees)              & 140   \\
-4th Zernike Coefficient   & 2018.4            & -61.1             & $\beta$                   &  ?      & L (cm)                         & 240   \\
-9th Zernike Coefficient   & -37.0             & 16.7              & L                         &   ?     & \multicolumn{2}{c|}{Derivative parameters}  \\
-10th Zernike Coefficient  & -2919.8           & -15.1             & d$_{SR-FP}$               &    ?    & Focal ratio, F                 & 1.42  \\
-11th Zernike Coefficient  & -1292.7           & 22.3              &                           &         & h (cm)                         & 624.2 \\
-12th Zernike Coefficient  & 120.6             & -3.8              &   \multicolumn{2}{c||}{Focal Plane}  & $\alpha$                          & 38.6  \\
-13th Zernike Coefficient  & -74.5             & 4.9               & Diameter (cm)          & 69 x 45  & $\beta$                           & 101.4 \\
-19th Zernike Coefficient  & -75.8             & 3.4               & Diameter (deg)          & 19 x 13  & Primary, $f$ (cm)             & 312.1 \\
-20th Zernike Coefficient  & -398.9            & 6.3               & Tilt (deg)            & ?check?  & Secondary, $e$                & 1.802 \\
-21st Zernike Coefficient  & -319.5            & 23.3              & Radius of curvature (cm) & 455     & Secondary, $a$ (cm)          & 131   \\
-22nd Zernike Coefficient  & -276.6            & -8.5              &                           &         &                                &       \\
-23rd Zernike Coefficient  & -201.6            & -3.2              &                           &         &                                &       \\
-24th Zernike Coefficient  & -127.4            & -1.9              &                           &         &                                &       \\
-25th Zernike Coefficient  & -55.0             & 0.1               &                           &         &                                &       \\\hline
+                          & Primary           & Secondary         & Telescope parameters$^b$   &         & \multicolumn{2}{c|}{Fundamental design parameters}  \\
+Size$^a$ (cm)                 & $270 \times 205$ & $160 \times 158$ & Aperture (cm)           & 140      & Aperture (cm)                  & 140   \\
+Radius of curvature (cm)  & $\infty$         & 136.6             & Focal ratio, F             & 1.42     & $\theta_0$ (degrees)           & 90    \\
+Conic constant, $k$       & 0                 & -0.926            & h (cm)                    & 624.2    & $\theta_e$ (degrees)           & 20    \\
+Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (deg)            & 74.2     & $\theta_p$ (degrees)           & 140   \\
+4th Zernike Coefficient   & 2018.4            & -61.1             & $\beta$  (deg)            &  62.3    & L$_m$ (cm)                     & 240   \\
+9th Zernike Coefficient   & -37.0             & 16.7              & L$_m$ (cm)                &   229.3  &                                &         \\
+10th Zernike Coefficient  & -2919.8           & -15.1             & L$_s$ (cm)                &   140.5  & \multicolumn{2}{c|}{Derivative parameters} \\ 
+11th Zernike Coefficient  & -1292.7           & 22.3              &                           &          & Focal ratio, F                 & 1.42  \\   
+12th Zernike Coefficient  & 120.6             & -3.8              &   \multicolumn{2}{c||}{Focal Plane}  & h (cm)                         & 624.2 \\   
+13th Zernike Coefficient  & -74.5             & 4.9               & Diameter (cm)             & 69 x 45  & $\alpha$ (deg)                 & 38.6  \\   
+19th Zernike Coefficient  & -75.8             & 3.4               & Diameter (deg)            & 19 x 13  & $\beta$  (deg)                 & 101.4 \\   
+20th Zernike Coefficient  & -398.9            & 6.3               & Radius of curvature (cm)  & 455      & L$_s$ (cm)                     & 122.2 \\   
+21st Zernike Coefficient  & -319.5            & 23.3              &                           &          & Primary, $f$ (cm)              & 312.1 \\   
+22nd Zernike Coefficient  & -276.6            & -8.5              &                           &          & Secondary, $a$ (cm)            & 131   \\   
+23rd Zernike Coefficient  & -201.6            & -3.2              &                           &          & Secondary, $e$                 &  1.802  \\
+24th Zernike Coefficient  & -127.4            & -1.9              &                           &          &                                &       \\
+25th Zernike Coefficient  & -55.0             & 0.1               &                           &          &                                &       \\\hline
 \multicolumn{7}{l}{\footnotesize  $^a$ The maximum physical size of the mirrors.}\\
 \multicolumn{7}{l}{\footnotesize  $^b$ Telescope parameters follow the definitions in Granet 2001.\cite{granet2001}} \\
 %\multicolumn{7}{l}{\footnotesize  $^b$ } \\
@@ -310,6 +311,7 @@ curvature reduces defocus and increases the DLFOV as well as increasing telecent
 wafers would result in large defocus at the edges of these wafers.  This is not the case for PICO. The focal plane radius of curvature, 4.55~m, 
 results in a defocus of 0.1~mm for the edge of a 10~cm wafer. 
 
+%these are unoptimized comparisons. note that.
 We considered two additional Dragone systems; a Gregorian Dragone like that used for \textit{Planck} and a Crossed Dragone similar to that planned 
 for CORE or LiteBIRD.  With half the diffraciton limited focal plane area of the Open Dragone,\cite{core2018_inst} the Gregorian Dragone is 
 unable to support $\mathcal{O}(10^4)$ detectors, so was rejected.  
@@ -402,14 +404,19 @@ sky view in the Crossed system require a long forebaffle or large F-number to mi
 \section{FOCAL PLANE}
 \label{sec:focalplane}
 
-Modern mm/sub-mm detectors are photon noise limited, so the primary way to increase sensitivity is to increase the number of detectors on sky. 
-The PICO focal plane has 12,996 detectors, a factor of 175 more than \textit{Planck}. PICO achieves this by having a large DLFOV and using 
-multichroic pixels (MCP)\cite{Suzuki2014_samps}.  Multichroic pixels are a recent mm-wave pixel technology made up of a broad-bandwidth 
-polarization sensitive antenna lithographed onto a silicon substrate which couples to microstrip transmission lines to carry the signal 
-to a channelizing filter. The filter divides the broadband signal into individual bands and 
-directs it to separate transition edge sensor (TES) bolometers. The architecture assumed for PICO uses three bands per pixel; each 
-pixel contains two single polarization bolometers per band and therefore six bolometers total. Using MCP increases 
-the number of bolometers by a factor of six without increasing the required focal plane area.  
+Modern mm/sub-mm detectors are photon noise limited, so the primary way to increase sensitivity is to increase the number of detectors. 
+The PICO focal plane has 12,996 detectors, $175\times$ the number flown on \textit{Planck}. PICO achieves this by having a large DLFOV and using 
+multichroic pixels (MCP)\cite{Suzuki2014_samps}.  
+%Multichroic pixels are a recent mm-wave pixel technology made up of a broad-bandwidth 
+%polarization sensitive antenna lithographed onto a silicon substrate which couples to microstrip transmission lines to carry the signal 
+%to a channelizing filter. The filter divides the broadband signal into individual bands and 
+%directs it to separate transition edge sensor (TES) bolometers. 
+The architecture assumed for PICO uses three bands per pixel; each 
+pixel contains two single polarization transition edge sensor (TES) bolometers bolometers per band and therefore six bolometers total. 
+We assume the MCP are coupled to free space using lenslets\cite{Suzuki2014_samps}, however the pixel size, number, and spacing is 
+relatively agnostic to the coupling scheme, so current layout would not change significantly if horn or phased array coupling was used 
+instead.
+
 
 \begin{figure} [ht]
 \begin{center}
@@ -418,26 +425,29 @@ the number of bolometers by a factor of six without increasing the required foca
 %\end{tabular}
 \end{center}
 \caption { \label{fig:bands} 
-Frequency coverage of the PICO bands. Each color (except magenta) denotes a different MCP, labeled A-F. The bar height 
+Frequency coverage of the PICO bands. Each color (excluding magenta) denotes a different MCP, labeled A-F. The bar height 
 indicates the number of detectors per band.  Width gives the bandwidth, all are top-hats with 
 25\% fractional bandwidth; the $x$-axis is logarithmic.  The three highest frequencies (magenta) are single color pixels G, H, I.
 \comr{Confusion likely because 'E' is blue in this plot, but cyan in the focal plane. Need to address this.}
 }
 \end{figure} 
 
-We designed PICO with 21 overlapping bands centered at 21--799~GHz and divided amongst nine pixel types, A-I, shown in Figure~\ref{fig:bands}, 
-These bands provide the broad fequency coverage needed to seperate the CMB, Galactic dust, and various foreground using their differing spectra.  
-The PICO bands are 
-logarithmically spaced with 25\% fractional bandwidth.  The bandwidth is broader than the interband spacing meaning the bands 
-overlap and neighboring bands must be in separate pixels.  For example, bands 1, 3, and 5 are in pixel A while bands 2, 4, and 6 are in pixel B.  This 
-complicates the pixel design and focal plane layout, but allows broader brands to increase total sensitivity.  The exceptions to this MCP architecture 
-are the highest three bands.  These three bands are single frequency, because they are above the superconducting band gap of niobium meaning the standard 
-niobium transmission lines and filters cannot be used.  Instead we will use absorber coupled bolometers at these frequencies.  
+We designed PICO with 21 overlapping bands centered at 21--799~GHz and divided amongst nine pixel types, A-I; see Figure~\ref{fig:bands}. 
+These bands provide the broad fequency coverage needed to seperate the CMB, Galactic dust, and various foregrounds using their differing spectra.  
+%The PICO bands are logarithmically spaced with 25\% fractional bandwidth.  
+The 25\% fractional bandwidth is broader than the interband spacing, so the neighboring bands overlap and must be in separate pixels.  
+For example, bands 1, 3, and 5 are in pixel A while bands 2, 4, and 6 are in pixel B.  This 
+complicates the pixel design and focal plane layout, but allows broader brands to increase total sensitivity.  
 
-The PICO focal plane is designed to take maximum advantage of the large field of view.  As discussed in Section~\ref{sec:optics}, the optical quality peaks at the 
-focal plane center and falls off with radius.  This pattern dictates the layout shown in Figure~\ref{fig:focal_plane}, with the highest frequency 
-pixels centered in the focal plane and low frequency pixels around the edge. The maximum radial distance for a given pixel is the point where 
-the Strehl ratio for the highest frequency band within that pixel equals 0.8.  Interior to these contours, the ellipses in 
+The exceptions to this MCP architecture are the highest three bands.  These three bands are above the superconducting band gap of niobium, so 
+the niobium transmission lines and filters used in MCP are unsuitable.  Instead we will use polarization sensitive, feedhorn 
+coupled bolometers at these frequencies, similar to the \textit{Planck}\cite{planck2010_hfi} or Herschel SPIRE\cite{spire2010} detectors.  
+
+The PICO focal plane is designed to take maximum advantage of the large field of view.  The optical quality peaks at the 
+focal plane center and falls off with radius as shown in Figure~\ref{fig:strehl}.  This pattern dictates the layout shown 
+in Figure~\ref{fig:focal_plane}. The highest frequency pixels are centered on the focal plane and low frequency pixels are arranged 
+around the edge. The maximum radial distance for a given pixel is the point where 
+the Strehl ratio for the upper edge of the highest frequency band within that pixel equals 0.8.  Interior to these contours, the ellipses in 
 Figure~\ref{fig:focal_plane}, the Strehl ratio increases ensuring pixels are diffraction limited.
 
 \begin{figure} [ht]
@@ -451,33 +461,47 @@ PICO focal plane layout with Strehl~$=0.8$ contours for each pixel type. The pix
 in Figure~\ref{fig:bands} \comr{Strehls make in more visible format, certainly cyan contours.}}
 \end{figure} 
 
-Optimizing the pixel size is a balance between number of pixels and the efficiency with which they couple to the telescope. Smaller pixels pack more densely 
-on the focal plane, number scaling as $1/D_{px}^2$, but over illuminate the stop which reduces total efficiency and adds thermal load.  
+Optimizing the pixel size is a balance between the total number of pixels, $N_{px}$, and the efficiency with which they couple to the telescope. 
+Smaller pixels pack more densely on the focal plane, $N_{px}\propto 1/D_{px}^2$, but over illuminate the stop which reduces optical efficiency 
+and adds optical load.  
 %Since PICO has a cold stop additional load is minimized, reducing the penalty for smaller pixels.  
-We choose a pixel spacing of $2.1$F$\lambda$, giving an edge taper on the stop of 10~dB, for the center 
-band of each pixel. Due to the multichroic nature of the pixels this edge taper varies with band, details in Section~\ref{sec:noise}. We hex-pack pixels onto 
-94~mm hexagonal wafers to minimize wasted space for the mid-frequency pixels. The three central wafers have the same 94~mm hexagon footprint but are split into 
-3 rhombi as seen in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different detector technology and will need to be 
-fabricated separately.  Laying out the focal plane we assume lenslets \cite{Suzuki2014_samps} will be used to couple the antennas to free space, 
-but the exact coupling scheme has not been finalized.  
-However, the pixel size, number, and spacing is relatively agnostic to the coupling scheme, so we do not expect significant changes to the 
-current layout even if horn or phased array coupling is used in the final design.
+We choose a pixel diameter of $2.1$F$\lambda_{mid}$, where $\lambda_{mid}$ refers to the center 
+band of each pixel. This gives an edge taper, $T_e$, on the stop of 10~dB for the center band. 
+Due to the multichroic nature of the pixels $T_e$ varies with band, details in Section~\ref{sec:noise}. 
+We hex-pack pixels onto 94~mm hexagonal wafers to minimize wasted space for the mid-frequency pixels. 
+The three central wafers have the same 94~mm hexagon footprint but are split into 
+3 rhombi, shown in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different 
+detector technology and will need to be fabricated separately.  
 
-%To obtain full polarization information a point on the sky must be measured at we have pixels oriented at $\pm 90$\dgr, sensitive to Stokes Q
-%Q/U ? and syst.
+
+For each pixel type we orient neighboring pixels at 45\dgr to each other as shown in Figure~\ref{fig:QU}.  
+Intro words?? To measure Stokes Q and U we adjust the polarization orientation of neighboring pixels such  oriented at 0 and 90\dgr, sensitive to Stokes Q and $\pm 45$\dgr, sensitive to U. Each wafer is laid out to maximize the following . . . scan  . . .  sky hits . . . language . . .
+Q/U ? and syst.
+
+Each MCP is sensitive to only Stokes Q or U. To measure both Q and U we rotate the polarization orientation of adjancent pixels which scan over the same sky location by 45\dgr as shown in 
+Figure~\ref{fig:QU}. Adjacent columns of Q and U pixels sample the same sky locations at a slight delay minimize systematics from drifts in detector response which are slower than the scan 
+speed. order 0.5 sec is longer than the sample time even at 1 deg beams.
+
+QU observations of single location follow each other on the sky, so same location is observed in Q and U 'simultaneously' almost.
+
+
+
+
 \comr{Discuss Q/U orientation?}
-% \begin{figure} [ht]
-% \begin{center}
-% %\begin{tabular}{c} %% tabular useful for creating an array of images 
-% \includegraphics[height=5cm]{QU_wafer.png}
-% %\end{tabular}
-% \end{center}
-% \caption { \label{fig:QU} 
-% Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) for an example wafer.}
-% \end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\includegraphics[height=4cm]{QU_wafer.png}
+%\end{tabular}
+\end{center}
+\caption { \label{fig:QU} 
+Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) for an example wafer.}
+\end{figure}
 
 Reading out 12,996 TES bolometers requires significant multiplexing.  Time domain (TDM) and frequency domain (FDM) 
-multiplexing were explored for PICO, tradeoff details are in Ref.~\citenum{brian_spie}.  The current PICO baseline is TDM, 
+multiplexing were explored for PICO, tradeoff details are in Sutin et~al.\cite{brian_spie}  %Ref.~\citenum{brian_spie}.  
+The current PICO baseline is TDM, 
 but the choice is not a driver for the focal plane layout or noise discussed in this paper.
 
 
@@ -520,20 +544,20 @@ which are discussed in this section.  The assumptions are summarized in Table~\r
 
 \begin{table}[ht]
 \centering
-\caption{Noise model assumptions, see text for details. \comr{listing still in flux}}
+\caption{Noise model assumptions, see text for details. }%\comr{listing still in flux}}
 \label{tab:assume}
 %
 \begin{tabular}{|l|l|}
 \hline
-                                 &                                                  \\
+%                                 &                                                  \\
 Throughput                       & single moded, $\lambda^2$          \\
 Fractional Bandwidth             & 25\%                                             \\
 Mirror emissivity                & $\epsilon = \epsilon_0\sqrt{\nu/\text{150~GHz}}, \epsilon_0 = 0.07\%$ \\
 Aperture stop emissivity         & 1                                                \\
 Low pass filter reflection loss  & 8\%                                                \\
-Low pass filter absorption loss  & frequency dependent, $\approx 2\%  $ \comr{change to appropriate range}             \\
+Low pass filter absorption loss$^a$  & frequency dependent, 0.2\%--2.8\%             \\
 Bolometer absorption efficiency  & 70\%                                             \\
-T$_e$ for middle band in pixel (dB) & 10                                               \\
+T$_e$, middle band in pixel (dB) & 10                                               \\
 Mission length (years)           & 5                                                \\
 Observing efficiency             & 95\%                                             \\
 Safety factor, P$_{sat}$/P$_{abs}$      & 2                                                \\
@@ -541,12 +565,13 @@ Bose noise fraction, $\xi$       & 1                                            
 $T_o$ (mK)                      & 100                                              \\
 $T_c$ (mK)                      & 187                                              \\
 Thermal power law index, $n$    & 2                                                \\
-SQUID noise (aW/$\sqrt{\text{Hz}}$)   & 3.5    (FDM), ?? (TDM)                       \\
-TES operating resistance, ohm    & 1 (FDM), 0.03 (TDM)                              \\
-TES transition slope, alpha      & 100 (TDM)                                        \\
-TES loop gain                    & 25 (FDM), 14 (TDM)                               \\
-\comr{other?}                    &                                                  \\
-\comr{\footnotesize footnote to explain LP filter absorption}  &                                                  \\ \hline
+Intrinsic SQUID noise (aW/$\sqrt{\text{Hz}}$)   & 3                        \\
+TES operating resistance, $\Omega$    &  0.03                               \\
+TES transition slope, $\alpha$    & 100                                         \\
+TES loop gain                    & 14                                \\
+%\comr{other?}                    &                                                  \\
+\hline
+\multicolumn{2}{l}{\footnotesize $^a$Assumes seperate metal mesh in polypropylene filters for each wafer.}
 \end{tabular}
 \end{table}
 
@@ -640,8 +665,9 @@ We consider three noise sources per bolometer; photon, phonon, and readout.  Pho
 NEP_{\gamma}^2 = \int\limits_{band} 2h\nu p \, d\nu + 2\xi \int\limits_{band} p^2 d\nu,
 \end{equation} 
 where $p$ is the power spectral density for a single polarization absorbed at the bolometer and $\xi$ is the fraction of correlated Bose 
-photon noise. We assume $\xi=1$. For PICO, NEP$_{Bose}$/NEP$_{Poisson}= 1.3 $ in the lowest band but since Bose noise does not scale with 
-$\sqrt{\nu}$ as Poisson does NEP$_{Bose}$/NEP$_{Poisson} <10\%$ at 268~GHz.\comr{check if this is NEP/NEP or NEP$^2$} %Photon noise dominates at all frequencies for PICO.
+photon noise. We assume $\xi=1$. For PICO, NEP$_{Bose}$/NEP$_{Poisson}= 1.5 $ in the lowest band, but since Bose noise does not scale with 
+$\sqrt{\nu}$ as Poisson does NEP$_{Bose}$/NEP$_{Poisson} <10\%$ at 321~GHz. % this is NEP/NEP NOT squared.  Squared is 2.2 at 21 GHz and 0.01 at 321. < 10 at 129 GHz.  in NEP to NEP bose = poisson at 30 GHz
+%Photon noise dominates at all frequencies for PICO.
 The second largest noise term is phonon noise\cite{mather1982} in the thermal connection to $T_o$,
 \begin{equation}
 \label{eq:phonon}
@@ -716,38 +742,40 @@ units for all bands, even though this isn't particularly suitable for the highes
 
 All the above calculations have been for sensitivity to temperature and are given in Table~\ref{tab:noise}.  Assuming evenly weighted observations 
 of the full sky and 5 years observing at 95\% efficiency we calculate full mission map sensitivities in polarization; final column in Table~\ref{tab:noise}.
-Combining all bands gives a total CMB map depth for the entire PICO mission of \comr{0.67}~$\mu$K$_{CMB}$-arcmin.
+Combining all bands gives a total CMB map depth for the entire PICO mission of 0.62~$\mu$K$_{CMB}$-arcmin.
 
 \begin{table}[ht]
 \centering
-\caption{PICO frequency channels and noise. \comr{this assumes 4K, 40K, filter. may need to change}}
+\caption{PICO frequency channels and noise. }
 \label{tab:noise}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
 Pixel  & Band  & FWHM   & Bolometer NEP & Bolometer NET        & N$_{bolo}$ & Array NET            & Polarization map depth  \\
 Type   & GHz   & arcmin & aW/$\sqrt{Hz}$ & $\mu$K$_{CMB}\sqrt{s}$ &           & $\mu$K$_{CMB}\sqrt{s}$ & $\mu$K$_{CMB}$-arcmin      \\ \hline
-A   & 21    & 38.4   & 4.23          & 97.0                 & 120         & 10.88                & 15.32                    \\
-B   & 25    & 32.0   & 4.60          & 88.8                 & 200         & 7.64                 & 10.75                   \\
-A   & 30    & 28.3   & 4.67          & 56.4                 & 120         & 5.30                 & 7.46                     \\
-B   & 36    & 23.6   & 5.07          & 51.6                 & 200         & 3.75                 & 5.27                    \\
-A   & 43    & 22.2   & 5.31          & 41.6                 & 120         & 3.79                 & 5.34                    \\
-B   & 52    & 18.4   & 5.71          & 38.2                 & 200         & 2.70                 & 3.81                     \\
-C   & 62    & 12.8   & 6.99          & 58.3                 & 732         & 2.44                 & 3.44                    \\
-D   & 75    & 10.7   & 7.50          & 54.6                 & 1020        & 1.90                 & 2.67                   \\
-C   & 90    & 9.5    & 7.22          & 35.0                 & 732         & 1.31                 & 1.84                     \\
-D   & 108   & 7.9    & 7.54          & 33.3                 & 1020        & 1.05                 & 1.48                      \\
-C   & 129   & 7.4    & 7.34          & 27.8                 & 732         & 1.03                 & 1.45                 \\
-D   & 155   & 6.2    & 7.36          & 27.5                 & 1020        & 0.86                 & 1.21                    \\
-E   & 186   & 4.3    & 9.04          & 52.1                 & 960         & 1.72                 & 2.43                     \\
-F   & 223   & 3.6    & 8.85          & 58.6                 & 900         & 1.99                 & 2.80                     \\
-E   & 268   & 3.2    & 6.93          & 44.4                 & 960         & 1.43                 & 2.02                    \\
-F   & 321   & 2.6    & 6.35          & 60.3                 & 900         & 2.01                 & 2.83                   \\
-E   & 385   & 2.5    & 5.38          & 82.1                 & 960         & 2.65                 & 3.73                    \\
-F   & 462   & 2.1    & 5.55          & 184.1                & 900         & 6.14                 & 8.64                     \\
-G   & 555   & 1.5    & 6.22          & 632.3                & 440         & 30.15                & 42.44                   \\
-H   & 666   & 1.3    & 7.08          & 2728.5               & 400         & 136.44               & 192.06                  \\
-I   & 799   & 1.1    & 8.24          & 17297.3              & 360         & 911.70               & 1283.36                 \\ \hline
-Total &        &         &             &              & 12996         & 0.46              & 0.57               \\ \hline
+A     & 21  & 38.4 & 4.89  & 112.2   & 120   & 12.9  & 18.2  \\
+B     & 25  & 32.0 & 5.33  & 103.0   & 200   & 9.07   & 12.8  \\
+A     & 30  & 28.3 & 4.92  & 59.4    & 120   & 5.60   & 7.88   \\
+B     & 36  & 23.6 & 5.36  & 54.4    & 200   & 3.96   & 5.58   \\
+A     & 43  & 22.2 & 5.33  & 41.7    & 120   & 3.80   & 5.36   \\
+B     & 52  & 18.4 & 5.73  & 38.4    & 200   & 2.71   & 3.82   \\
+C     & 62  & 12.8 & 8.29  & 69.2    & 732   & 2.97   & 4.19   \\
+D     & 75  & 10.7 & 8.98  & 65.4    & 1020  & 2.34   & 3.29   \\
+C     & 90  & 9.5  & 7.76  & 37.7    & 732   & 1.41   & 1.99   \\
+D     & 108 & 7.9  & 8.18  & 36.2    & 1020  & 1.15   & 1.61   \\
+C     & 129 & 7.4  & 7.35  & 27.8    & 732   & 1.03   & 1.45   \\
+D     & 155 & 6.2  & 7.36  & 27.5    & 1020  & 0.86   & 1.21   \\
+E     & 186 & 4.3  & 12.30 & 70.8    & 960   & 2.39   & 3.36   \\
+F     & 223 & 3.6  & 12.70 & 84.2    & 900   & 2.89   & 4.07   \\
+E     & 268 & 3.2  & 8.55  & 54.8    & 960   & 1.77   & 2.49   \\
+F     & 321 & 2.6  & 8.16  & 77.6    & 900   & 2.59   & 3.64   \\
+E     & 385 & 2.5  & 4.54  & 69.1    & 960   & 2.23   & 3.14   \\
+F     & 462 & 2.1  & 4.00  & 132.6   & 900   & 4.42   & 6.22   \\
+G     & 555 & 1.5  & 6.47  & 657.8   & 440   & 31.4  & 44.1  \\
+H     & 666 & 1.3  & 5.74  & 2212  & 400   & 111 & 156 \\
+I     & 799 & 1.1  & 4.97  & 10430 & 360   & 550 & 774 \\ 
+\hline
+Total &     &      &       &         & 12996 & 0.44   & 0.62  \\
+\hline
 \end{tabular}
 \end{table}
 %https://www.tablesgenerator.com/
