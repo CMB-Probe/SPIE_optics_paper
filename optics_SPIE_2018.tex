@@ -108,12 +108,9 @@ We describe the PICO instrument, including the 1.4 meter telescope, the frequenc
 \section{INTRODUCTION}
 \label{sec:intro}  
 
-\comr{Probe study language copied directly from Brian's paper (May 6th).  What level of repeat is useful and what is appropriate?}
+\comr{Probe study language copied directly from Brian's paper (May 6th).  What level of repeat is useful?  What is appropriate?}
 
 In astronomy and astrophysics, NASA currently flies small and medium Explorer missions ($<$\$250M), as well as multi-billion-dollar flagship observatories like JWST and WFIRST. There are a number of science opportunities that are beyond the scope of the Explorer program, but don't require flagship-level funding. To explore these opportunities, NASA has funded studies of 10 `Probe' class (\$400M-\$1B) mission concepts. The Probe of Inflation and Cosmic Origins (PICO) is one of these mission studies. Reports of these mission studies are due to NASA at the end of the 2018 and NASA's plan is to forward the reports for consideration by the next Astronomy and Astrophysics Decadal panel. This paper comes part way through the PICO study, and describes a snapshot of the  instrument design at this time in the study.
-
-
-\comr{Brian's science section copied in .tex document. Repeating all of that here seems inappropriate. I have attempted to summarize. Mostly this is the first paragraph from Brian's paper.}
 
 Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of information about 
 the formation, evolution, and current structure of the Universe.  Large scale cosmological and fundamental physics information, such as 
@@ -275,23 +272,53 @@ Adding a stop in this way increases the size of the primary mirror, effectively 
 field angles, but reduces detector noise, see Section~\ref{sec:noise}, and controls sidelobes.  At this stage the system still meets 
 the Dragone condition and is defined by the `Initial Open Dragone' parameters in Table~\ref{tab:optics}.
 
-% do we add ~ 2 paragraphs about Richard's method.
+%%%
 
-To increase the optical performance we use CodeV to numerically optimize the system.  To adjust the mirror shapes, we add a low order, 
-4th and 9th-13th, Zernike polynomial correction to each conic surface.  We allow focal plane curvature, a focal plane tilt angle, 
-and the focal plane to secondary distance to vary.  The primary-secondary distance, primary offset $h$, and the primary and secondary 
+\comr{Richard's final method used zernike polynomials similar to Jim's. Zemax defines offset Zernikes in a way CodeV does not, so the 
+Zernike method only works in Zemax.  I describe it below.}
+
+We pursued two methods to increase the DLFOV.  The first follows a procedure by Richard Hills to numerically implement 
+Dragone's corrections which elimiate coma.\cite{dragone_coma} Dragone's correction calls for a distortion of the primary and secondary 
+which goes as $r^4$ where $r=0$ is at the chief ray impact point on each mirror.  We implement this correction in Zemax by adding Zernike 
+polynomials which are offset by $h=624.2$~cm for the primary and $76.1$~cm for the secondary.  This places the origin of polynomials at the 
+chief ray impact point for each mirror. All Zernike terms up to fourth order and the first fifth order term were allowed to vary. 
+The optimization metric was minimization of the rms spot size at the center of the FOV, $\pm2$\dgr in Y, and $\pm4$\dgr in X with the 
+center of the FOV most heavily weighted. 
+To constrain the optimization, the X and Y effective focal lengths are held fixed as is the impact point of the chief ray on the focal plane. 
+
+This optimization using only Zernike polynomials increases the diffraction limited area by only 15\% at the lowest frequencies but by 
+10.5$\times$ at 799~GHz.  We improve the system further by allowing the focal plane radius of curvature to vary and rerunning the optimization.  
+This gives a 50\% increase in diffraction limited area at all frequencies over the Zernike polynomials alone.  
+Finally, an approximately 4\% additional gain in area can be acheived by adding Zernike terms 
+up to sixth order, allowing the secondray to focal plane distance to vary, adding a weighted constraint on the effective focal length, 
+and adding fields with low weight to the rms spot size metric at $\pm7.5$\dgr in Y and $15$\dgr in X, without these additional fields the 
+corrections at mirror edges are not well constrained.
+
+\comr{The other method by Richard has the first step of converting the conics into an on axis XY polynomial respresentation. Then the same procedure is followed.  It is less well behaved during optimization.  This second Richard method is what I replicated in CodeV.}
+
+%%%
+
+%To increase the optical performance we use CodeV to numerically optimize the system.  
+The second optimization uses CodeV and allows more of the geometric parameters of the system to vary. 
+To adjust the mirror shapes, we add a low order, 
+4th and 9th-13th, Zernike polynomial correction to each conic surface. The Zernike polynomials are defined on the same coordinates as the 
+base conics.  We allow the focal plane curvature 
+and focal plane to secondary distance L$_s$ to vary.  The primary-secondary distance L$_m$, primary offset $h$, and the primary and secondary 
 rotation angles, $\alpha$ and $\beta$, are varied as well. The optimization metric is the rms spot size across the field of view, with 
 additional weighted constraints requiring telecentricity and maintaining the x- and y-focal lengths.  We also added Lagrange constraints 
 to enforce beam clearences and put an upper limit on overall system size.  Once the optimization coveraged to an acceptable optical 
 system, we added the higher order Zernike terms, 19th-25th, and refined the mirror shapes using the same metric and constraints.
+The current PICO design is from this optimization procedure.
 
 %. . . \\ \comr{in email communication with Jim. This paragraph is a work in progress.}
 %\comr{Following a procedure outlined by Richard Hills . . . turning dragone to polynomial surfaces, optimizing polynomial.}
 
 Figure~\ref{fig:compare} 
 %we show the final optimized system compared with the `Initial Open Dragone' and give the Strehl~$=0.8$ contours.  One sees 
-shows the optimization reduced the overall telescope volume, allowing it to fit more easily within the shadow cone, and increased the DLFOV.  The most important increase in the DLFOV is
-at 155 and 186~GHz.  This added area allows us to add `C' and `D' pixels which are critical to meeting PICO's cosmology and fundamental 
+shows the optimization reduces the overall telescope volume, allowing it to fit more easily within the shadow cone, and increases the DLFOV.  
+The DLFOV increases by 1.9$\times$ at 21~GHz and by 4.6$\times$ at 799~GHZ. 
+The most important gain in the DLFOV is at 129 and 155~GHz where it increased by 3.8$\times$ and 4.3$\times$, respectively.  
+This added area allows us to add `C' and `D' pixels which are critical to meeting PICO's cosmology and fundamental 
 physics science goals, because they contain the bands most sensitive to the CMB. Being able to pack 100's of `C' and `D' pixels into the focal 
 plane is what allows PICO to reach unprecedented levels of CMB sensitivity.
 
@@ -340,70 +367,9 @@ sky view in the Crossed system require a long forebaffle or large F-number to mi
 \end{figure} 
 
 
-%add anything about total focal plane area?  It's visible in the figures.
-%
-%Alignment? probably not.
 %
 %Grasp? maybe.  Beam and sidelobe would be pleasent.
 %
-%--------------------
-%% Shaul's suggestion
-%System that was made.
- %- dragone params from Granet 2001
-%
-%performance there of
-%
-%process to get there
-%
-%Other systems considered were . . .
-%comparison to other options.
-%
-%
-%
-%not greg -- too small
-%not crossed -- too sidelobey   plots!
-%open  -- just right
-%
-%basic open
-%
-%optimized open (show overlayed strehls. 1 color per contour?) to get growth at 150.
-%
-%both ray traces (or mirror outlines at least) to show size change.
-%
-%
-%\begin{itemize}
-%\item Design constraints and goals.
-%\subitem availible volume, limited by sunshields and shadow cone
-%\subitem no stray light i.e.\ low sidelobes
-%\subitem large throughput, large FOV
-%\subitem maximize strehl $\sim150$ GHz while maintaining quality at 800~GHz and large area at 20~GHz.
-%\item Design process: open dragone to optimized open dragone
-%\subitem Include crossed dragone and its problems also? Tradeoffs with crossed?
-%\subitem connection with focal plane size and mirror size. Volume limited.
-%\subitem show open dragone performance and physical size  (fig. ray trace)
-%\subitem show optimized performance, improvements, and physical size (fig. ray trace, and strehl or WFE)
-%\subsubitem Both above show performance at subset of bands (maybe) as metric for deciding what system to use.
-%\subsubitem Incremental steps? curved mirrors then curved focal plane.
-%\item final design and performance, strehl ratios and/or wavefront error
-%\subitem Table of physical parameters (D, F/\#, angles, apertures, etc.)
-%\subitem strehl ratios by frequency. total availible focal plane area.
-%\item alignment sensitivity (presentation 2017 11 21) 
-%\item GRASP related items
-%\subitem show simulated system, differences to actuall satellite.
-%\subitem primary mirror and/or stop illumination
-%\subitem mainbeam cuts and beamsize. compare beamsize to ray trace prediction
-%\subitem sidelobe response, 4$\pi$ beam
-%\subitem \comr{How much GRASP to include? Don't want to add significant additional analysis.}
-%\end{itemize}
-%
-%%The PICO optical system is based on an Open Dragone design.\cite{dragone}  The various types of Dragone telescopes which meet
-%%the Mizuguchi-Dragone condition have low cross polarization and large diffraction limited fields of view. The Crossed and Open Dragones
-%%have especially large fields of view making them appealing for CMB telescopes.  SPT? ACT? ?? use Crossed Dragone systems. The Open Dragone
-%%gives similar
-%
-%%One disadvantage of the large field of view is a large secondary and primary mirror . . .?  something about primary oversized? no too subtle.
-
-
 
 \section{FOCAL PLANE}
 \label{sec:focalplane}
@@ -476,21 +442,14 @@ The three central wafers have the same 94~mm hexagon footprint but are split int
 3 rhombi, shown in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different 
 detector technology and will need to be fabricated separately.  
 
-
-For each pixel type we orient neighboring pixels at 45\dgr to each other as shown in Figure~\ref{fig:QU}.  
-Intro words?? To measure Stokes Q and U we adjust the polarization orientation of neighboring pixels such  oriented at 0 and 90\dgr, sensitive to Stokes Q and $\pm 45$\dgr, sensitive to U. Each wafer is laid out to maximize the following . . . scan  . . .  sky hits . . . language . . .
-Q/U ? and syst.
-
-Each MCP is sensitive to only Stokes Q or U. To measure both Q and U we rotate the polarization orientation of adjancent pixels which scan over the same sky location by 45\dgr as shown in 
-Figure~\ref{fig:QU}. Adjacent columns of Q and U pixels sample the same sky locations at a slight delay minimize systematics from drifts in detector response which are slower than the scan 
-speed. order 0.5 sec is longer than the sample time even at 1 deg beams.
-
-QU observations of single location follow each other on the sky, so same location is observed in Q and U 'simultaneously' almost.
-
-
-
-
-\comr{Discuss Q/U orientation?}
+% order 0.5 sec is longer than the sample time even at 1 deg beams. sweeping 1 deg takes 0.2 sec.
+The polarization sensitive bolometers in each MCP are oriented perpindicular to each other. Differencing the bolometers allows each pixel to measure Stokes Q or, if the 
+pixel is rotated by 45\dgr, Stokes U. We rotate neighboring pixels which scan over the same sky location by 45\dgr, as shown in Figure~\ref{fig:QU}.
+This layout reduces systematic errors by maximizing the number of Q,U pixel pairs which have almost identical optical paths and measure sky locations 
+as close to simultaneously as possible.  % 'should reduce' haven't actually done these simulations . . . 
+%The small time difference between Q,U measurements reduces systematic errors relating slow to drifts in detector response or 
+%other 1/f noise. The proximity of the Q,U pixels also reduces errors arising from differnent telescope beam shapes and temperature gradients on the focal plane.
+%\comr{Discuss Q/U orientation?}
 
 \begin{figure} [ht]
 \begin{center}
@@ -563,17 +522,18 @@ Low pass filter reflection loss  & 8\%                                          
 Low pass filter absorption loss$^a$  & frequency dependent, 0.2\%--2.8\%             \\
 Bolometer absorption efficiency  & 70\%                                             \\
 T$_e$, middle band in pixel (dB) & 10                                               \\
-Mission length (years)           & 5                                                \\
-Observing efficiency             & 95\%                                             \\
-Safety factor, P$_{sat}$/P$_{abs}$      & 2                                                \\
 Bose noise fraction, $\xi$       & 1                                                \\
-$T_o$ (mK)                      & 100                                              \\
-$T_c$ (mK)                      & 187                                              \\
+Bolometer yield                 & 100\%                                            \\
+Bath temperature, $T_o$ (mK)    & 100                                              \\
+TES critical temperature, $T_c$ (mK)   & 187                                              \\
+Safety factor, P$_{sat}$/P$_{abs}$      & 2                                                \\
 Thermal power law index, $n$    & 2                                                \\
 Intrinsic SQUID noise (aW/$\sqrt{\text{Hz}}$)   & 3                        \\
 TES operating resistance, $\Omega$    &  0.03                               \\
 TES transition slope, $\alpha$    & 100                                         \\
 TES loop gain                    & 14                                \\
+Mission length (years)           & 5                                                \\
+Observing efficiency             & 95\%                                             \\
 %Multiplexing factor              &
 %Number of rows/columns/whichever matters . .. 
 %\comr{other?}                    &                                                  \\
@@ -712,13 +672,20 @@ For PICO, photon noise dominates at all frequencies as shown in Figure~\ref{fig:
 at lower frequencies with NEP$_{Bose}$/NEP$_{Poisson}= 1.5 $ in the lowest band.  However, Poisson noise increases as 
 $\sqrt{\nu}$, equalling Bose noise at 30~GHz and dominating at higher bands; NEP$_{Bose}$/NEP$_{Poisson} <10\%$ at 321~GHz. 
 % this is NEP/NEP NOT squared.  Squared is 2.2 at 21 GHz and 0.01 at 321. < 10 at 129 GHz.  in NEP to NEP bose = poisson at 30 GHz
+Phonon noise is the second most significant source, NEP$_{phonon}$/NEP$_{photon}$ ranges from 65\% at 21~GHz 
+to 19\% at 799~GHz. 
 
-For TDM readout phonon and readout noise are roughly equal, with TES Johnson noise being insigficant.  We also modeled 
+For TDM readout phonon and readout noise are roughly equal, with TES Johnson noise being insignificant.  We also modeled 
 frequency domain multiplexing (FDM) readout.  For FDM the TES Johnson noise is higher, 2/3 of the readout NEP, but the readout 
 noise is lower.  Comparing the combinined Johnson and readout NEPs for TDM and FDM we find essentially indentical performance 
 with total noise differing by less than 3\% across all bands.  For either system we require a focal plane temperature, $T_o$, of 
 100~mK and a bolometer safety factor of 2 to remain photon noise dominated at the lowest bands.
 
+The primary driver of noise levels is the optical load.  The combination of the CMB and aperture stop make up the majority of the load in all bands.
+The load from the mirrors is greatest at 799~GHz where it is 90\% of that from the CMB and stop. The CMB provides more than half the load 
+in the middle and upper bands of the multi-chroic pixels, but the stop dominates the load in the low band of each pixel.  Load from the 
+stop ranges from 1.2$\times$ the CMB load at 21~GHz to a maximum of 4.7$\times$ the CMB load at 223~GHz. 
+%Two options to mitigate this extra load are a colder stop or more aggresive edge taper.
 
 
 % RESULTS 
@@ -805,10 +772,16 @@ Total &     &      &       &         & 12996 & 0.44   & 0.62  \\
 
 \section{CONCLUSIONS/SUMMARY}
 
-\begin{itemize}
-\item Total full sky map sensitivity, compare to Planck, LB, and S4? or do so in intro?
-\end{itemize}
-simple telescope. low noise? low systematics? - systematics not discussed elsewhere (yet)
+The PICO optical system is a simple two mirror Open Dragone which we numerically optimized to maximize the DLFOV.  The addition of a 
+cold aperture stop and cold mirrors minimize optical load and reduce noise.  The focal plane take advantage of the large DLFOV and MCP 
+technology to implement 12996 polarization sensitive detectors in 21 bands from 21-799~GHz.  When combining all bands, our instrument 
+noise model predicts full mission polarization maps with integrated noise of 0.62$\mu$K$_{CMB}$-arcmin.
+
+
+% \begin{itemize}
+% \item Total full sky map sensitivity, compare to Planck, LB, and S4? or do so in intro?
+% \end{itemize}
+% simple telescope. low noise? low systematics? - systematics not discussed elsewhere (yet)
 
 
 % some of this phrasing here.
