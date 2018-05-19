@@ -129,7 +129,7 @@ In astronomy and astrophysics, NASA currently flies small and medium Explorer mi
 
 Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of information about 
 the formation, evolution, and current structure of the Universe.  Large scale cosmological and fundamental physics information, such as 
-evidence of inflation, the effect of the first stars and galaxies, constraints on neutrino masses, and limits on new light particles beyond 
+evidence of inflation, the effect of the first stars and galaxies, constraints on neutrino masses, and limits on light particles beyond 
 the standard model, is contained in the temperature and polarization anisotropies of the cosmic microwave background (CMB).  Information 
 about the role of magnetic fields in star formation and galactic evolution is obtainable by observing the polarized emission of Galactic dust, which 
 traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with unprecedented polarization sensitivity 
@@ -177,13 +177,13 @@ In this paper we discuss the optical system, focal plane, and expected sensitivi
 
 %  This could all be in the intro instead. Purpose is to show constraints on the optics to motivate decisions discussed later.  
 
-The PICO mission plan is to conduct scientific observations for five years from the Earth-Sun L2 Lagrange point. The spacecraft design impacts 
+The PICO will conduct scientific observations for five years from the Earth-Sun L2 Lagrange point. The spacecraft design impacts 
 the optical design and sensitivity in two primary ways; volume constraints limit the physical size of the telescope and optical component 
 temperatures impact noise levels.  
 
-The maximum size of the spacecraft is limited by the assumed launch vehicle, the Falcon 9, which carries payloads up to 4.6~m in diameter. 
+The maximum size of the spacecraft is limited by the launch vehicle, the Falcon 9, which carries payloads up to 4.6~m in diameter. 
 This diameter limit sets the V-groove size which, along with the scan strategy, defines the `shadow cone' in Figure~\ref{fig:cad}.  
-The shadow cone is the volume which is protected from solar illumination, and all optical components must remain within it. The shadow cone and 
+The shadow cone is the volume protected from solar illumination, and all optical components must remain within it. The shadow cone and 
 inner V-grooves define an available volume for the telescope.  
 
 The temperatures of all optical elements are given in Figure~\ref{fig:cad}.  The optics box, secondary, and focal plane are actively cooled, 
@@ -202,7 +202,7 @@ details of the thermal system are given in Sutin~et~al.\cite{brian_spie} % Ref.~
 \end{center}
 \caption { \label{fig:cad} 
 Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Sutin~et~al.\cite{brian_spie}%Ref.~\citenum{brian_spie}. 
-\comr{Update temperatures with final numbers from JPL}}
+}
 \end{figure} 
 
 % \begin{itemize}
@@ -232,7 +232,7 @@ and in the CORE\cite{core2018_inst} and LiteBIRD\cite{LB2016_optics} designs.
 The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics} and the ray trace in Figure~\ref{fig:ray}. The 
 system is diffraction limited, Strehl greater than 0.8, at the center of the field of view for 799~GHz and has a DLFOV of 82.4~deg$^2$ at 
 155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. The %slightly concave, 4.55~m radius of curvature, 
-focal plane is telecentric to within 0.12~deg across the entire surface.
+focal plane is telecentric to within 0.12\dgr\ across the entire surface.
 
 \begin{figure} [ht]
 \begin{center}
@@ -284,7 +284,7 @@ To arrive at the final design we modify an Open Dragone.  We design the initial 
 We find a solution which satisfies the volume constraints and has a large DLFOV.  We force a circular aperture stop 
 between the primary and secondary mirrors and numerically optimize its angle and position to obtain the best 
 optical performance.  We choose the stop diameter to provide an effective 1.4~m aperture on the primary for the center feed.  
-Adding a stop in this way increases the size of the primary mirror, effectively the primary is unevenly illuminated at various 
+Adding a stop in this way increases the size of the primary mirror, the primary is unevenly illuminated at various 
 field angles, but reduces detector noise, see Section~\ref{sec:noise}, and controls sidelobes.  At this stage the system still meets 
 the Dragone condition and is defined by the `Initial Open Dragone' parameters in Table~\ref{tab:optics}.
 
@@ -294,21 +294,21 @@ the Dragone condition and is defined by the `Initial Open Dragone' parameters in
 Zernike method only works in Zemax.  I describe it below.}
 
 We pursued two methods to increase the DLFOV.  The first follows a procedure by Richard Hills to numerically implement 
-Dragone's corrections which elimiate coma.\cite{dragone_coma} Dragone's correction calls for a distortion of the primary and secondary 
+Dragone's corrections to elimiate coma.\cite{dragone_coma} Dragone's correction calls for a distortion of the primary and secondary 
 which goes as $r^4$ where $r=0$ is at the chief ray impact point on each mirror.  We implement this correction in Zemax by adding Zernike 
 polynomials which are offset by $h=624.2$~cm for the primary and $76.1$~cm for the secondary.  This places the origin of polynomials at the 
 chief ray impact point for each mirror. All Zernike terms up to fourth order and the first fifth order term were allowed to vary. 
-The optimization metric was minimization of the rms spot size at the center of the FOV, $\pm2$\dgr in Y, and $\pm4$\dgr in X with the 
+The optimization metric was minimization of the rms spot size at the center of the FOV, $\pm2$\dgr\ in Y, and $\pm4$\dgr\ in X with the 
 center of the FOV most heavily weighted. 
 To constrain the optimization, the X and Y effective focal lengths are held fixed as is the impact point of the chief ray on the focal plane. 
 
-This optimization using only Zernike polynomials increases the diffraction limited area by only 15\% at the lowest frequencies but by 
+This optimization using only Zernike polynomials increases the diffraction limited area by 15\% at 21~GHz, by 2.4$\times$ at 155~GHz, and by 
 10.5$\times$ at 799~GHz.  We improve the system further by allowing the focal plane radius of curvature to vary and rerunning the optimization.  
 This gives a 50\% increase in diffraction limited area at all frequencies over the Zernike polynomials alone.  
 Finally, an approximately 4\% additional gain in area can be acheived by adding Zernike terms 
 up to sixth order, allowing the secondray to focal plane distance to vary, adding a weighted constraint on the effective focal length, 
-and adding fields with low weight to the rms spot size metric at $\pm7.5$\dgr in Y and $15$\dgr in X, without these additional fields the 
-corrections at mirror edges are not well constrained.
+and adding fields with low weight to the rms spot size metric at $\pm7.5$\dgr\ in Y and $+15$\dgr\ in X, without these additional fields the 
+corrections at the mirror edges are not well constrained.
 
 \comr{The other method by Richard has the first step of converting the conics into an on axis XY polynomial respresentation. Then the same procedure is followed.  It is less well behaved during optimization.  This second Richard method is what I replicated in CodeV.}
 
@@ -322,16 +322,14 @@ base conics.  We allow the focal plane curvature
 and focal plane to secondary distance L$_s$ to vary.  The primary-secondary distance L$_m$, primary offset $h$, and the primary and secondary 
 rotation angles, $\alpha$ and $\beta$, are varied as well. The optimization metric is the rms spot size across the field of view, with 
 additional weighted constraints requiring telecentricity and maintaining the x- and y-focal lengths.  We also added Lagrange constraints 
-to enforce beam clearences and put an upper limit on overall system size.  Once the optimization coveraged to an acceptable optical 
+to enforce beam clearences and place an upper limit on overall system size.  Once the optimization coveraged to an acceptable optical 
 system, we added the higher order Zernike terms, 19th-25th, and refined the mirror shapes using the same metric and constraints.
 The current PICO design is from this optimization procedure.
 
-%. . . \\ \comr{in email communication with Jim. This paragraph is a work in progress.}
-%\comr{Following a procedure outlined by Richard Hills . . . turning dragone to polynomial surfaces, optimizing polynomial.}
 
 Figure~\ref{fig:compare} 
 %we show the final optimized system compared with the `Initial Open Dragone' and give the Strehl~$=0.8$ contours.  One sees 
-shows the optimization reduces the overall telescope volume, allowing it to fit more easily within the shadow cone, and increases the DLFOV.  
+shows that the optimization reduces the overall telescope volume, allowing it to fit more easily within the shadow cone, and increases the DLFOV.  
 The DLFOV increases by 1.9$\times$ at 21~GHz and by 4.6$\times$ at 799~GHZ. 
 The most important gain in the DLFOV is at 129 and 155~GHz where it increased by 3.8$\times$ and 4.3$\times$, respectively.  
 This added area allows us to add `C' and `D' pixels which are critical to meeting PICO's cosmology and fundamental 
@@ -348,7 +346,7 @@ plane is what allows PICO to reach unprecedented levels of CMB sensitivity.
 Comparison between optimized and unoptimized Open Dragones.  The raytraces (left) are aligned at the chief ray impact point on the primary. 
 The optimized system (red rays, solid mirrors) is smaller vertically and has a slightly flatter primary than the unoptimized version 
 (blue rays, dash-dot mirrors). The overlaid Strehl~$=0.8$ contours (right) show the improvement at 
-all frequencies in the optimized (solid lines) over the unoptimized (dash-dot lines) system. 
+all frequencies in the optimized (solid lines) system over the unoptimized (dash-dot lines) system. 
 }
 \end{figure} 
 
@@ -377,9 +375,9 @@ Open Dragone, led us to the final PICO optical system detailed in Table~\ref{tab
 %\end{tabular}
 \end{center}
 \caption { \label{fig:sidelobes} 
-Comparison of sidelobes for example Crossed (left) and Open (right) Dragones.  Rays are traced from the center of the focal plane toward the sky.
+Comparison of sidelobes for typicalexample Crossed (left) and Open (right) Dragones.  Rays are traced from the center of the focal plane toward the sky.
 For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles.  However, the sidelobe and direct 
-sky view in the Crossed system require a long forebaffle or large F-number to mitigate, both of which were problematic in the PICO case.}
+sky view in the Crossed system require a long forebaffle or large F-number to mitigate, both of which are problematic in the PICO case.}
 \end{figure} 
 
 
@@ -392,17 +390,23 @@ sky view in the Crossed system require a long forebaffle or large F-number to mi
 
 Modern mm/sub-mm detectors are photon noise limited, so the primary way to increase sensitivity is to increase the number of detectors. 
 The PICO focal plane has 12,996 detectors, $175\times$ the number flown on \textit{Planck}. PICO achieves this by having a large DLFOV and using 
-multichroic pixels (MCP)\cite{Suzuki2014_samps}.  
+multichroic pixels (MCPs)\cite{Suzuki2014_samps}.  
 %Multichroic pixels are a recent mm-wave pixel technology made up of a broad-bandwidth 
 %polarization sensitive antenna lithographed onto a silicon substrate which couples to microstrip transmission lines to carry the signal 
 %to a channelizing filter. The filter divides the broadband signal into individual bands and 
 %directs it to separate transition edge sensor (TES) bolometers. 
-The MCP architecture assumed for PICO uses three bands per pixel. Each 
-pixel contains two single polarization transition edge sensor (TES) bolometers bolometers per band and therefore six bolometers total. 
-We assume the MCP are coupled to free space using lenslets\cite{Suzuki2014_samps}, however the pixel size, number, and spacing is 
-relatively agnostic to the coupling scheme, so current layout would not change significantly if horn or phased array coupling was used 
+The MCP architecture assumed for PICO has three bands per pixel with two single polarization transition 
+edge sensor (TES) bolometers bolometers per band and therefore six bolometers total. 
+We assume the MCPs are coupled to free space using lenslets\cite{Suzuki2014_samps}, however the pixel size, number, and spacing is 
+relatively agnostic to the coupling scheme, so the current layout would not change significantly if horn or phased array coupling was used 
 instead.
 
+We design PICO with 21 overlapping bands centered at 21--799~GHz and divided amongst nine pixel types, A-I; see Figure~\ref{fig:bands}. 
+These bands provide the broad fequency coverage needed to seperate the CMB, Galactic dust, and various foregrounds using their differing spectra.  
+%The PICO bands are logarithmically spaced with 25\% fractional bandwidth.  
+The 25\% fractional bandwidth is broader than the interband spacing, so the neighboring bands overlap and must be in separate pixels.  
+For example, bands 1, 3, and 5 are in pixel A while bands 2, 4, and 6 are in pixel B.  This 
+complicates the pixel design and focal plane layout, but allows broader bands to increase total sensitivity.  
 
 \begin{figure} [ht]
 \begin{center}
@@ -417,15 +421,8 @@ indicates the number of detectors per band.  Width gives the bandwidth, all are 
 }
 \end{figure} 
 
-We designed PICO with 21 overlapping bands centered at 21--799~GHz and divided amongst nine pixel types, A-I; see Figure~\ref{fig:bands}. 
-These bands provide the broad fequency coverage needed to seperate the CMB, Galactic dust, and various foregrounds using their differing spectra.  
-%The PICO bands are logarithmically spaced with 25\% fractional bandwidth.  
-The 25\% fractional bandwidth is broader than the interband spacing, so the neighboring bands overlap and must be in separate pixels.  
-For example, bands 1, 3, and 5 are in pixel A while bands 2, 4, and 6 are in pixel B.  This 
-complicates the pixel design and focal plane layout, but allows broader brands to increase total sensitivity.  
-
 The exceptions to this MCP architecture are the highest three bands.  These three bands are above the superconducting band gap of niobium, so 
-the niobium transmission lines and filters used in MCP are unsuitable.  Instead we will use polarization sensitive, feedhorn 
+the niobium transmission lines and filters used in MCPs are unsuitable.  Instead we will use polarization sensitive, feedhorn 
 coupled bolometers at these frequencies, similar to the \textit{Planck}\cite{planck2010_hfi} or Herschel SPIRE\cite{spire2010} detectors.  
 
 The PICO focal plane is designed to take maximum advantage of the large field of view.  The optical quality peaks at the 
@@ -511,11 +508,11 @@ but the choice is not a driver for the focal plane layout or noise discussed in 
 
 We develope an end to end white noise model of the PICO instrument to predict full mission sensitivity and 
 provide a metric by which to evaluate optical, mechanical, and mission design tradeoffs.  This model does not include 
-1/f noise or estimates of possible systematic effects.  We assume TES bolometers read out using time domain multiplexing (TDM). 
+1/f noise or estimates of possible systematic effects.  %We assume TES bolometers read out using time domain multiplexing (TDM). 
 %To simplify the model, we assume TES bolometers as the detector at all frequencies, even though other technologies may be better suited to the lowest bands.  
 %Any suitable technology will be photon noise dominated as the TESs are, so total noise levels in the lowest bands should be relatively unaffected by 
 %the use of a different detector technology.
-To construct the model we follow the standard steps\cite{suzuki2013_thesis,aubin2013_thesis} of estimating the 
+To construct the model we follow the standard process\cite{suzuki2013_thesis,aubin2013_thesis} of estimating the 
 optical load, calculating properties of the TES bolometers, calculating noise equivalent power (NEP) by source, 
 combining all NEP terms to get detector noise, and finally combining all detectors to get full mission sensitivity.  
 Each of these steps includes various assumptions and design decisions, 
@@ -572,7 +569,7 @@ are shown schematically in Figure~\ref{fig:load}.
 %Emissivity of the stop and low pass filter was 1 at all frequencies.
 %; temperatures and emissivities are given in Table~\ref{tab:noise_model}. 
 %
-The total load absorbed at the bolometer is the sum of the power emitted by each element reduced by the optical efficiency of the elements between 
+The total load absorbed at the bolometer is the sum of the power emitted by each element reduced by the transmission efficiency of the elements between 
 the emitting surface and the bolometer.  
 %For example, the CMB power is reduced by the optical efficiency of the entire instrument, 
 %$\eta_{opt} = \eta_{PRI}\eta_{stop}\eta_{SEC}\eta_{filter}\eta_{bolo}$, while the power emitted by the low pass filter is reduced only by $\eta_{bolo}$.
@@ -653,7 +650,7 @@ Photon noise depends on the absorbed power\cite{richards1994},
 NEP_{\gamma}^2 = \int\limits_{band} 2h\nu p_{\nu} \, d\nu + 2\xi \int\limits_{band} p_{\nu}^2 \,  d\nu,
 \end{equation} 
 where $p_{\nu}$ is the power spectral density for a single polarization absorbed at the bolometer and $\xi$ is the fraction of correlated Bose 
-photon noise. The extra factor of 2 in the Bose noise term is because we have single polarization bolometers.  
+photon noise. The extra factor of 2 in the Bose noise term is because we use single polarization bolometers.  
 %
 %
 From $P_{abs}$ we calculate the TES bolometer properties and phonon noise.\cite{mather1982}  
@@ -692,15 +689,15 @@ Phonon noise is the second most significant source, NEP$_{phonon}$/NEP$_{photon}
 to 19\% at 799~GHz. 
 
 For TDM readout phonon and readout noise are roughly equal, with TES Johnson noise being insignificant.  We also modeled 
-frequency domain multiplexing (FDM) readout.  For FDM the TES Johnson noise is higher, 2/3 of the readout NEP, but the readout 
+FDM readout.  For FDM the TES Johnson noise is higher, 2/3 of the readout NEP, but the readout 
 noise is lower.  Comparing the combinined Johnson and readout NEPs for TDM and FDM we find essentially indentical performance 
 with total noise differing by less than 3\% across all bands.  For either system we require a focal plane temperature, $T_o$, of 
 100~mK and a bolometer safety factor of 2 to remain photon noise dominated at the lowest bands.
 
 The primary driver of noise levels is the optical load.  The combination of the CMB and aperture stop make up the majority of the load in all bands.
 The load from the mirrors is greatest at 799~GHz where it is 90\% of that from the CMB and stop. The CMB provides more than half the load 
-in the middle and upper bands of the multi-chroic pixels, but the stop dominates the load in the low band of each pixel.  Load from the 
-stop ranges from 1.2$\times$ the CMB load at 21~GHz to a maximum of 4.7$\times$ the CMB load at 223~GHz. 
+in the middle and upper bands of the multi-chroic pixels, but the stop dominates the load in the lowest band of each pixel.  Load from the 
+stop in the lowest band of each pixel ranges from 1.2$\times$ the CMB load at 21~GHz to a maximum of 4.7$\times$ the CMB load at 223~GHz. 
 %Two options to mitigate this extra load are a colder stop or more aggresive edge taper.
 
 
@@ -731,7 +728,7 @@ stop ranges from 1.2$\times$ the CMB load at 21~GHz to a maximum of 4.7$\times$ 
 
 \subsection{Combined  array noise}
 
-Using single detector NEPs as per Section~\ref{sec:det_noise} and the detector counts from Section~\ref{sec:focalplane} we 
+Using single detector NEPs from Section~\ref{sec:det_noise} and the detector counts from Section~\ref{sec:focalplane} we 
 calculate the combined NEP of the detector array for each band.  Generally, combining detectors simply reduces noise by $\sqrt{N}$.  The one 
 exception is Bose photon noise. For the lowest band of each MCP the pixels oversample the PSF, pixel spacing is $0.4$F$\lambda$, resulting in correlated 
 Bose noise bewteen pixels.  Accounting for this effect gives a 26\% increase in the combined array $NEP$ of the lowest band, 21~GHz, and only 
@@ -740,10 +737,10 @@ a 0.003\% increase in the highest band, 799~GHz.
 From the array $NEP$ we convert to $NET$ per band,
 \begin{equation}
 \label{eq:NET}
-NET = \frac{NEP}{\sqrt{2}\eta_{opt} \int\limits_{band}\frac{dp_{\nu}}{dT}\Bigr|_{T_{CMB}} d\nu }.
+NET = \frac{NEP}{\sqrt{2} \, \eta_{opt} \int\limits_{band}\frac{dp_{\nu}}{dT}\Bigr|_{T_{CMB}} d\nu }.
 \end{equation} 
-The $\eta_{opt}$ term contributes to the `jumps' in $NET$ seen in Figure~\ref{fig:net} since $\eta_{opt}$ varies band to band.  We use CMB temperature 
-units for all bands, even though this isn't particularly suitable for the highest bands, because the CMB is the most stringent requirement on sensitivity.
+The $\eta_{opt}$ term contributes to the `jumps' in $NET$ seen in Figure~\ref{fig:net} since $\eta_{opt}$ varies band to band.  
+%We use CMB temperature units for all bands, even though this isn't particularly suitable for the highest bands, because the CMB is the most stringent requirement on sensitivity.
 
 All the above calculations have been for sensitivity to temperature and are given in Table~\ref{tab:noise}.  Assuming evenly weighted observations 
 of the full sky and 5 years observing at 95\% efficiency we calculate full mission map sensitivities in polarization; final column in Table~\ref{tab:noise}.
@@ -789,9 +786,9 @@ Total &     &      &       &         & 12996 & 0.44   & 0.62  \\
 \section{CONCLUSIONS/SUMMARY}
 
 The PICO optical system is a simple two mirror Open Dragone which we numerically optimized to maximize the DLFOV.  The addition of a 
-cold aperture stop and cold mirrors minimize optical load and reduce noise.  The focal plane take advantage of the large DLFOV and MCP 
+cold aperture stop and cold mirrors minimize optical load and reduce noise.  The focal plane takes advantage of the large DLFOV and MCP 
 technology to implement 12996 polarization sensitive detectors in 21 bands from 21-799~GHz.  When combining all bands, our instrument 
-noise model predicts full mission polarization maps with integrated noise of 0.62$\mu$K$_{CMB}$-arcmin.
+noise model predicts full mission polarization map depth of 0.62~$\mu$K$_{CMB}$-arcmin.
 
 
 % \begin{itemize}
