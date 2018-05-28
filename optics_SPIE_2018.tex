@@ -397,9 +397,13 @@ Open Dragone, led us to the final PICO optical system detailed in Table~\ref{tab
 %\end{tabular}
 \end{center}
 \caption { \label{fig:sidelobes} 
-Comparison of sidelobes for typicalexample Crossed (left) and Open (right) Dragones.  Rays are traced from the center of the focal plane toward the sky.
+Comparison of sidelobes for typicalexample Crossed (left) and Open (right) Dragones \comb{informal language. How many Corado Dragones are there? do you mean Dragone systems?}  Rays are traced from the center 
+of the focal plane toward the sky.
 For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles.  However, the sidelobe and direct 
-sky view in the Crossed system require a long forebaffle or large F-number to mitigate, both of which are problematic in the PICO case.}
+sky view in the Crossed system require a long forebaffle or large F-number to mitigate, both of which are problematic in the PICO case.
+\comb{there is an additional front 'stop' shown for the cross system. No such stop shown for the open. Need to clarify as it affects 
+spillover past the primary.}
+}
 \end{figure} 
 
 
@@ -411,24 +415,30 @@ sky view in the Crossed system require a long forebaffle or large F-number to mi
 \label{sec:focalplane}
 
 Modern mm/sub-mm detectors are photon noise limited, so the primary way to increase sensitivity is to increase the number of detectors. 
-The PICO focal plane has 12,996 detectors, $175\times$ the number flown on \textit{Planck}. PICO achieves this by having a large DLFOV and using 
-multichroic pixels (MCPs)\cite{Suzuki2014_samps}.  
-%Multichroic pixels are a recent mm-wave pixel technology made up of a broad-bandwidth 
-%polarization sensitive antenna lithographed onto a silicon substrate which couples to microstrip transmission lines to carry the signal 
-%to a channelizing filter. The filter divides the broadband signal into individual bands and 
-%directs it to separate transition edge sensor (TES) bolometers. 
+\comb{the construction "ABC, so DEF" is verbal, informal language. Please use 'therefore' (for example), or at least don't use it so much}
+The PICO focal plane has 12,996 detectors, $175\times$ the number flown on \textit{Planck}. PICO achieves this by 
+having a large DLFOV and using multichroic pixels (MCPs)\cite{Suzuki2014_samps}. \comb{ please don't use 
+mathematical symbols instead of English words. Add reference to the NIST MCPs.} 
 The MCP architecture assumed for PICO has three bands per pixel with two single polarization transition 
-edge sensor (TES) bolometers bolometers per band and therefore six bolometers total. 
-We assume the MCPs are coupled to free space using lenslets\cite{Suzuki2014_samps}, however the pixel size, number, and spacing is 
-relatively agnostic to the coupling scheme, so the current layout would not change significantly if horn or phased array coupling was used 
-instead.
+edge sensor (TES) bolometers bolometers per band and therefore six bolometers per pixel. 
+We assume the MCPs are coupled to free space using lenslets and sinuous antennae \cite{Suzuki2014_samps}, 
+however the pixel size, number, and spacing is 
+relatively agnostic to the coupling scheme, so \comb{another so} the current layout would not change significantly 
+if horn or phased array coupling was used instead.\comb{it would not change significantly or it would not change?}
 
-We design PICO with 21 overlapping bands centered at 21--799~GHz and divided amongst nine pixel types, A-I; see Figure~\ref{fig:bands}. 
-These bands provide the broad fequency coverage needed to seperate the CMB, Galactic dust, and various foregrounds using their differing spectra.  
+We design PICO with 21 overlapping bands \comb{with centers spanning the range 21--799~GHz} and divided amongst 
+nine pixel types, A-I; see Figure~\ref{fig:bands}. 
+These bands provide the broad fequency coverage needed to seperate the CMB, Galactic dust, and various foregrounds using their differing spectra.  \comr{no. it is needed to achieve all of our science goals. separating foreground is only one of the goals
+of the broad frequency coverage.}
 %The PICO bands are logarithmically spaced with 25\% fractional bandwidth.  
-The 25\% fractional bandwidth is broader than the interband spacing, so the neighboring bands overlap and must be in separate pixels.  
+The 25\% fractional bandwidth is broader than the interband spacing, so \comb{another so} the neighboring bands 
+overlap and must be in separate pixels.  
 For example, bands 1, 3, and 5 are in pixel A while bands 2, 4, and 6 are in pixel B.  This 
 complicates the pixel design and focal plane layout, but allows broader bands to increase total sensitivity.  
+\comb{Be more succinct. A paper is not a tutorial. I don't agree that it leads to more complications}
+The exceptions to the MCP architecture are the highest three bands, which  are above the superconducting 
+band gap of niobium, which is used for stripline of the antennae and filters of the MCPs. \sout{the in-line filtering  so} \comb{another so}
+\sout{the niobium transmission lines and filters used in MCPs are unsuitable}.  Instead we will use feedhorn-coupled polarization sensitive bolometers similar to those used with \textit{Planck}\cite{planck2010_hfi} \sout{or} and Herschel SPIRE\cite{spire2010} \sout{detectors}.  
 
 \begin{figure} [ht]
 \begin{center}
@@ -439,13 +449,10 @@ complicates the pixel design and focal plane layout, but allows broader bands to
 \caption { \label{fig:bands} 
 Frequency coverage of the PICO bands. Each color (excluding magenta) denotes a different MCP, labeled A-F. The bar height 
 indicates the number of detectors per band.  Width gives the bandwidth, all are top-hats with 
-25\% fractional bandwidth; the $x$-axis is logarithmic.  The three highest frequencies (magenta) are single color pixels G, H, I.
-}
+25\% fractional bandwidth; the $x$-axis is logarithmic \comr{now you have three separate sentences within one period. Two 
+are separated by a comma, and one with semi-colon}.  The three highest frequencies (magenta) are single color pixels G, H, I.}
 \end{figure} 
 
-The exceptions to this MCP architecture are the highest three bands.  These three bands are above the superconducting band gap of niobium, so 
-the niobium transmission lines and filters used in MCPs are unsuitable.  Instead we will use polarization sensitive, feedhorn 
-coupled bolometers at these frequencies, similar to the \textit{Planck}\cite{planck2010_hfi} or Herschel SPIRE\cite{spire2010} detectors.  
 
 The PICO focal plane is designed to take maximum advantage of the large field of view.  The optical quality peaks at the 
 focal plane center and falls off with radius as shown in Figure~\ref{fig:strehl}.  This pattern dictates the layout shown 
