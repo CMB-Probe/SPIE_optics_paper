@@ -124,53 +124,31 @@ and give the expected noise level.
 \label{sec:intro}  
 
 \comr{Probe study language copied directly from Brian's paper (May 6th).  What level of repeat is useful?  What is appropriate?}
+\comb{Answer: you shouldn't copy the same text. Find a different way to say the same thing, or simply point people to the other paper.} 
 
 In astronomy and astrophysics, NASA currently flies small and medium Explorer missions ($<$\$250M), as well as multi-billion-dollar flagship observatories like JWST and WFIRST. There are a number of science opportunities that are beyond the scope of the Explorer program, but don't require flagship-level funding. To explore these opportunities, NASA has funded studies of 10 `Probe' class (\$400M-\$1B) mission concepts. The Probe of Inflation and Cosmic Origins (PICO) is one of these mission studies. Reports of these mission studies are due to NASA at the end of the 2018 and NASA's plan is to forward the reports for consideration by the next Astronomy and Astrophysics Decadal panel. This paper comes part way through the PICO study, and describes a snapshot of the  instrument design at this time in the study.
 
-Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of information about 
-the formation, evolution, and current structure of the Universe.  Large scale cosmological and fundamental physics information, such as 
+Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of 
+information about the formation, evolution, and structure of the Universe.  
+\comb{new:} The polarization and temperature anisotropy of the of the cosmic microwave 
+background (CMB) encode fundamental physics information relating to  the epoch of inflation, to the mass of the neutrinos,  
+and to the number of relic light particles in the early Universe. They also contain information about the formation of 
+the first stars, galaxies, and clusters.  Information about the role of magnetic fields in star formation and galactic evolution is obtainable 
+by observing the polarized emission of Galactic dust, which 
+traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with 
+unprecedented polarization sensitivity 
+in 21 bands centered at 21--799~GHz.  Details of these science targets and expected constraints from PICO 
+are in a companion paper, Sutin~et~al.\cite{brian_spie} 
+In this paper we discuss the mission's optical system, focal plane, and sensitivity.
+
+
+\comb{old: Large scale cosmological and fundamental 
+physics information, such as 
 evidence of inflation, the effect of the first stars and galaxies, constraints on neutrino masses, and limits on light particles beyond 
-the standard model, is contained in the temperature and polarization anisotropies of the cosmic microwave background (CMB).  Information 
-about the role of magnetic fields in star formation and galactic evolution is obtainable by observing the polarized emission of Galactic dust, which 
-traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with unprecedented polarization sensitivity 
-in 21 bands centered at 21--799~GHz.  Details of these science targets and expected constraints from PICO are in a companion paper, Sutin~et~al.\cite{brian_spie} 
-In this paper we discuss the optical system, focal plane, and expected sensitivity of PICO.
-
-% Astrophysical electromagnetic radiation in the millimeter and sub-millimeter wavelength band contains a wealth of information about the origin, structure, and evolution of the Universe. With 21 frequency bands centered between 21 and 799 GHz and polarization sensitivity across this spectrum, PICO has unprecedented sensitivity to the properties of the cosmic microwave background (CMB) radiation and to Galactic emissions. Measurements of these sources will reveal new information about the structure and dynamics of the Milky Way, detect the signature (or constrain models of) inflation, measure the properties of the fundamentals particles of nature, and provide key information on the evolution of Galactic and extragalactic structures across cosmic time.
-
-% Quantum fluctuations of the space-time metric at times as short as 10-35 seconds after the big bang are predicted to generate gravity waves that imprint a signature on the polarization of the CMB. A detection of this signature sets the energy scale at which an inflationary period occurred near the big bang, and thus provides constraints on the physics of inflation. These constraints are not attainable in other ways. PICO will detect the energy scale of inflation with high confidence if it is above 6.6×1015 GeV. If the signal is not detected, the upper limit will exclude broad classes of potentials as the driving force for inflation.
-
-% The first stars in the Universe formed within about 1 billion years after the big bang. As they formed they ionized the surrounding medium, which was dominated by neutral hydrogen. Many details of this process of ‘reionization’ are not known. PICO will determine the history of star formation in the Universe through its measurement of the optical depth to reionization τ. The measurement requires scanning large portions of the sky, a requirement particularly well suited for space missions. PICOs measurement uncertainty σ(τ) = 0.002 will be limited by cosmic statistics not instrument noise.  
-
-% Structure formation in the Universe depends on the masses of neutrinos. Lensing of CMB photons as they traverse the Universe reveal the properties of cosmic structures, and is thus a sensitive probe of the masses of neutrinos, specifically the sum of neutrino masses Σmν. Available data indicates that 58 meV ≤ Σmν ≤ 140 meV [Lattanzi][Palanque]. But achieving lower limit on Σmν through its effect on lensing also requires higher precision measurements of the matter density in the Universe and of τ. PICO is expected to make a ~4σ measurement if Σmν =58 meV, rising to higher confidence if Σmν is larger. This forecast relies on PICO’s own high precision measurement of τ and on measurement of the matter density forthcoming from the DESI experiment. PICO’s measurement of Σmν could distinguish between the normal and inverted neutrino mass hierarchies.
-
-% In addition to the three known neutrino families, the Universe may harbor other similar light relics. The number of such relic species is quantified through the parameter Neff, for which the current measured value is 3.04 ± 0.18 ([Lattanzi]. The theoretical value in the presence of only three neutrino families is 3.046, and the smallest increment, if other relic species existed in early Universe, is 0.027. A sensitive way to probe for additional relic species is through their effect on the spatial anisotropy of the polarization of the CMB. PICO will improve current uncertainty by a factor of 6 reaching σ(Neff) = 0.03.
-
-% Both magnetic fields and turbulence regulate the rate of star formation in our galaxy, but their relative roles are not well understood. Detailed mapping of the magnetic field structure on a broad range of scales will transform our understanding of star formation and of the role of magnetic fields in Galactic evolution. Ellipsoidal Galactic dust grains are aligned by the magnetic fields and emit polarized radiation in sub-mm wavelengths. PICO will map the structure of magnetic fields by detecting this polarized emission. It will map dust polarized emission with resolution of 5’ over the entire sky with fractional polarization of less than 0.3\% over 70\% of the sky with resolution of 1’.  It will resolve the magnetic field structure on molecular cloud core scale of 0.1 pc in 8 nearby clouds and on filament scale of 0.5 pc in 10 nearby clouds. It will resolve the magnetic field structure on 1 pc scale for more than 2000 clouds. Currently there is no equivalent information available for scales less than 1 pc, and information at the 1 pc scale is available for only 14 clouds.
-
-% PICO will produce a complete census of cold dust in the nearby universe as well as rich catalog of newly discovered extra-galactic sources distributed over the entire sky. These sources include about 5000 highly magnified dusty galaxies with redshifts up to z>5, and tens of thousands of proto-clusters at z of up to 4-4.5, detected via the sub-mm emission of their member galaxies. PICO will produce a catalog of galaxy clusters that is on the order of 105 objects via the thermal Sunyaev-Zel'dovich out to z=2. PICO will also characterize the polarization properties of several thousands of radio and FIR emitting galaxies. This rich catalog, which will increase the numbers of known sources by more than an order of magnitude, will be used to probe star formation history, determine galaxy and cluster formation and evolution, learn about the properties of dark matter, and study radio jets in radio loud sources.
-
-% \begin{itemize}
-% \item Reminder of main science drivers.  Very similar to Brian's paper. 
-% \subitem r and inflation 
-% \subitem neutrino masses and tau
-% \subitem Extragalactic science. galaxy formation and evolution, SZ effect 
-% \subitem Galactic science. magnetic fields, star formation, and dust
-% \item PICO definition as concept study
-% \subitem explanation of what this means and purpose of study
-% \item \comr{Do we include quantitative goals?}
-% \end{itemize}
+the standard model, is contained in the temperature and polarization anisotropies of the cosmic microwave 
+background (CMB). } 
 
 % %(check LB's intro?, although I probably won't like that.)
-
-% %(Do I need a 'real' intro? i.e. motivating science.)
-
-
-% %The Probe of Inflation and Cosmic Orgins (PICO) is the mission concept study of a future mm/sub-mm sattelite. The primary science goal
-% %of PICO is to definitively measure cosmological B-modes and constrain inflationary theories.  This requires high sensitivity polarization
-% %measurements of the Cosmic Microwave Background with low, well controlled systematics.  (understood sytematics?)
-
-
 
 \section{SPACECRAFT AND MISSION}
 \label{sec:spacecraft}
@@ -181,18 +159,15 @@ The PICO will conduct scientific observations for five years from the Earth-Sun 
 the optical design and sensitivity in two primary ways; volume constraints limit the physical size of the telescope and optical component 
 temperatures impact noise levels.  
 
-The maximum size of the spacecraft is limited by the launch vehicle, the Falcon 9, which carries payloads up to 4.6~m in diameter. 
+The maximum size of the spacecraft is limited by the launch vehicle, SpaceX's Falcon 9, which carries payloads up to 4.6~m in diameter. 
 This diameter limit sets the V-groove size which, along with the scan strategy, defines the `shadow cone' in Figure~\ref{fig:cad}.  
 The shadow cone is the volume protected from solar illumination, and all optical components must remain within it. The shadow cone and 
 inner V-grooves define an available volume for the telescope.  
 
-The temperatures of all optical elements are given in Figure~\ref{fig:cad}.  The optics box, secondary, and focal plane are actively cooled, 
-details of the thermal system are given in Sutin~et~al.\cite{brian_spie} % Ref.~\citenum{brian_spie}.  
-
-%The primary cools to \comr{15 K}.
-%, as was seen for \textit{Planck}\cite{planck2011_hfi_temp}.  
-%The secondary, optics box, and aperture stop are actively cooled to \comr{6~K}.  The focal plane is cooled 
-%by a continuous ADR to 100~mK.
+The temperatures of all optical elements are given in Figure~\ref{fig:cad} \comb{see comment in caption in regard to the temperature 
+of the primary. Check with Paine}.  The optics box, secondary, and focal plane are actively cooled, 
+details of the thermal system are given in Sutin~et~al.\cite{brian_spie}. \comb{looks like the primary is also actively 
+cooled. check with Paine.}
 
 \begin{figure} [ht]
 \begin{center}
@@ -201,7 +176,9 @@ details of the thermal system are given in Sutin~et~al.\cite{brian_spie} % Ref.~
 %\end{tabular}
 \end{center}
 \caption { \label{fig:cad} 
-Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Sutin~et~al.\cite{brian_spie}%Ref.~\citenum{brian_spie}. 
+Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Sutin~et~al.\cite{brian_spie}
+\comb{is the primary really at 15 K? hard to believe. Need to verify. To explain the idea of a 'shadow cone', need to say something 
+about where the Sun is and how it illuminate the spacecraft such as to give this 'shadow cone'. } 
 }
 \end{figure} 
 
@@ -221,18 +198,44 @@ Mechanical design of the PICO satellite. Components relevant to this paper are l
 \section{OPTICAL SYSTEM}
 \label{sec:optics}
 
-The PICO telescope is a 1.4~m modified Open Dragone.  This choice was driven by a combination of science requirements and the physical limits 
-discussed in Section~\ref{sec:spacecraft}.  The science requirements are; a large diffraction limited field of view (DLFOV) sufficient to 
-support $\mathcal{O}(10^4)$ detectors, arcminute resolution at 800~GHz, low instrumental polarization, and low sidelobe response. Additionally, 
-the transition edge sensor bolometers baselined for PICO require a telecentric focal plane which is sufficiently flat that it can be tiled by 
-10~cm detector wafers without reduction in optical quality. These requirements suggest an off-axis Dragone system\cite{dragone} similar 
-to what has been used for \textit{Planck}\cite{planck2000_optics}, various ground based systems such as ACT\cite{ACT2011_optics} and SPT\cite{SPT2008_optics}, 
-and in the CORE\cite{core2018_inst} and LiteBIRD\cite{LB2016_optics} designs.
+The PICO telescope is a 1.4~m \comb{aperture} modified open-Dragone.  This choice was driven by a combination of science
+requirements and the physical limits discussed in Section~\ref{sec:spacecraft}.  The science requirements are: a large diffraction 
+limited field of view (DLFOV) sufficient to support $\mathcal{O}(10^4)$ detectors, arcminute resolution at 800~GHz, low 
+instrumental polarization, and low sidelobe response. Additionally, 
+the transition edge sensor bolometers baselined for PICO require a telecentric focal plane which is sufficiently flat that it 
+can be tiled by 10~cm detector wafers without reduction in optical quality. \comb{More than 30 years ago Dragone analyzed the 
+performance of several off-axis systems and found solutions that give low cross-polarization at the center of the field 
+of view, and that cancel coma, or coma and astigmatism to first order}\cite{dragone}\comr{give more references}.  
+\comb{A number of recent CMB instruments used off-axis systems, and several 
+began the design optimization with systems based on designs by
+Dragone\cite{planck2000_optics,ACT2011_optics,SPT2008_optics,core2018_inst,LB2016_optics}. For PICO we began 
+the optimization with a Dragone system that to our knowledge hasn't yet been implemented before. 
+We call it `0pen-Dragone' because of its overall geometry, see Figure~\ref{fig:ray}, and as contrast to the widely 
+used `cross-Dragone'. }
+
+\comr{An advantage of the open-Dragone system relative to the cross-Dragone is that it is easier to baffle the focal plane
+and thus to eliminate side-lobes. An advantage relative to a Gregorian design is that it has larger DLFOV. Our studies 
+indicate however that for the same aperture size and focal length, a cross system has a DLFOV that is $\sim$1.3 times 
+larger than the open. CHECK. 1.1? 1.2? 1.3?}
+
+We design the initial open Dragone following Granet's method\cite{granet2001}. 
+We find a solution \comr{with the largest aperture that still satisfies the volume constraints and has a large 
+DLFOV}\comb{what about focal length?}.  We force a circular aperture stop 
+between the primary and secondary mirrors and numerically optimize its angle and position to obtain the best 
+optical performance.  The stop diameter provides an effective 1.4~m aperture on the primary for the center feed.  
+Adding a stop in this way increases the size of the primary mirror, the primary is unevenly illuminated at various 
+field angles. Actively cooling the aperture stop, however, reduces detector noise, and the stop shields the 
+focal plane from stray radiation. At this stage the system still meets 
+the Dragone condition and is defined by the `Initial Open Dragone' parameters in Table~\ref{tab:optics}.
+
 
 The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics} and the ray trace in Figure~\ref{fig:ray}. The 
 system is diffraction limited, Strehl greater than 0.8, at the center of the field of view for 799~GHz and has a DLFOV of 82.4~deg$^2$ at 
-155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. The %slightly concave, 4.55~m radius of curvature, 
-focal plane is telecentric to within 0.12\dgr\ across the entire surface.
+155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. 
+The slightly \comb{concave, focal surface, which has a radius of curvature of 4.55~m,} is telecentric to 
+within 0.12\dgr\ across the entire area.
+
+
 
 \begin{figure} [ht]
 \begin{center}
@@ -261,7 +264,7 @@ Conic constant, $k$       & 0                 & -0.926            & h (cm)      
 Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (deg)            & 74.2     & $\theta_p$ (degrees)           & 140   \\
 4th Zernike Coefficient   & 2018.4            & -61.1             & $\beta$  (deg)            &  62.3    & L$_m$ (cm)                     & 240   \\
 9th Zernike Coefficient   & -37.0             & 16.7              & L$_m$ (cm)                &   229.3  &                                &         \\
-10th Zernike Coefficient  & -2919.8           & -15.1             & L$_s$ (cm)                &   140.5  & \multicolumn{2}{c|}{Derivative parameters} \\ 
+10th Zernike Coefficient  & -2919.8           & -15.1             & L$_s$ (cm)                &   140.5  & \multicolumn{2}{c|}{Derived parameters} \\ 
 11th Zernike Coefficient  & -1292.7           & 22.3              &                           &          & Focal ratio, F                 & 1.42  \\   
 12th Zernike Coefficient  & 120.6             & -3.8              &   \multicolumn{2}{c||}{Focal Plane}  & h (cm)                         & 624.2 \\   
 13th Zernike Coefficient  & -74.5             & 4.9               & Diameter (cm)             & 69 x 45  & $\alpha$ (deg)                 & 38.6  \\   
