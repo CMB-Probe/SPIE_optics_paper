@@ -10,6 +10,7 @@
 % user added packages
 \usepackage{xcolor}
 \usepackage{adjustbox}
+\usepackage{ulem}
 %\usepackage{natbib}
 
 % user added commands
@@ -309,7 +310,7 @@ Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (de
 \end{table}
 
 %To increase the optical performance we use CodeV to numerically optimize the system.  
-In the second optimization method another coauthor (JM) used CodeV and allowed more of the geometric 
+In the second optimization method, another coauthor (JM) used CodeV and allowed more of the geometric 
 parameters of the system to vary.  To adjust the 
 mirror shapes, we add \comr{tenses} a low order \comr{what does 'low order' mean?}, 4th and 9th-13th, 
 Zernike polynomial correction to each conic surface \comr{what do you mean 'each'? more than two?}. 
@@ -338,13 +339,13 @@ cosmology and fundamental physics science goals, because they contain the bands 
 pack 100's of `C' and `D' pixels into the focal plane is what allows PICO to reach unprecedented levels of CMB sensitivity. \comr{do 
 you mean 'if we had only optimization method1 we wouldn't reach our goals?}
 
-The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics} and the ray trace in Figure~\ref{fig:ray}. The 
-system is diffraction limited, Strehl greater than 0.8, at the center of the field of view for 799~GHz and has a DLFOV of 82.4~deg$^2$ at 
-155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. 
+The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics}. The 
+system is diffraction limited, Strehl greater than 0.8, at the center of the field of view for 799~GHz and has a 
+DLFOV of 82.4~deg$^2$ at 155~GHz \comr{This sentence is not passing English grammar scrutiny. 
+Please revise. Give the total throughput}.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. 
+\comb{make sentence active voice.} 
 The slightly \comb{concave, focal surface, which has a radius of curvature of 4.55~m,} is telecentric to 
 within 0.12\dgr\ across the entire area.
-
-
 
 \begin{figure} [ht]
 \begin{center}
@@ -353,8 +354,10 @@ within 0.12\dgr\ across the entire area.
 %\end{tabular}
 \end{center}
 \caption { \label{fig:compare} 
-Comparison between optimized and unoptimized Open Dragones.  The raytraces (left) are aligned at the chief ray impact point on the primary. 
-The optimized system (red rays, solid mirrors) is smaller vertically and has a slightly flatter primary than the unoptimized version 
+Comparison between optimized \comr{optimized in which way?} and unoptimized Open Dragone systems.  
+The ray traces (left) are aligned at the chief ray impact point on the primary. 
+The optimized system (red rays, solid mirrors) is smaller in the vertical direction \sout{and has a 
+slightly flatter primary than the unoptimized version} \comb{can not see; remove} 
 (blue rays, dash-dot mirrors). The overlaid Strehl~$=0.8$ contours (right) show the improvement at 
 all frequencies in the optimized (solid lines) system over the unoptimized (dash-dot lines) system. 
 }
