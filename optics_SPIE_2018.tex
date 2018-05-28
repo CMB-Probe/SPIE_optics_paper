@@ -473,20 +473,25 @@ PICO focal plane layout with Strehl~$=0.8$ contours for each pixel type. The pix
 in Figure~\ref{fig:bands} }
 \end{figure} 
 
-Optimizing the pixel size is a balance between the total number of pixels, $N_{px}$, and the efficiency with which they couple to the telescope. 
-Smaller pixels pack more densely on the focal plane, $N_{px}\propto 1/D_{px}^2$, but over illuminate the stop which reduces optical efficiency 
-and adds optical load.  
+\sout{Optimizing the pixel size is a balance between the total number of pixels, $N_{px}$, and the efficiency with which 
+they couple to the telescope. Smaller pixels pack more densely on the focal plane, $N_{px}\propto 1/D_{px}^2$, but over 
+illuminate the stop which reduces optical efficiency and adds optical load.}  \comb{instead of making general statements
+that have a tutorial flavor, just say what you do}
+
+\comb{We optimize the pixels diameters for each MCP by calculating the mapping speed. The calculation includes the 
+increased illumination of the aperture stop as the pixel size decreases, as described in more detail in Section ... }
 %Since PICO has a cold stop additional load is minimized, reducing the penalty for smaller pixels.  
 We choose a pixel diameter of $2.1$F$\lambda_{mid}$, where $\lambda_{mid}$ refers to the center 
 band of each pixel. This gives an edge taper, $T_e$, on the stop of 10~dB for the center band. 
-Due to the multichroic nature of the pixels $T_e$ varies with band, details in Section~\ref{sec:noise}. 
+\sout{Due to the multichroic nature of the pixels $T_e$ varies with band, details in Section~\ref{sec:noise}}. 
 We hex-pack pixels onto 94~mm hexagonal wafers to minimize wasted space for the mid-frequency pixels. 
 The three central wafers have the same 94~mm hexagon footprint but are split into 
 3 rhombi, shown in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different 
-detector technology and will need to be fabricated separately.  
+detector technology and will need to be fabricated separately.  \comb{I don't understand the last few sentences. Need to discuss}
 
 % order 0.5 sec is longer than the sample time even at 1 deg beams. sweeping 1 deg takes 0.2 sec.
-The polarization sensitive bolometers in each MCP are oriented perpindicular to each other. Differencing the bolometers allows each pixel to measure Stokes Q or, if the 
+The polarization sensitive bolometers in each MCP are oriented perpendicular to each other. 
+Differencing the bolometers allows each pixel to measure Stokes Q or, if the 
 pixel is rotated by 45\dgr, Stokes U. We rotate neighboring pixels which scan over the same sky location by 45\dgr, as shown in Figure~\ref{fig:QU}.
 This layout reduces systematic errors by maximizing the number of Q,U pixel pairs which have almost identical optical paths and measure sky locations 
 as close to simultaneously as possible.  % 'should reduce' haven't actually done these simulations . . . 
@@ -507,8 +512,8 @@ Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) f
 Reading out 12,996 TES bolometers requires significant \comr{what does this word mean? reading out 12,996
 detectors doesn't on its own require any multiplexing} multiplexing.  
 Time domain (TDM) and frequency domain (FDM) 
-multiplexing were explored for PICO, tradeoff details are in Sutin et~al.\cite{brian_spie} \comr{did you 
-check that tradeoff details are in fact provided by Sutin et al? }
+multiplexing were explored for PICO, tradeoff details are in Sutin et~al.\cite{brian_spie} \comr{two sentences 
+and a comma; did you check that tradeoff details are in fact provided by Sutin et al? }
 The current PICO baseline is TDM, 
 but the choice is not a driver for the focal plane layout or noise discussed in this paper.
 
