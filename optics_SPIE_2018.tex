@@ -205,7 +205,7 @@ instrumental polarization, and low sidelobe response. Additionally,
 the transition edge sensor bolometers baselined for PICO require a telecentric focal plane which is sufficiently flat that it 
 can be tiled by 10~cm detector wafers without reduction in optical quality. \comb{More than 30 years ago Dragone analyzed the 
 performance of several off-axis systems and found solutions that give low cross-polarization at the center of the field 
-of view, and that cancel coma, or coma and astigmatism to first order}\cite{dragone}\comr{give more references}.  
+of view, and that cancel astigmatis, or astigmatism \it{and} coma to first order}\cite{dragone}\comr{is that correct? give more references}.  
 \comb{A number of recent CMB instruments used off-axis systems, and several 
 began the design optimization with systems based on designs by
 Dragone\cite{planck2000_optics,ACT2011_optics,SPT2008_optics,core2018_inst,LB2016_optics}. For PICO we began 
@@ -223,17 +223,43 @@ We find a solution \comr{with the largest aperture that still satisfies the volu
 DLFOV}\comb{what about focal length?}.  We force a circular aperture stop 
 between the primary and secondary mirrors and numerically optimize its angle and position to obtain the best 
 optical performance.  The stop diameter provides an effective 1.4~m aperture on the primary for the center feed.  
-Adding a stop in this way increases the size of the primary mirror, the primary is unevenly illuminated at various 
-field angles. Actively cooling the aperture stop, however, reduces detector noise, and the stop shields the 
+Adding a stop in this way increases the size of the primary mirror, \comb{as} the primary is unevenly illuminated at various 
+field angles \comr{karl, if you want to start a new sentence without using a period, please use a semi colon, not a comma. Generally, 
+however, it is best to stick to simple grammatical structures}. 
+Actively cooling the aperture stop, however, reduces detector noise, and the stop shields the 
 focal plane from stray radiation. At this stage the system still meets 
 the Dragone condition and is defined by the `Initial Open Dragone' parameters in Table~\ref{tab:optics}.
 
+\comb{In his publications Dragone provided a prescription to eliminate coma
+in addition to the cancellation of astimgatism, which is provided by the baseline designs.} The reflector corrections 
+call for adding distortions of the primary and secondary reflectors, 
+which scale as $r^4$ where $r=0$ is at the chief ray impact point on each mirror \comr{is that true?}. 
+We thus attempted to increase the DLFOV using two methods. 
 
-The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics} and the ray trace in Figure~\ref{fig:ray}. The 
-system is diffraction limited, Strehl greater than 0.8, at the center of the field of view for 799~GHz and has a DLFOV of 82.4~deg$^2$ at 
-155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. 
-The slightly \comb{concave, focal surface, which has a radius of curvature of 4.55~m,} is telecentric to 
-within 0.12\dgr\ across the entire area.
+In the first method, one of the coauthors (RH) used Zemax and added Zernike 
+polynomials which were offset by $h=624.2$~cm for the primary and $76.1$~cm for the secondary.  
+This places \comr{mix of tenses. present tense or past tense?} the origin of polynomials at the 
+chief ray impact point for each mirror. \comr{what do you mean 'offset by $h$'? has $h$ been defined?}
+Inspired by the Dragone corrections, all Zernike terms up to fourth order and the first fifth order term were allowed to vary. 
+The optimization metric was minimization of the rms spot \comb{size; what does 'size' mean?} diameter at 
+the following locations: the center of the FOV, $\pm2$\dgr\ in Y, and $\pm4$\dgr\ in X. The center of the FOV was 
+most heavily weighted \comr{what was the relative weighting?}. To constrain the optimization, the X and Y 
+effective focal lengths are held fixed as is the impact point of the chief ray on the focal plane. 
+
+This optimization step increases \comr{tenses!} the \comr{DLFOV}
+by 15\% at 21~GHz, by 2.4$\times$ at 155~GHz, and by 
+10.5$\times$ at 799~GHz. \comr{is this proper English? 2.4$times$? I don't think so. Why change between \% and $\times$?} 
+We improve the system further by allowing the focal plane radius of 
+curvature to vary \comr{if it has a radius of curvature, please call it focal surface} and rerunning the optimization.  
+This gives a 50\% increase in diffraction limited area at all frequencies over the Zernike polynomials alone.  
+Finally, an approximately 4\% additional gain in area can be achieved by adding Zernike terms 
+up to sixth order, allowing the secondary to focal plane distance to vary, adding a weighted constraint on the effective focal length, 
+and adding fields with low weight to the rms spot diameter metric at $\pm7.5$\dgr\ in Y and $+15$\dgr\ in X, 
+without these additional fields the 
+corrections at the mirror edges are not well constrained \comr{again, a sentence on its own, separated only by coma}.
+
+\comr{The other method by Richard has the first step of converting the conics into an on axis XY polynomial respresentation. Then the same procedure is followed.  It is less well behaved during optimization.  This second Richard method is what I replicated in CodeV.}
+\comb{is this 'other method' = method2? or is it 1b?}
 
 
 
@@ -282,62 +308,43 @@ Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (de
 \end{adjustbox}
 \end{table}
 
-To arrive at the final design we modify an Open Dragone.  We design the initial Open Dragone following Granet's method\cite{granet2001}. 
-%follow Ref.~\citenum{granet2001} to
-We find a solution which satisfies the volume constraints and has a large DLFOV.  We force a circular aperture stop 
-between the primary and secondary mirrors and numerically optimize its angle and position to obtain the best 
-optical performance.  We choose the stop diameter to provide an effective 1.4~m aperture on the primary for the center feed.  
-Adding a stop in this way increases the size of the primary mirror, the primary is unevenly illuminated at various 
-field angles, but reduces detector noise, see Section~\ref{sec:noise}, and controls sidelobes.  At this stage the system still meets 
-the Dragone condition and is defined by the `Initial Open Dragone' parameters in Table~\ref{tab:optics}.
-
-%%%
-
-\comr{Richard's final method used zernike polynomials similar to Jim's. Zemax defines offset Zernikes in a way CodeV does not, so the 
-Zernike method only works in Zemax.  I describe it below.}
-
-We pursued two methods to increase the DLFOV.  The first follows a procedure by Richard Hills to numerically implement 
-Dragone's corrections to elimiate coma.\cite{dragone_coma} Dragone's correction calls for a distortion of the primary and secondary 
-which goes as $r^4$ where $r=0$ is at the chief ray impact point on each mirror.  We implement this correction in Zemax by adding Zernike 
-polynomials which are offset by $h=624.2$~cm for the primary and $76.1$~cm for the secondary.  This places the origin of polynomials at the 
-chief ray impact point for each mirror. All Zernike terms up to fourth order and the first fifth order term were allowed to vary. 
-The optimization metric was minimization of the rms spot size at the center of the FOV, $\pm2$\dgr\ in Y, and $\pm4$\dgr\ in X with the 
-center of the FOV most heavily weighted. 
-To constrain the optimization, the X and Y effective focal lengths are held fixed as is the impact point of the chief ray on the focal plane. 
-
-This optimization using only Zernike polynomials increases the diffraction limited area by 15\% at 21~GHz, by 2.4$\times$ at 155~GHz, and by 
-10.5$\times$ at 799~GHz.  We improve the system further by allowing the focal plane radius of curvature to vary and rerunning the optimization.  
-This gives a 50\% increase in diffraction limited area at all frequencies over the Zernike polynomials alone.  
-Finally, an approximately 4\% additional gain in area can be acheived by adding Zernike terms 
-up to sixth order, allowing the secondray to focal plane distance to vary, adding a weighted constraint on the effective focal length, 
-and adding fields with low weight to the rms spot size metric at $\pm7.5$\dgr\ in Y and $+15$\dgr\ in X, without these additional fields the 
-corrections at the mirror edges are not well constrained.
-
-\comr{The other method by Richard has the first step of converting the conics into an on axis XY polynomial respresentation. Then the same procedure is followed.  It is less well behaved during optimization.  This second Richard method is what I replicated in CodeV.}
-
-%%%
-
 %To increase the optical performance we use CodeV to numerically optimize the system.  
-The second optimization uses CodeV and allows more of the geometric parameters of the system to vary. 
-To adjust the mirror shapes, we add a low order, 
-4th and 9th-13th, Zernike polynomial correction to each conic surface. The Zernike polynomials are defined on the same coordinates as the 
-base conics.  We allow the focal plane curvature 
-and focal plane to secondary distance L$_s$ to vary.  The primary-secondary distance L$_m$, primary offset $h$, and the primary and secondary 
-rotation angles, $\alpha$ and $\beta$, are varied as well. The optimization metric is the rms spot size across the field of view, with 
-additional weighted constraints requiring telecentricity and maintaining the x- and y-focal lengths.  We also added Lagrange constraints 
-to enforce beam clearences and place an upper limit on overall system size.  Once the optimization coveraged to an acceptable optical 
-system, we added the higher order Zernike terms, 19th-25th, and refined the mirror shapes using the same metric and constraints.
-The current PICO design is from this optimization procedure.
+In the second optimization method another coauthor (JM) used CodeV and allowed more of the geometric 
+parameters of the system to vary.  To adjust the 
+mirror shapes, we add \comr{tenses} a low order \comr{what does 'low order' mean?}, 4th and 9th-13th, 
+Zernike polynomial correction to each conic surface \comr{what do you mean 'each'? more than two?}. 
+The Zernike polynomials are defined on the same coordinates as the base conics.  We allow the focal plane curvature 
+and focal plane to secondary distance L$_s$ to vary.  The primary-secondary distance L$_m$, primary offset $h$, 
+and the primary and secondary rotation angles, $\alpha$ and $\beta$, are varied as well.  The optimization 
+metric is the rms spot size \comr{diameter} across the field of view, with additional weighted constraints requiring telecentricity and 
+maintaining the x- and y-focal lengths \comr{capital X,Y or small x,y?}.  We also added Lagrange constraints 
+to enforce beam clearances and place an upper limit on overall system size.  Once the optimization converged to 
+an acceptable optical system, we added the higher order Zernike terms, 19th-25th, and refined t
+he mirror shapes using the same metric and constraints. \comr{please find a better way 
+to express the parameters varied without so many also's.}
+The current PICO optical design is from this optimization procedure.
 
 
 Figure~\ref{fig:compare} 
 %we show the final optimized system compared with the `Initial Open Dragone' and give the Strehl~$=0.8$ contours.  One sees 
-shows that the optimization reduces the overall telescope volume, allowing it to fit more easily within the shadow cone, and increases the DLFOV.  
-The DLFOV increases by 1.9$\times$ at 21~GHz and by 4.6$\times$ at 799~GHZ. 
+shows that the optimization reduces the overall telescope volume, allowing it to fit more easily within the shadow cone, 
+and increases the DLFOV.  
+The DLFOV increases by 1.9$\times$ at 21~GHz and by 4.6$\times$ at 799~GHZ. \comr{This is relative to which 
+baseline? need to provide improvement relative to the same starting point, but also give improvement relative 
+to method1.}
 The most important gain in the DLFOV is at 129 and 155~GHz where it increased by 3.8$\times$ and 4.3$\times$, respectively.  
-This added area allows us to add `C' and `D' pixels which are critical to meeting PICO's cosmology and fundamental 
-physics science goals, because they contain the bands most sensitive to the CMB. Being able to pack 100's of `C' and `D' pixels into the focal 
-plane is what allows PICO to reach unprecedented levels of CMB sensitivity.
+This added area allows us to add `C' and `D' pixels \comr{what pixels? what is C, D?} which are critical to meeting PICO's 
+cosmology and fundamental physics science goals, because they contain the bands most sensitive to the CMB. Being able to 
+pack 100's of `C' and `D' pixels into the focal plane is what allows PICO to reach unprecedented levels of CMB sensitivity. \comr{do 
+you mean 'if we had only optimization method1 we wouldn't reach our goals?}
+
+The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics} and the ray trace in Figure~\ref{fig:ray}. The 
+system is diffraction limited, Strehl greater than 0.8, at the center of the field of view for 799~GHz and has a DLFOV of 82.4~deg$^2$ at 
+155~GHz.  Strehl of 0.8 contours for all pixel types are shown in Figure~\ref{fig:strehl}. 
+The slightly \comb{concave, focal surface, which has a radius of curvature of 4.55~m,} is telecentric to 
+within 0.12\dgr\ across the entire area.
+
+
 
 \begin{figure} [ht]
 \begin{center}
