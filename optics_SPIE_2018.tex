@@ -460,6 +460,7 @@ in Figure~\ref{fig:focal_plane}. The highest frequency pixels are centered on th
 around the edge. The maximum radial distance for a given pixel is the point where 
 the Strehl ratio for the upper edge of the highest frequency band within that pixel equals 0.8.  Interior to these contours, the ellipses in 
 Figure~\ref{fig:focal_plane}, the Strehl ratio increases ensuring pixels are diffraction limited.
+\comb{most of the text in this paragraph is relatively trivial (including the first sentence). Can prune and make more succinct.}
 
 \begin{figure} [ht]
 \begin{center}
@@ -503,8 +504,11 @@ as close to simultaneously as possible.  % 'should reduce' haven't actually done
 Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) for an example wafer.}
 \end{figure}
 
-Reading out 12,996 TES bolometers requires significant multiplexing.  Time domain (TDM) and frequency domain (FDM) 
-multiplexing were explored for PICO, tradeoff details are in Sutin et~al.\cite{brian_spie}  %Ref.~\citenum{brian_spie}.  
+Reading out 12,996 TES bolometers requires significant \comr{what does this word mean? reading out 12,996
+detectors doesn't on its own require any multiplexing} multiplexing.  
+Time domain (TDM) and frequency domain (FDM) 
+multiplexing were explored for PICO, tradeoff details are in Sutin et~al.\cite{brian_spie} \comr{did you 
+check that tradeoff details are in fact provided by Sutin et al? }
 The current PICO baseline is TDM, 
 but the choice is not a driver for the focal plane layout or noise discussed in this paper.
 
