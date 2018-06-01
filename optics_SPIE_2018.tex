@@ -131,9 +131,9 @@ In astronomy and astrophysics, NASA currently flies small and medium Explorer mi
 
 Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of 
 information about the formation, evolution, and structure of the Universe.  
-\comb{new:} The polarization and temperature anisotropy of the of the cosmic microwave 
-background (CMB) encode fundamental physics information relating to  the epoch of inflation, to the mass of the neutrinos,  
-and to the number of relic light particles in the early Universe. They also contain information about the formation of 
+The polarization and temperature anisotropies of the cosmic microwave 
+background (CMB) encode fundamental physics information relating to the epoch of inflation, the mass of neutrinos,  
+and the number of relic light particles in the early Universe. They also contain information about the formation of 
 the first stars, galaxies, and clusters.  Information about the role of magnetic fields in star formation and galactic evolution is obtainable 
 by observing the polarized emission of Galactic dust, which 
 traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with 
@@ -143,20 +143,18 @@ are in a companion paper, Sutin~et~al.\cite{brian_spie}
 In this paper we discuss the mission's optical system, focal plane, and sensitivity.
 
 
-\comb{old: Large scale cosmological and fundamental 
-physics information, such as 
-evidence of inflation, the effect of the first stars and galaxies, constraints on neutrino masses, and limits on light particles beyond 
-the standard model, is contained in the temperature and polarization anisotropies of the cosmic microwave 
-background (CMB). } 
-
-% %(check LB's intro?, although I probably won't like that.)
+%\comb{old: Large scale cosmological and fundamental 
+%physics information, such as 
+%evidence of inflation, the effect of the first stars and galaxies, constraints on neutrino masses, and limits on light particles beyond 
+%the standard model, is contained in the temperature and polarization anisotropies of the cosmic microwave 
+%background (CMB). } 
 
 \section{SPACECRAFT AND MISSION}
 \label{sec:spacecraft}
 
 %  This could all be in the intro instead. Purpose is to show constraints on the optics to motivate decisions discussed later.  
 
-The PICO will conduct scientific observations for five years from the Earth-Sun L2 Lagrange point. The spacecraft design impacts 
+PICO will conduct scientific observations for five years from the Earth-Sun L2 Lagrange point. The spacecraft design impacts 
 the optical design and sensitivity in two primary ways; volume constraints limit the physical size of the telescope and optical component 
 temperatures impact noise levels.  
 
@@ -165,10 +163,10 @@ This diameter limit sets the V-groove size which, along with the scan strategy, 
 The shadow cone is the volume protected from solar illumination, and all optical components must remain within it. The shadow cone and 
 inner V-grooves define an available volume for the telescope.  
 
-The temperatures of all optical elements are given in Figure~\ref{fig:cad} \comb{see comment in caption in regard to the temperature 
-of the primary. Check with Paine}.  The optics box, secondary, and focal plane are actively cooled, 
-details of the thermal system are given in Sutin~et~al.\cite{brian_spie}. \comb{looks like the primary is also actively 
-cooled. check with Paine.}
+The temperatures of all optical elements are given in Figure~\ref{fig:cad} 
+%\comb{see comment in caption in regard to the temperature of the primary. Check with Paine}.  
+The optics box, secondary, and focal plane are actively cooled, 
+details of the thermal system are given in Sutin~et~al.\cite{brian_spie}. 
 
 \begin{figure} [ht]
 \begin{center}
@@ -177,9 +175,10 @@ cooled. check with Paine.}
 %\end{tabular}
 \end{center}
 \caption { \label{fig:cad} 
-Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Sutin~et~al.\cite{brian_spie}
-\comb{is the primary really at 15 K? hard to believe. Need to verify. To explain the idea of a 'shadow cone', need to say something 
-about where the Sun is and how it illuminate the spacecraft such as to give this 'shadow cone'. } 
+Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Sutin~et~al.\cite{brian_spie }
+%\comb{is the primary really at 15 K? hard to believe. Need to verify. To explain the idea of a 'shadow cone', need to say something 
+%about where the Sun is and how it illuminates the spacecraft such as to give this 'shadow cone'. 
+%Primary 17 K, secondary 8 K, liner 6 (may get to 4.5 K)} 
 }
 \end{figure} 
 
@@ -194,24 +193,26 @@ about where the Sun is and how it illuminate the spacecraft such as to give this
 % \subitem launch vehicle is Falcon 9 
 % \end{itemize}
 
-% \vspace{4in}
+%%%%%%%%%%%%%%%%%  Karl here %%%%%%%%%%%%%%%%%%%%%
 
 \section{OPTICAL SYSTEM}
 \label{sec:optics}
 
-The PICO telescope is a 1.4~m \comb{aperture} modified open-Dragone.  This choice was driven by a combination of science
+The PICO telescope is a 1.4~m aperture modified open-Dragone.  This choice was driven by a combination of science
 requirements and the physical limits discussed in Section~\ref{sec:spacecraft}.  The science requirements are: a large diffraction 
 limited field of view (DLFOV) sufficient to support $\mathcal{O}(10^4)$ detectors, arcminute resolution at 800~GHz, low 
 instrumental polarization, and low sidelobe response. Additionally, 
 the transition edge sensor bolometers baselined for PICO require a telecentric focal plane which is sufficiently flat that it 
-can be tiled by 10~cm detector wafers without reduction in optical quality. \comb{More than 30 years ago Dragone analyzed the 
-performance of several off-axis systems and found solutions that give low cross-polarization at the center of the field 
-of view, and that cancel astigmatis, or astigmatism \it{and} coma to first order}\cite{dragone}\comr{is that correct? give more references}.  
+can be tiled by 10~cm detector wafers without reduction in optical quality. 
+
+More than 30 years ago Dragone analyzed the 
+performance of several off-axis systems and found solutions with low cross-polarization at the center of the field 
+of view and with astigmatism, or astigmatism \it{and} coma, canceled to first order.\cite{dragone}\cite{dragone_coma}\comr{is that correct? give more references}  
 \comb{A number of recent CMB instruments used off-axis systems, and several 
 began the design optimization with systems based on designs by
 Dragone\cite{planck2000_optics,ACT2011_optics,SPT2008_optics,core2018_inst,LB2016_optics}. For PICO we began 
 the optimization with a Dragone system that to our knowledge hasn't yet been implemented before. 
-We call it `0pen-Dragone' because of its overall geometry, see Figure~\ref{fig:ray}, and as contrast to the widely 
+We call it `open-Dragone' because of its overall geometry, see Figure~\ref{fig:ray}, and as contrast to the widely 
 used `cross-Dragone'. }
 
 \comr{An advantage of the open-Dragone system relative to the cross-Dragone is that it is easier to baffle the focal plane
@@ -260,7 +261,7 @@ without these additional fields the
 corrections at the mirror edges are not well constrained \comr{again, a sentence on its own, separated only by coma}.
 
 \comr{The other method by Richard has the first step of converting the conics into an on axis XY polynomial respresentation. Then the same procedure is followed.  It is less well behaved during optimization.  This second Richard method is what I replicated in CodeV.}
-\comb{is this 'other method' = method2? or is it 1b?}
+\comb{is this 'other method' = method2? or is it 1b? \comr{1b}}
 
 
 
@@ -397,7 +398,7 @@ Open Dragone, led us to the final PICO optical system detailed in Table~\ref{tab
 %\end{tabular}
 \end{center}
 \caption { \label{fig:sidelobes} 
-Comparison of sidelobes for typicalexample Crossed (left) and Open (right) Dragones \comb{informal language. How many Corado Dragones are there? do you mean Dragone systems?}  Rays are traced from the center 
+Comparison of sidelobes for example Crossed (left) and Open (right) Dragones \comb{informal language. How many Corado Dragones are there? do you mean Dragone systems?}  Rays are traced from the center 
 of the focal plane toward the sky.
 For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles.  However, the sidelobe and direct 
 sky view in the Crossed system require a long forebaffle or large F-number to mitigate, both of which are problematic in the PICO case.
@@ -406,10 +407,6 @@ spillover past the primary.}
 }
 \end{figure} 
 
-
-%
-%Grasp? maybe.  Beam and sidelobe would be pleasent.
-%
 
 \section{FOCAL PLANE}
 \label{sec:focalplane}
