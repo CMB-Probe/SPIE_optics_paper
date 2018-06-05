@@ -127,10 +127,10 @@ and give the expected noise level.
 %\comr{Probe study language copied directly from Brian's paper (May 6th).  What level of repeat is useful?  What is appropriate?}
 %\comb{Answer: you shouldn't copy the same text. Find a different way to say the same thing, or simply point people to the other paper.} 
 
-Currently,  NASA funded spaces missions in astronomy and astrophysics are either Explorer missions with \$250M cost caps or flagship missions 
-such as JWST which cost around \$3-\$5B. 
+Currently,  NASA funded spaces missions in astronomy and astrophysics are either Explorer missions with \$250M cost caps or flagship missions, 
+such as JWST, which cost roughly \$3-\$5B. 
 To study the science opportunities available at intermediate costs, NASA called for studies of `Probe' class missions with \$1B cost caps.  The Probe of Inflation 
-and Cosmic Origins (PICO) is one of these NASA funded studies.  This paper describes the instrument optical design and focal plane approximately two 
+and Cosmic Origins (PICO) is one of these NASA funded studies.  This paper describes the status of the instrument optical design and focal plane approximately two 
 thirds of the way through the study time line.  The final PICO report will be sent to NASA at the end of 2018.
 
 % AT's text.
@@ -277,7 +277,7 @@ effective focal lengths are held fixed as is the impact point of the chief ray o
 This optimization step increases the DLFOV
 by 15\% at 21~GHz, by 2.4$\times$ at 155~GHz, and by 
 10.5$\times$ at 799~GHz. 
-\comr{1. is this proper English? 2.4$\times$? I don't think so. 2. Why change between \% and $\times$?} \como{1. Yes, according to Erin.} \como{2. Because 1050\% is awkward, as is 1.15$\times$.} 
+%\comr{1. is this proper English? 2.4$\times$? I don't think so. 2. Why change between \% and $\times$?} \como{1. Yes, according to Erin.} \como{2. Because 1050\% is awkward, as is 1.15$\times$.} 
 We improve the system further by including a curved focal surface, allowing the radius of 
 curvature to vary, and rerunning the optimization.  
 This gives a roughly 50\% increase in diffraction limited area at all frequencies over the Zernike polynomials alone.  
@@ -286,8 +286,8 @@ up to sixth order, allowing the secondary to focal surface distance to vary, add
 and adding fields with weight of 0.01 to the rms spot diameter metric at $\pm7.5$\dgr\ in Y and $+15$\dgr\ in X. 
 These additional fields are necessary to constrain the corrections at the mirror edges.
 
- \comr{The other method by Richard has the first step of converting the conics into an on axis XY polynomial representation. Then a similar procedure is followed.  It is less well behaved during optimization.  This second Richard method is what I replicated in CodeV.}
- \comb{is this 'other method' = method2? or is it 1b? \como{KY: My method is 1b and not discussed here.}}
+% \comr{The other method by Richard has the first step of converting the conics into an on axis XY polynomial representation. Then a similar procedure is followed.  It is less well behaved during optimization.  This second Richard method is what I replicated in CodeV.}
+% \comb{is this 'other method' = method2? or is it 1b? \como{KY: My method is 1b and not discussed here.}}
 
 
 \begin{figure} [ht]
@@ -433,7 +433,7 @@ overlap and requiring them to be in separate pixels.
 %\comb{Be more succinct. A paper is not a tutorial. I don't agree that it leads to more complications}
 The exceptions to the MCP architecture are the highest three bands, because they are above the superconducting 
 band gap of niobium which is used for the transmission lines, antennae, and filters of the MCPs.  
-For bands G, H, and I we will use feedhorn-coupled polarization sensitive bolometers similar to those used with 
+For bands G, H, and I, we will use feedhorn-coupled polarization sensitive bolometers similar to those used with 
 \textit{Planck}\cite{planck2010_hfi} and Herschel SPIRE\cite{spire2010}.
 
 \begin{figure} [ht]
@@ -452,14 +452,12 @@ Figure~\ref{fig:focal_plane} shows the PICO focal plane.
 We optimize the diameter of each MCP by calculating the array sensitivity for that pixel type. The calculation includes the 
 increased illumination of the aperture stop as the pixel diameter decreases, as described in Section~\ref{sec:det_noise}.
 We choose a pixel diameter of $2.1$F$\lambda_{mid}$, where $\lambda_{mid}$ refers to the center 
-band of each pixel. This gives an edge taper, $T_e$, on the stop of 10~dB for the center band. 
+band of each pixel. This gives an edge taper, $T_e$, on the stop of 10~dB for the center band of each pixel. 
 
 %We hex-pack pixels onto 94~mm hexagonal wafers to minimize wasted space for the mid-frequency pixels. 
 %The three central wafers have the same 94~mm hexagon footprint but are split into 
 %3 rhombi, shown in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different 
 %detector technology and will need to be fabricated separately.  \comb{I don't understand the last few sentences. Need to discuss}
-
-
 %The 3 central wafers are rhombi to put the F pixels on different wafers than the G, H, and I pixels, which use different technology. The C and D/E wafers are 94~mm regular hexagons. 
 
 
@@ -484,21 +482,21 @@ in Figure~\ref{fig:bands} }
 \end{figure} 
 
 
-\sout{Optimizing the pixel size is a balance between the total number of pixels, $N_{px}$, and the efficiency with which 
-they couple to the telescope. Smaller pixels pack more densely on the focal plane, $N_{px}\propto 1/D_{px}^2$, but over 
-illuminate the stop which reduces optical efficiency and adds optical load.}  \comb{instead of making general statements
-that have a tutorial flavor, just say what you do}
+% \sout{Optimizing the pixel size is a balance between the total number of pixels, $N_{px}$, and the efficiency with which 
+% they couple to the telescope. Smaller pixels pack more densely on the focal plane, $N_{px}\propto 1/D_{px}^2$, but over 
+% illuminate the stop which reduces optical efficiency and adds optical load.}  \comb{instead of making general statements
+% that have a tutorial flavor, just say what you do}
 
-\comb{We optimize the pixels diameters for each MCP by calculating the mapping speed. The calculation includes the 
-increased illumination of the aperture stop as the pixel size decreases, as described in more detail in Section ... }
-%Since PICO has a cold stop additional load is minimized, reducing the penalty for smaller pixels.  
-We choose a pixel diameter of $2.1$F$\lambda_{mid}$, where $\lambda_{mid}$ refers to the center 
-band of each pixel. This gives an edge taper, $T_e$, on the stop of 10~dB for the center band. 
-\sout{Due to the multichroic nature of the pixels $T_e$ varies with band, details in Section~\ref{sec:noise}}. 
-We hex-pack pixels onto 94~mm hexagonal wafers to minimize wasted space for the mid-frequency pixels. 
-The three central wafers have the same 94~mm hexagon footprint but are split into 
-3 rhombi, shown in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different 
-detector technology and will need to be fabricated separately.  \comb{I don't understand the last few sentences. Need to discuss}
+% \comb{We optimize the pixels diameters for each MCP by calculating the mapping speed. The calculation includes the 
+% increased illumination of the aperture stop as the pixel size decreases, as described in more detail in Section ... }
+% %Since PICO has a cold stop additional load is minimized, reducing the penalty for smaller pixels.  
+% We choose a pixel diameter of $2.1$F$\lambda_{mid}$, where $\lambda_{mid}$ refers to the center 
+% band of each pixel. This gives an edge taper, $T_e$, on the stop of 10~dB for the center band. 
+% \sout{Due to the multichroic nature of the pixels $T_e$ varies with band, details in Section~\ref{sec:noise}}. 
+% We hex-pack pixels onto 94~mm hexagonal wafers to minimize wasted space for the mid-frequency pixels. 
+% The three central wafers have the same 94~mm hexagon footprint but are split into 
+% 3 rhombi, shown in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different 
+% detector technology and will need to be fabricated separately.  \comb{I don't understand the last few sentences. Need to discuss}
 
 \comr{SH Stopped Here}
 
@@ -829,7 +827,7 @@ noise model predicts full mission polarization map depth of 0.62~$\mu$K$_{CMB}$-
 
 \section{ACKNOWLEDGMENTS}
 
-This Probe mission concept study is funded by NASA grant xxxxxxxx.  Gianfranco de Zotti acknowledges financial support from the ASI/University of
+This Probe mission concept study is funded by NASA grant \#NNX17AK52G.  Gianfranco de Zotti acknowledges financial support from the ASI/University of
 Roma--Tor Vergata agreement n.\; 2016-24-H.0 for study activities of the Italian cosmology community. Jacques
 Delabrouille acknowledges financial support from PNCG for participating to the PICO study.
 
