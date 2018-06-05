@@ -264,7 +264,7 @@ involve adding distortions to the primary and secondary reflectors
 which are proportional to $r^4$ where $r=0$ is at the chief ray impact point on each mirror. 
 We thus attempt to increase the DLFOV using two methods. 
 
-In the first method, one of the coauthors (RH) uses Zemax to add Zernike 
+In the first method, one of the coauthors (RH) used Zemax to add Zernike 
 polynomials to the base conics which describe the mirrors. These Zernike polynomials are offset from the symmetry axis of the conic 
 by $624.2$~cm for the primary and $76.1$~cm for the secondary.  
 This places the origin of polynomials at the chief ray impact point for each mirror. 
@@ -280,7 +280,7 @@ by 15\% at 21~GHz, by 2.4$\times$ at 155~GHz, and by
 \comr{1. is this proper English? 2.4$\times$? I don't think so. 2. Why change between \% and $\times$?} \como{1. Yes, according to Erin.} \como{2. Because 1050\% is awkward, as is 1.15$\times$.} 
 We improve the system further by including a curved focal surface, allowing the radius of 
 curvature to vary, and rerunning the optimization.  
-This gives a 50\% increase in diffraction limited area at all frequencies over the Zernike polynomials alone.  
+This gives a roughly 50\% increase in diffraction limited area at all frequencies over the Zernike polynomials alone.  
 Finally, an approximately 4\% additional gain in area can be achieved by adding Zernike terms 
 up to sixth order, allowing the secondary to focal surface distance to vary, adding a weighted constraint on the effective focal length, 
 and adding fields with weight of 0.01 to the rms spot diameter metric at $\pm7.5$\dgr\ in Y and $+15$\dgr\ in X. 
@@ -315,22 +315,21 @@ Mirror size$^a$ (cm)      & $270 \times 205$ & $160 \times 158$ & Aperture (cm) 
 Radius of curvature (cm)  & $\infty$         & 136.6             & Focal ratio, $F$           & 1.42     & $\theta_0$ (degrees)           & 90    \\
 Conic constant, $k$       & 0                 & -0.926            & h (cm)                    & 624.2    & $\theta_e$ (degrees)           & 20    \\
 Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (deg)            & 74.2     & $\theta_p$ (degrees)           & 140   \\
-4th Zernike Coefficient   & 2018.4            & -61.1             & $\beta$  (deg)            &  62.3    & L$_m$ (cm)                     & 240   \\
-9th Zernike Coefficient   & -37.0             & 16.7              & L$_m$ (cm)                &   229.3  &                                &         \\
-10th Zernike Coefficient  & -2919.8           & -15.1             & L$_s$ (cm)                &   140.5  & \multicolumn{2}{c|}{Derived parameters} \\ 
-11th Zernike Coefficient  & -1292.7           & 22.3              &                           &          & Focal ratio, F                 & 1.42  \\   
-12th Zernike Coefficient  & 120.6             & -3.8             &   \multicolumn{2}{c||}{Focal Surface}  & h (cm)                         & 624.2 \\   
-13th Zernike Coefficient  & -74.5             & 4.9               & Diameter (cm)             & 69 x 45  & $\alpha$ (deg)                 & 38.6  \\   
-19th Zernike Coefficient  & -75.8             & 3.4               & Diameter (deg)            & 19 x 13  & $\beta$  (deg)                 & 101.4 \\   
-20th Zernike Coefficient  & -398.9            & 6.3               & Radius of curvature (cm)  & 455      & L$_s$ (cm)                     & 122.2 \\   
-21st Zernike Coefficient  & -319.5            & 23.3              &                           &          & Primary, $f$ (cm)              & 312.1 \\   
-22nd Zernike Coefficient  & -276.6            & -8.5              &                           &          & Secondary, $a$ (cm)            & 131   \\   
-23rd Zernike Coefficient  & -201.6            & -3.2              &                           &          & Secondary, $e$                 &  1.802  \\
-24th Zernike Coefficient  & -127.4            & -1.9              &                           &          &                                &       \\
-25th Zernike Coefficient  & -55.0             & 0.1               &                           &          &                                &       \\\hline
+4th Zernike Coefficient (cm)  & 2018.4            & -61.1             & $\beta$  (deg)            &  62.3    & L$_m$ (cm)                     & 240   \\
+9th Zernike Coefficient (cm)  & -37.0             & 16.7              & L$_m$ (cm)                &   229.3  &                                &         \\
+10th Zernike Coefficient (cm) & -2919.8           & -15.1             & L$_s$ (cm)                &   140.5  & \multicolumn{2}{c|}{Derived parameters} \\ 
+11th Zernike Coefficient (cm) & -1292.7           & 22.3              &                           &          & Focal ratio, F                 & 1.42  \\   
+12th Zernike Coefficient (cm) & 120.6             & -3.8             &   \multicolumn{2}{c||}{Focal Surface}  & h (cm)                         & 624.2 \\   
+13th Zernike Coefficient (cm) & -74.5             & 4.9               & Diameter (cm)             & 69 x 45  & $\alpha$ (deg)                 & 38.6  \\   
+19th Zernike Coefficient (cm) & -75.8             & 3.4               & Diameter (deg)            & 19 x 13  & $\beta$  (deg)                 & 101.4 \\   
+20th Zernike Coefficient (cm) & -398.9            & 6.3               & Radius of curvature (cm)  & 455      & L$_s$ (cm)                     & 122.2 \\   
+21st Zernike Coefficient (cm) & -319.5            & 23.3              &                           &          & Primary, $f$ (cm)              & 312.1 \\   
+22nd Zernike Coefficient (cm) & -276.6            & -8.5              &                           &          & Secondary, $a$ (cm)            & 131   \\   
+23rd Zernike Coefficient (cm) & -201.6            & -3.2              &                           &          & Secondary, $e$                 &  1.802  \\
+24th Zernike Coefficient (cm) & -127.4            & -1.9              &                           &          &                                &       \\
+25th Zernike Coefficient (cm) & -55.0             & 0.1               &                           &          &                                &       \\\hline
 \multicolumn{7}{l}{\footnotesize  $^a$ The maximum physical size of the mirrors.}\\
 \multicolumn{7}{l}{\footnotesize  $^b$ Telescope parameters follow the definitions in Granet 2001.\cite{granet2001}} \\
-%\multicolumn{7}{l}{\footnotesize  $^b$ } \\
 \end{tabular}
 \end{adjustbox}
 \end{table}
