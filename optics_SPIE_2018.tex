@@ -111,8 +111,8 @@ the role of Galactic magnetic fields in galactic evolution and star formation.
 We describe the current state of the PICO instrument design.  We will discuss the choice of optical system, present the design of the focal plane, 
 and give the expected noise level. 
 
-
-
+\comr{did you review the abstract? does it accurately represent the contents of the paper? Is it highlighting the unique and new 
+things you are reporting? Is it quantitative? } 
 
 
 \end{abstract}
@@ -216,13 +216,15 @@ can be tiled by 10~cm detector wafers without reduction in optical quality.
 
 More than 30 years ago Dragone analyzed the 
 performance of several off-axis systems and found solutions with low cross-polarization at the center of the field 
-of view and with astigmatism, or astigmatism and coma, canceled to first order.\cite{dragone,dragone_coma,dragone1983}
+of view and with astigmatism, or astigmatism and coma, canceled to first order.\cite{dragone,dragone_coma,dragone1983} 
+\comr{there are several unresolved references throughout}
 A number of recent CMB instruments used off-axis systems, and several 
 began the design optimization with systems based on designs by
-Dragone\cite{planck2000_optics,ACT2011_optics,SPT2008_optics,core2018_inst,LB2016_optics,parshley_ccat_spie}. For PICO we began 
-the optimization with a Dragone system that to our knowledge has not been implemented before. 
-We call it an `open-Dragone' because of its overall geometry, see Figure~\ref{fig:ray}, and in contrast to the widely 
-used `cross-Dragone'. 
+Dragone\cite{planck2000_optics,ACT2011_optics,SPT2008_optics,core2018_inst,LB2016_optics,parshley_ccat_spie}. 
+For PICO we began \comr{past tense}
+the optimization with a Dragone system that to our knowledge has not been implemented \comr{in CMB instruments} before. 
+We call \comr{present tense, confusing; choose a tense and stick with it throughtout} it an `open-Dragone' because 
+of its overall geometry and in contrast to the widely used `cross-Dragone', see Figure~\ref{fig:ray}. 
 
 %\comr{An advantage of the open-Dragone system relative to the cross-Dragone is that it is easier to baffle the focal plane
 %and thus to eliminate side-lobes. An advantage relative to a Gregorian design is that it has larger DLFOV. Our studies 
@@ -231,23 +233,51 @@ used `cross-Dragone'.
 
 %\comr{This is an important paragraph. I started making comments along these lines earlier. Need to move the paragraph 
 %earlier to motivate the use of the Open system.}
-We consider two additional Dragone systems; a Gregorian Dragone and a cross-Dragone. We compare their performance to 
-an open-Dragone using 155~GHz diffraction limited area, measured in units of $(F\lambda)^2$, as our metric. 
-%Using $(F\lambda)^2$ is a better comparison than cm$^2$ or deg$^2$ as it takes the different $F$-numbers of the systems into account.
-%similar to that planned for CORE or LiteBIRD \comb{I don't think Planck is formally a Dragone system; nothing is really 'planned' for CORE, as it is not in development}.  
+\comb{We consider} \comr{present tense} \comb{two additional Dragone systems, a Gregorian Dragone and a cross-Dragone, and compare their performance to 
+the open-Dragone. We compare the DLFOV at 155 GHz measured in units of $(F\lambda)^2$ as this metric is invariant to changes 
+in F-number.} 
 With half the diffraction limited focal plane 
-area of the open-Dragone,\cite{core2018_inst} the Gregorian Dragone is unable to support $\mathcal{O}(10^4)$ detectors, so it was rejected.  
+area of the open-Dragone,\cite{core2018_inst} the Gregorian Dragone is \comr{present tense} unable to 
+support $\mathcal{O}(10^4)$ detectors, so it was \comr{past tense} rejected.  
 The cross-Dragone has roughly $4\times$ the diffraction limited focal plane area of the open-Dragone, 
-\comr{is that true? I didn't think it was that much of a difference} \como{true for our open vs a crossed of the same aperture and similar geometry to EPIC. This is only a factor of 2 in DLFOV diameter. }
 but it has significant sidelobes as shown in Figure~\ref{fig:sidelobes}. Additionally, a cross-Dragone will always have a larger $F$-number 
-than a similar open-Dragone, because the cross-Dragone focal length must be long enough that the focal plane does not block the primary mirror.
-% \comr{why does it 'always' have larger F? Can make a smaller F, no?}. \como{The smallest f-number of a crossed system is about 2. The focal length has to be long so the focal plane doesn't block the primary. You could make an open with F > 2, but you can't make a crossed system with F < 2.}
+than a similar open-Dragone, because the cross-Dragone focal length must be long enough that the focal plane does 
+not block the primary mirror.
 The larger $F$-number results in a larger telescope which fits poorly into the shadow cone. The largest cross-Dragone 
 that meets the PICO volume constraints has 
 a 1.2~m aperture while the largest open-Dragone aperture is 1.4~m. The large $F$-number of the cross-Dragone system also increases 
 the physical focal plane size, and therefore mass and cost, for a fixed number of pixels.  
-These disadvantages with the Gregorian Dragone and the cross-Dragone led us to use the open-Dragone as a starting point for the PICO optical design.
+These disadvantages with the Gregorian Dragone and the cross-Dragone led us to use the open-Dragone as a starting 
+point for the PICO optical design.
 
+\comr{I am confused about the previous paragraph. It starts with a claim of a quantitative 'comparison' between a number of 
+systems; it even presents the advantages of a particular figure of merit, but in the
+end it is largely a set of qualitative arguments.  Here is my version of this paragraph. }
+
+\comb{We considered two additional Dragone systems, a Gregorian Dragone and a cross-Dragone, and compared the 
+relative performance 
+of the three systems in terms of DLFOV, compactness, and rejection of sidelobes.  
+Compared to the open-Dragone, the Gregorian had half the DLFOV for the same F-number and could not  
+support $\mathcal{O}(10^4)$ detectors. It was therefore rejected.  
+The cross-Dragone had roughly $4\times$ the DLFOV compared to the open-Dragone, 
+but was more difficult to pack inside the spacecraft volume {\it and} avoid known sidelobes, as shown in Figure~\ref{fig:sidelobes}.
+\comr{why is this Figure 4 and not 3?}
+We found that the largest cross-Dragone that met the PICO volume constraints had 
+a 1.2~m aperture and an F\# of ? while the largest open-Dragone aperture was 1.4~m and an F\# of ?. The larger 
+$F$-number of the cross-Dragone system implied larger physical focal plane size, and therefore higher mass and cost, 
+for the same number of pixels. Although the 1.2~m cross-Dragone could accommodate a larger DLFOV, we could not mitigate
+its sidelobes with further reducing the aperture. We therefore concluded that for PICO, an open-Dragone presented
+a good starting point for further optimization. }
+
+
+%A cross-Dragone will always have a larger $F$-number 
+%than an open-Dragone of the same aperture size, because the cross-Dragone focal length must be long enough that the focal plane 
+%does not block the primary mirror. } 
+% \comr{Can you really make such a general claim? }
+%\comr{why does it 'always' have larger F? Can make a smaller F, no?}. \como{The smallest f-number of a crossed system is about 2. The focal length has to be long so the focal plane doesn't block the primary. You could make an open with F > 2, but you can't make a crossed system with F < 2.}
+
+
+\comr{the previous paragraph was past tense; choose a tense and stick to it}
 We design the initial open Dragone following Granet's method\cite{granet2001}. 
 We find a solution with low f-number, $F=1.42$, the largest aperture that satisfies the volume constraints, and a large 
 DLFOV.  We force a circular aperture stop 
@@ -255,7 +285,7 @@ between the primary and secondary mirrors and numerically optimize its angle and
 optical performance.  The stop diameter provides an effective 1.4~m aperture on the primary for the center feed.  
 Adding a stop in this way increases the size of the primary mirror, because the primary is unevenly illuminated at various 
 field angles.
-Actively cooling the aperture stop, however, reduces detector noise and the stop shields the 
+Actively cooling the aperture stop, however, reduces detector noise, and the stop shields the 
 focal plane from stray radiation. At this stage the system still meets 
 the Dragone condition and is defined by the `Initial Open-Dragone' parameters in Table~\ref{tab:optics}.
 
@@ -274,15 +304,12 @@ The optimization metric is minimization of the rms spot diameter at
 the following locations: the center of the FOV, $\pm2$\dgr\ in Y, and $\pm4$\dgr\ in X. The center of the FOV is given a weight of 100
 while each outer point is given a weight of 1. To constrain the optimization, the X and Y 
 effective focal lengths are held fixed as is the impact point of the chief ray on the focal plane. 
-
 This optimization step increases the DLFOV
-by 15\% at 21~GHz, by 2.4$\times$ at 155~GHz, and by 
-10.5$\times$ at 799~GHz. 
-%\comr{1. is this proper English? 2.4$\times$? I don't think so. 2. Why change between \% and $\times$?} \como{1. Yes, according to Erin.} \como{2. Because 1050\% is awkward, as is 1.15$\times$.} 
-We improve the system further by including a curved focal surface, allowing the radius of 
-curvature to vary, and rerunning the optimization.  
-This gives a roughly 50\% increase in diffraction limited area at all frequencies over the Zernike polynomials alone.  
-Finally, an approximately 4\% additional gain in area can be achieved by adding Zernike terms 
+by \comb{factors of 1.15, 2.4 and 10.5 at 21, 155 and 799~GHz, respectively.} 
+%15\% at 21~GHz, by 2.4$\times$ at 155~GHz, and by 10.5$\times$ at 799~GHz. 
+\comr{2.4$\times$ is not proper English writing; tell Erin to stick to teaching math ...}  
+%2.4$\times$? I don't think so. 2. Why change between \% and $\times$?} \como{1. Yes, according to Erin.} \como{2. Because 1050\% is awkward, as is 1.15$\times$.} 
+\comb{We improve the DLFOV at all frequencies by approximately 50\% by rerunning the optimization and including a curved focal surface. A small ($\sim$4\%) additional gain in DLFOV} is achieved by adding Zernike terms 
 up to sixth order, allowing the secondary to focal surface distance to vary, adding a weighted constraint on the effective focal length, 
 and adding fields with weight of 0.01 to the rms spot diameter metric at $\pm7.5$\dgr\ in Y and $+15$\dgr\ in X. 
 These additional fields are necessary to constrain the corrections at the mirror edges.
