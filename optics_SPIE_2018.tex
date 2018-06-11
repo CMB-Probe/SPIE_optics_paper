@@ -121,7 +121,6 @@ things you are reporting? Is it quantitative? }
 \keywords{Cosmic microwave background, cosmology, mm-wave optics, polarimetry, instrument design, satellite, mission concept}
 
 
-
 \section{INTRODUCTION}
 \label{sec:intro}  
 
@@ -137,7 +136,8 @@ information about the formation, evolution, and structure of the Universe.
 The polarization and temperature anisotropies of the cosmic microwave 
 background (CMB) encode fundamental physics information relating to the epoch of inflation, the mass of neutrinos,  
 and the number of relic light particles in the early Universe. They also contain information about the formation of 
-the first stars, galaxies, and clusters.  Information about the role of magnetic fields in star formation and galactic evolution is obtainable 
+the first stars, galaxies, and clusters, as well as information on emission from the innermost regions of radio source jets.
+.  Information about the role of magnetic fields in star formation and galactic evolution is obtainable 
 by observing the polarized emission of Galactic dust, which 
 traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with 
 unprecedented polarization sensitivity 
@@ -220,48 +220,25 @@ For PICO we begin
 the optimization with a Dragone system that to our knowledge has not been implemented in CMB instruments before. 
 We call it an `open-Dragone' because of its overall geometry and in contrast to the widely used `cross-Dragone', see Figure~\ref{fig:ray}. 
 
-%\comr{An advantage of the open-Dragone system relative to the cross-Dragone is that it is easier to baffle the focal plane
-%and thus to eliminate side-lobes. An advantage relative to a Gregorian design is that it has larger DLFOV. Our studies 
-%indicate however that for the same aperture size and focal length, a cross system has a DLFOV that is $\sim$1.3 times 
-%larger than the open. CHECK. 1.1? 1.2? 1.3?}
+%\comr{I am confused about the previous paragraph. It starts with a claim of a quantitative 'comparison' between a number of 
+%systems; it even presents the advantages of a particular figure of merit, but in the
+%end it is largely a set of qualitative arguments.  Here is my version of this paragraph. }
+%\como{I agree the rewritten strucutre is better.  I refined it some more.}
 
-%\comr{This is an important paragraph. I started making comments along these lines earlier. Need to move the paragraph 
-%earlier to motivate the use of the Open system.}
-We consider two additional Dragone systems, a Gregorian Dragone and a cross-Dragone, and compare their performance to 
-the open-Dragone. We compare the DLFOV at 155 GHz measured in units of $(F\lambda)^2$ as this metric is invariant to changes 
-in $F$-number. 
-With half the diffraction limited focal plane 
-area of the open-Dragone,\cite{core2018_inst} the Gregorian Dragone is unable to 
-support $\mathcal{O}(10^4)$ detectors, so it is rejected.  
-The cross-Dragone has roughly $4\times$ the diffraction limited focal plane area of the open-Dragone, 
-but it has significant sidelobes as shown in Figure~\ref{fig:sidelobes}. Additionally, a cross-Dragone will always have a larger $F$-number 
-than a similar open-Dragone, because the cross-Dragone focal length must be long enough that the focal plane does 
-not block the primary mirror.
-The larger $F$-number results in a larger telescope which fits poorly into the shadow cone. The largest cross-Dragone 
-that meets the PICO volume constraints has 
-a 1.2~m aperture while the largest open-Dragone aperture is 1.4~m. The large $F$-number of the cross-Dragone system also increases 
-the physical focal plane size, and therefore mass and cost, for a fixed number of pixels.  
-These disadvantages with the Gregorian Dragone and the cross-Dragone led us to use the open-Dragone as a starting 
-point for the PICO optical design.
-
-\comr{I am confused about the previous paragraph. It starts with a claim of a quantitative 'comparison' between a number of 
-systems; it even presents the advantages of a particular figure of merit, but in the
-end it is largely a set of qualitative arguments.  Here is my version of this paragraph. }
-
-\comb{We considered two additional Dragone systems, a Gregorian Dragone and a cross-Dragone, and compared the 
-relative performance 
-of the three systems in terms of DLFOV, compactness, and rejection of sidelobes.  
-Compared to the open-Dragone, the Gregorian had half the DLFOV for the same $F$-number and could not  
-support $\mathcal{O}(10^4)$ detectors. It was therefore rejected.  
-The cross-Dragone had roughly $4\times$ the DLFOV compared to the open-Dragone, 
-but was more difficult to pack inside the spacecraft volume {\it and} avoid known sidelobes, as shown in Figure~\ref{fig:sidelobes}.
-\comr{why is this Figure 4 and not 3?}
-We found that the largest cross-Dragone that met the PICO volume constraints had 
-a 1.2~m aperture and an F\# of ? while the largest open-Dragone aperture was 1.4~m and an F\# of ?. The larger 
-$F$-number of the cross-Dragone system implied larger physical focal plane size, and therefore higher mass and cost, 
-for the same number of pixels. Although the 1.2~m cross-Dragone could accommodate a larger DLFOV, we could not mitigate
-its sidelobes without further reducing the aperture. We therefore concluded that for PICO, an open-Dragone presented
-a good starting point for further optimization. }
+We consider two additional Dragone systems, a Gregorian Dragone and a cross-Dragone, and compare the 
+relative performance of all three systems in terms of DLFOV, compactness, and rejection of sidelobes.  
+Compared to the open-Dragone, the Gregorian has half the DLFOV for the same $F$-number and cannot  
+support $\mathcal{O}(10^4)$ detectors. It is therefore rejected.  
+The cross-Dragone has roughly $4\times$ the DLFOV of the open-Dragone, 
+but is more difficult to pack inside the spacecraft volume while avoiding the known sidelobes shown in Figure~\ref{fig:sidelobes}.
+We find the largest cross-Dragone which meets the PICO volume constraints has 
+a 1.2~m aperture and an $F$-number of 2.5, while the largest open-Dragone aperture is 1.4~m with an $F$-number of 1.42. The larger 
+$F$-number of the cross-Dragone system implies a larger physical focal plane, and therefore higher mass and cost, 
+for the same number of pixels. 
+%Although the 1.2~m cross-Dragone can accommodate a larger DLFOV, we could not mitigate
+%its sidelobes without further reducing the aperture. 
+For the PICO case, we conclude that the advantages of a low $F$-number and easily baffled sidelobes make the open-Dragone a good starting  
+point for further optimization. 
 
 
 %A cross-Dragone will always have a larger $F$-number 
@@ -270,8 +247,21 @@ a good starting point for further optimization. }
 % \comr{Can you really make such a general claim? }
 %\comr{why does it 'always' have larger F? Can make a smaller F, no?}. \como{The smallest $F$-number of a crossed system is about 2. The focal length has to be long so the focal plane doesn't block the primary. You could make an open with F > 2, but you can't make a crossed system with F < 2.}
 
+\begin{figure} [ht]
+\begin{center}
+%\begin{tabular}{c} %% tabular useful for creating an array of images 
+\includegraphics[height=6.5cm]{sidelobes.png}
+%\end{tabular}
+\end{center}
+\caption { \label{fig:sidelobes} 
+Comparison of sidelobes for a cross-Dragone (left) and an open-Dragone (right).  Rays are traced from the center 
+of the focal plane toward the sky.
+For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles.  
+However, the sidelobe and direct 
+sky view in the cross-Dragone system require a long forebaffle or large $F$-number to mitigate, both of which are problematic in the PICO case.
+}
+\end{figure} 
 
-\comr{the previous paragraph was past tense; choose a tense and stick to it}
 We design the initial open Dragone following Granet's method\cite{granet2001}. 
 We find a solution with low $F$-number, $F=1.42$, the largest aperture that satisfies the volume constraints, and a large 
 DLFOV.  We force a circular aperture stop 
@@ -299,11 +289,8 @@ the following locations: the center of the FOV, $\pm2$~deg in Y, and $\pm4$~deg 
 while each outer point is given a weight of 1. To constrain the optimization, the X and Y 
 effective focal lengths are held fixed as is the impact point of the chief ray on the focal plane. 
 This optimization step increases the DLFOV
-by \comb{factors of 1.15, 2.4 and 10.5 at 21, 155 and 799~GHz, respectively.} 
-%15\% at 21~GHz, by 2.4$\times$ at 155~GHz, and by 10.5$\times$ at 799~GHz. 
-\comr{2.4$\times$ is not proper English writing; tell Erin to stick to teaching math ...}  
-%2.4$\times$? I don't think so. 2. Why change between \% and $\times$?} \como{1. Yes, according to Erin.} \como{2. Because 1050\% is awkward, as is 1.15$\times$.} 
-\comb{We improve the DLFOV at all frequencies by approximately 50\% by rerunning the optimization and including a curved focal surface. A small ($\sim$4\%) additional gain in DLFOV} is achieved by adding Zernike terms 
+by factors of 1.15, 2.4 and 10.5 at 21, 155 and 799~GHz, respectively. 
+We improve the DLFOV at all frequencies by approximately 50\% by rerunning the optimization and including a curved focal surface. A small ($\sim$4\%) additional gain in DLFOV is achieved by adding Zernike terms 
 up to sixth order, allowing the secondary to focal surface distance to vary, adding a weighted constraint on the effective focal length, 
 and adding fields with weight of 0.01 to the rms spot diameter metric at $\pm7.5$~deg in Y and $+15$~deg in X. 
 These additional fields are necessary to constrain the corrections at the mirror edges.
@@ -371,22 +358,16 @@ an acceptable optical system, we add higher order Zernike terms, 19th-25th, and 
 the mirror shapes using the same metric and constraints. 
 The current PICO optical design is from this optimization procedure.
 
-Figure~\ref{fig:compare} 
-shows that the second optimization method reduces the overall telescope volume, allowing it to fit more easily within the shadow cone, 
-and increases the DLFOV.  
-The DLFOV increases by 1.9$\times$ at 21~GHz and by 4.6$\times$ at 799~GHZ, relative to the initial open-Dragone. 
-%\comr{This is relative to which baseline? need to provide improvement relative to the same starting point, but also give improvement relative 
-%to method1.}
-The most important gain in the DLFOV is at 129 and 155~GHz where it increased by 3.8$\times$ and 4.3$\times$, respectively.  
-This added area allows us to add `C' and `D' pixels, see Figure~\ref{fig:bands} and Section~\ref{sec:focalplane}, %\comr{what pixels? what is C, D?} 
-%which are critical to meeting PICO's cosmology and fundamental physics science goals, because they
-which contain the bands most sensitive to the CMB. Being able to 
-pack 100's of `C' and `D' pixels into the focal plane is what allows PICO to reach unprecedented levels of CMB sensitivity. 
-The first optimization method gives slightly worse performance at the lower frequencies with 92\% and 87\% the DLFOV relative to method two 
-at 21 and 155~GHz, respectively.  Method two gives a smaller DLFOV at 799~GHz, only 30\% of the method one area, but the DLFOV is still sufficient 
-for the number of 799~GHz detectors we require. 
+Figure~\ref{fig:compare} shows that the second optimization method greatly increases the DLFOV relative to the initial open-Dragone design.  
+The DLFOV is increased by factors of 1.9, 3.8, 4.3, and 4.6 at 21, 129, 155, and 799~GHz, respectively.  
+The most important gain is at 129 and 155~GHz where the extra area allows us to add 
+many more `C' and `D' pixels, see Figure~\ref{fig:bands} and Section~\ref{sec:focalplane}, 
+which contain the bands most sensitive to the CMB. 
+Being able to pack 100's of `C' and `D' pixels into the focal plane is what allows PICO to reach unprecedented levels of CMB sensitivity. 
+Compared to the first optimization method, the second gives somewhat better performance at the lower frequencies, with 1.11 and 1.15 times large DLFOV at 21 and 155~GHz, respectively.
+Method two gives a smaller DLFOV at 799~GHz, only 0.3 times the method one area, but the DLFOV is still sufficient for the number of 799~GHz detectors we require. Figure~\ref{fig:compare} also shows the second optimization method reduces the overall telescope volume, allowing it to fit more easily within the shadow cone. 
 
- \comr{do you mean if we had only optimization method 1 we wouldn't reach our goals?} \como{not really, because the goals are poorly defined.  But total sensitivity would be lower with method 1 only.}
+\comr{do you mean if we had only optimization method 1 we wouldn't reach our goals?} \como{not really, because the goals are poorly defined.  But total CMB sensitivity would be lower with method 1 only.}
 
 The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics}. The 
 system is diffraction limited for 799~GHz at the center of the field of view. At 155~GHz the 
@@ -416,20 +397,6 @@ curvature reduces defocus and increases the DLFOV as well as increasing telecent
 wafers would result in large defocus at the edges of these wafers.  This is not the case for PICO. The focal surface radius of curvature, 4.55~m, 
 results in a defocus of 0.1~mm for the edge of a 10~cm wafer. 
 
-\begin{figure} [ht]
-\begin{center}
-%\begin{tabular}{c} %% tabular useful for creating an array of images 
-\includegraphics[height=6.5cm]{sidelobes.png}
-%\end{tabular}
-\end{center}
-\caption { \label{fig:sidelobes} 
-Comparison of sidelobes for a cross-Dragone (left) and an open-Dragone (right).  Rays are traced from the center 
-of the focal plane toward the sky.
-For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles.  
-However, the sidelobe and direct 
-sky view in the cross-Dragone system require a long forebaffle or large $F$-number to mitigate, both of which are problematic in the PICO case.
-}
-\end{figure} 
 
 
 \section{FOCAL PLANE}
@@ -580,7 +547,7 @@ Low pass filter absorption loss$^a$  & frequency dependent, 0.2\%--2.8\%        
 Bolometer absorption efficiency  & 70\%                                             \\
 T$_e$, middle band in pixel (dB) & 10                                               \\
 Bose noise fraction, $\xi$       & 1                                                \\
-Bolometer yield                 & 100\%                                            \\
+Bolometer yield                 & 100\% \comr{\bf Change to 90\%}                                            \\
 Bath temperature, $T_o$ (mK)    & 100                                              \\
 TES critical temperature, $T_c$ (mK)   & 187                                              \\
 Safety factor, P$_{\rm sat}$/P$_{\rm abs}$      & 2                                                \\
@@ -794,33 +761,33 @@ Combining all bands gives a total CMB map depth for the entire PICO mission of 0
 \centering
 \caption{PICO frequency channels and noise. }
 \label{tab:noise}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|cc|}
 \hline
-Pixel  & Band  & FWHM   & Bolometer NEP & Bolometer NET        & N$_{\rm bolo}$ & Array NET            & Polarization map depth  \\
-Type   & GHz   & arcmin & aW/$\sqrt{Hz}$ & $\mu$K$_{\rm CMB}\sqrt{s}$ &           & $\mu$K$_{\rm CMB}\sqrt{s}$ & $\mu$K$_{\rm CMB}$-arcmin      \\ \hline
-A     & 21  & 38.4 & 4.89  & 112.2   & 120   & 12.9  & 18.2  \\
-B     & 25  & 32.0 & 5.33  & 103.0   & 200   & 9.07   & 12.8  \\
-A     & 30  & 28.3 & 4.92  & 59.4    & 120   & 5.60   & 7.88   \\
-B     & 36  & 23.6 & 5.36  & 54.4    & 200   & 3.96   & 5.58   \\
-A     & 43  & 22.2 & 5.33  & 41.7    & 120   & 3.80   & 5.36   \\
-B     & 52  & 18.4 & 5.73  & 38.4    & 200   & 2.71   & 3.82   \\
-C     & 62  & 12.8 & 8.29  & 69.2    & 732   & 2.97   & 4.19   \\
-D     & 75  & 10.7 & 8.98  & 65.4    & 1020  & 2.34   & 3.29   \\
-C     & 90  & 9.5  & 7.76  & 37.7    & 732   & 1.41   & 1.99   \\
-D     & 108 & 7.9  & 8.18  & 36.2    & 1020  & 1.15   & 1.61   \\
-C     & 129 & 7.4  & 7.35  & 27.8    & 732   & 1.03   & 1.45   \\
-D     & 155 & 6.2  & 7.36  & 27.5    & 1020  & 0.86   & 1.21   \\
-E     & 186 & 4.3  & 12.30 & 70.8    & 960   & 2.39   & 3.36   \\
-F     & 223 & 3.6  & 12.70 & 84.2    & 900   & 2.89   & 4.07   \\
-E     & 268 & 3.2  & 8.55  & 54.8    & 960   & 1.77   & 2.49   \\
-F     & 321 & 2.6  & 8.16  & 77.6    & 900   & 2.59   & 3.64   \\
-E     & 385 & 2.5  & 4.54  & 69.1    & 960   & 2.23   & 3.14   \\
-F     & 462 & 2.1  & 4.00  & 132.6   & 900   & 4.42   & 6.22   \\
-G     & 555 & 1.5  & 6.47  & 657.8   & 440   & 31.4  & 44.1  \\
-H     & 666 & 1.3  & 5.74  & 2212    & 400   & 111 & 156 \\
-I     & 799 & 1.1  & 4.97  & 10430   & 360   & 550 & 774 \\ 
+Pixel  & Band  & FWHM   & Bolometer NEP & Bolometer NET        & N$_{\rm bolo}$ & Array NET            & \multicolumn{2}{|c|}{Polarization map depth}  \\
+Type   & GHz   & arcmin & aW/$\sqrt{Hz}$ & $\mu$K$_{\rm CMB}\sqrt{s}$ &           & $\mu$K$_{\rm CMB}\sqrt{s}$ & $\mu$K$_{\rm CMB}$-arcmin & Jy/sr     \\ \hline
+A     & 21  & 38.4 & 4.89  & 112.2   & 120   & 12.9  & 18.2  & \comr{XX} \\
+B     & 25  & 32.0 & 5.33  & 103.0   & 200   & 9.07   & 12.8 & \comr{XX}  \\
+A     & 30  & 28.3 & 4.92  & 59.4    & 120   & 5.60   & 7.88 & \comr{XX}   \\
+B     & 36  & 23.6 & 5.36  & 54.4    & 200   & 3.96   & 5.58 & \comr{XX}   \\
+A     & 43  & 22.2 & 5.33  & 41.7    & 120   & 3.80   & 5.36 & \comr{XX}   \\
+B     & 52  & 18.4 & 5.73  & 38.4    & 200   & 2.71   & 3.82 & \comr{XX}   \\
+C     & 62  & 12.8 & 8.29  & 69.2    & 732   & 2.97   & 4.19 & \comr{XX}   \\
+D     & 75  & 10.7 & 8.98  & 65.4    & 1020  & 2.34   & 3.29 & \comr{XX}   \\
+C     & 90  & 9.5  & 7.76  & 37.7    & 732   & 1.41   & 1.99 & \comr{XX}   \\
+D     & 108 & 7.9  & 8.18  & 36.2    & 1020  & 1.15   & 1.61 & \comr{XX}   \\
+C     & 129 & 7.4  & 7.35  & 27.8    & 732   & 1.03   & 1.45 & \comr{XX}   \\
+D     & 155 & 6.2  & 7.36  & 27.5    & 1020  & 0.86   & 1.21 & \comr{XX}   \\
+E     & 186 & 4.3  & 12.30 & 70.8    & 960   & 2.39   & 3.36 & \comr{XX}   \\
+F     & 223 & 3.6  & 12.70 & 84.2    & 900   & 2.89   & 4.07 & \comr{XX}   \\
+E     & 268 & 3.2  & 8.55  & 54.8    & 960   & 1.77   & 2.49 & \comr{XX}   \\
+F     & 321 & 2.6  & 8.16  & 77.6    & 900   & 2.59   & 3.64 & \comr{XX}   \\
+E     & 385 & 2.5  & 4.54  & 69.1    & 960   & 2.23   & 3.14 & \comr{XX}   \\
+F     & 462 & 2.1  & 4.00  & 132.6   & 900   & 4.42   & 6.22 & \comr{XX}   \\
+G     & 555 & 1.5  & 6.47  & 657.8   & 440   & 31.4   & 44.1 & \comr{XX}  \\
+H     & 666 & 1.3  & 5.74  & 2212    & 400   & 111    & 156  & \comr{XX} \\
+I     & 799 & 1.1  & 4.97  & 10430   & 360   & 550    & 774  & \comr{XX} \\ 
 \hline
-Total &     &      &       &         & 12996 & 0.44   & 0.62  \\
+Total &     &      &       &         & 12996 & 0.44   & 0.62 &   \\
 \hline
 \end{tabular}
 \end{table}
