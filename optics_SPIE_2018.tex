@@ -103,13 +103,14 @@
 
 %\comr{new abstract}
 
-The Probe of Inflation and Cosmic Origins (PICO) is a probe-class mission concept currently under study by NASA.  PICO will probe the physics of the Big Bang 
-and the energy scale of inflation, constrain the sum of neutrino masses, measure the growth of structure in the universe, and constrain its reionization 
-history by making full sky maps of the cosmic microwave background with sensitivity 70 times higher than the Planck space mission. With bands at 
-21-799~GHz and arcmin resolution at the highest frequencies, PICO will make polarization maps of galactic synchrotron and dust emission to observe  
-the role of Galactic magnetic fields in galactic evolution and star formation. 
-We describe the current state of the PICO instrument design.  We discuss the choice of optical system, present the design of the focal plane, 
-and give the expected noise level. 
+The Probe of Inflation and Cosmic Origins (PICO) is a probe-class mission concept currently under study by NASA.  
+PICO will probe the physics of the Big Bang and the energy scale of inflation, constrain the sum of neutrino masses, 
+measure the growth of structure in the universe, and constrain its reionization history by making full sky maps of the 
+cosmic microwave background with sensitivity 70 times higher than the Planck space mission. With bands at 
+21-799~GHz and arcmin resolution at the highest frequencies, PICO will make polarization maps of galactic synchrotron 
+and dust emission to observe the role of Galactic magnetic fields in galactic evolution and star formation. 
+We describe the current state of the PICO instrument design.  We discuss the choice of optical system, present the 
+design of the focal plane, and give the expected noise level. 
 
 \comr{did you review the abstract? does it accurately represent the contents of the paper? Is it highlighting the unique and new 
 things you are reporting? Is it quantitative? } 
@@ -125,8 +126,8 @@ things you are reporting? Is it quantitative? }
 \label{sec:intro}  
 
 
-Currently,  NASA funded spaces missions in astronomy and astrophysics are either Explorer missions with \$250M cost caps or flagship missions, 
-such as JWST, which cost roughly \$3-\$5B. 
+Currently,  NASA funded spaces missions in astronomy and astrophysics are either Explorer missions with \$250M cost caps or 
+flagship missions, such as JWST, which cost roughly \$3-\$5B. 
 To study the science opportunities available at intermediate costs, NASA called for studies of `Probe' class missions with \$1B cost caps.  The Probe of Inflation 
 and Cosmic Origins (PICO) is one of these NASA funded studies.  This paper describes the status of the instrument optical design and focal plane approximately two 
 thirds of the way through the study time line.  The final PICO report will be sent to NASA at the end of 2018.
@@ -402,18 +403,18 @@ results in a defocus of 0.1~mm for the edge of a 10~cm wafer.
 \section{FOCAL PLANE}
 \label{sec:focalplane}
 
-Modern mm/sub-mm detectors are photon noise limited, therefore the primary way to increase sensitivity is to increase the number of detectors. 
+Modern mm/sub-mm detectors are photon noise limited, therefore the primary way to increase sensitivity is to increase the 
+number of detectors. \comr{are there additional secondary ways?}
 The PICO focal plane has 12,996 detectors, 175 times the number flown on \textit{Planck}. PICO achieves this by 
 having a large DLFOV and using multichroic pixels (MCPs)\cite{Suzuki2014_samps,datta2014_mcp}. 
 The MCP architecture assumed for PICO has three bands per pixel with two single polarization transition 
 edge sensor (TES) bolometers per band and therefore six bolometers per pixel. 
 We assume the MCPs are coupled to free space using lenslets and sinuous antennae \cite{Suzuki2014_samps}, 
-however the pixel size, number, and spacing is 
-relatively agnostic to the coupling scheme meaning the current layout would not change significantly 
+but the focal plane layout, including pixel sizes, numbers, and spacing would not change significantly 
 if horn or phased array coupling was used instead.
 
 PICO has 21 overlapping bands with centers spanning the range 21--799~GHz. The bands are divided amongst 
-nine pixel types, A-I; see Figure~\ref{fig:bands}. 
+nine pixel types labeled A to I; see Figure~\ref{fig:bands}. 
 %These bands provide the broad fequency coverage needed to seperate the CMB, Galactic dust, and various foregrounds using their differing spectra.  \comr{no. it is needed to achieve all of our science goals. separating foreground is only one of the goals of the broad frequency coverage.}
 The 25\% fractional bandwidth is broader than the interband spacing causing neighboring bands to 
 overlap and requiring them to be in separate pixels. 
@@ -422,7 +423,8 @@ overlap and requiring them to be in separate pixels.
 %\comb{Be more succinct. A paper is not a tutorial. I don't agree that it leads to more complications}
 The exceptions to the MCP architecture are the highest three bands, because they are above the superconducting 
 band gap of niobium which is used for the transmission lines, antennae, and filters of the MCPs.  
-For bands G, H, and I, we will use feedhorn-coupled polarization sensitive bolometers similar to those used with 
+For bands G, H, and I, we will use feedhorn-coupled polarization sensitive bolometers. The technology has high TRL 
+as it has already been used successfully with 
 \textit{Planck}\cite{planck2010_hfi} and Herschel SPIRE\cite{spire2010}.
 
 \begin{figure} [ht]
@@ -434,7 +436,8 @@ For bands G, H, and I, we will use feedhorn-coupled polarization sensitive bolom
 \caption { \label{fig:bands} 
 Frequency coverage of the PICO bands. Each color (excluding magenta) denotes a different MCP, labeled A-F. The bar height 
 indicates the number of detectors per band.  Bar width gives the bandwidth. All bands are top-hats with 
-25\% fractional bandwidth; the $x$-axis is logarithmic.  The three highest frequencies (magenta) are the single color pixels G, H, and I.}
+25\% fractional bandwidth; the $x$-axis is logarithmic.  The three highest frequencies (magenta) are the 
+single color pixels G, H, and I.}
 \end{figure} 
 
 Figure~\ref{fig:focal_plane} shows the PICO focal plane.  
@@ -487,15 +490,12 @@ in Figure~\ref{fig:bands} }
 % 3 rhombi, shown in Figure~\ref{fig:focal_plane}, because the highest frequency magenta wafer will use different 
 % detector technology and will need to be fabricated separately.  \comb{I don't understand the last few sentences. Need to discuss}
 
-\comr{SH Stopped Here}
-
 % order 0.5 sec is longer than the sample time even at 1 deg beams. sweeping 1 deg takes 0.2 sec.
-The polarization sensitive bolometers in each MCP are oriented perpendicular to each other. 
-Differencing the bolometers allows each pixel to measure Stokes Q or, if the 
-pixel is rotated by 45~deg, Stokes U. This Q/U measurement is in the instrument reference frame with the $x$-axis parallel to the scan direction. 
-We rotate neighboring pixels which scan over the same sky location by 45~deg, as shown in Figure~\ref{fig:QU}.
-This layout reduces systematic errors by maximizing the number of Q,U pixel pairs which have almost identical optical paths and measure sky locations 
-as close to simultaneously as possible.  
+\sout{The polarization sensitive bolometers in each MCP are oriented perpendicular to each other. }
+Differencing detectors that are sensitive to orthogonal states of polarization within each pixel gives a measurement of 
+a particular Stokes parameter. Pixels that are sensitive to the $U$ Stokes parameter are rotated by 45~deg relative to those
+that are sensitive to $Q$. This Q/U measurement is in the instrument reference frame with the $x$-axis parallel to the scan 
+direction; see Figure~\ref{fig:QU}. \sout{ This layout reduces systematic errors by maximizing the number of Q,U pixel pairs which have almost identical optical paths and measure sky locations as close to simultaneously as possible.  }
 
 \begin{figure} [ht]
 \begin{center}
@@ -507,27 +507,32 @@ as close to simultaneously as possible.
 Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) for an example wafer.}
 \end{figure}
 
-Two multiplexing methods, time domain (TDM) and frequency domain (FDM), where explored 
-for PICO. Trade-off details are discussed in Sutin et~al.\cite{brian_spie}
-The current PICO baseline is TDM, but the choice is not a driver for the focal plane layout or noise discussed in this paper.
-
+\sout{Two multiplexing methods, time domain (TDM) and frequency domain (FDM), where explored for PICO. Trade-off details are discussed in Sutin et~al.\cite{brian_spie}}
+The PICO focal plane readout has been designed around time domain multiplexing (TDM), but this choice is not a 
+significant driver for the focal plane layout or overall noise budget. 
 
 
 \section{INSTRUMENT NOISE}
 \label{sec:noise}
 %\comr{comment somewhere in this section that these noise numbers are CBE. no margins.}
 
-We develop an end to end white noise model of the PICO instrument to predict full mission sensitivity and 
-provide a metric by which to evaluate optical, mechanical, and mission design trade-offs.  This model does not include 
-1/f noise or estimates of possible systematic effects.  %We assume TES bolometers read out using time domain multiplexing (TDM). 
-%To simplify the model, we assume TES bolometers as the detector at all frequencies, even though other technologies may be better suited to the lowest bands.  
-%Any suitable technology will be photon noise dominated as the TESs are, so total noise levels in the lowest bands should be relatively unaffected by 
+We develop an end to end noise model of the PICO instrument to predict full mission sensitivity and 
+provide a metric by which to evaluate \sout{optical, mechanical, and } mission design trade-offs.  This model assumes white noise
+at all frequencies \comr{to the extent you can, state what you do, rather than what you don't do}. 
+The overall sensitivity \comb{does not include calibration uncertainties or estimates} of other possible 
+systematic effects. \comr{but this is an example in which we state what we don't include...} 
+%We assume TES bolometers read out using time domain multiplexing (TDM). 
+%To simplify the model, we assume TES bolometers as the detector at all frequencies, even though other technologies 
+%may be better suited to the lowest bands.  Any suitable technology will be photon noise dominated as the TESs are, 
+% so total noise levels in the lowest bands should be relatively unaffected by 
 %the use of a different detector technology.
-To construct the model we follow the standard process\cite{suzuki2013_thesis,aubin2013_thesis} of estimating the 
-optical load, calculating properties of the TES bolometers, calculating noise equivalent power (NEP) by source, 
-combining all NEP terms to get detector noise, and finally combining all detectors to get full mission sensitivity.  
+To construct the model we \sout{follow the standard process\cite{suzuki2013_thesis,aubin2013_thesis}} estimate the 
+optical load, \sout{calculating properties of the TES bolometers,} calculate noise equivalent power (NEP) by source, 
+combine all NEP terms to get detector noise, combine all detectors to get noise per frequency band, and then 
+include total mission time to find overall mission sensitivity.  
 Each of these steps includes various assumptions and design decisions, 
 which are discussed in this section.  The assumptions are summarized in Table~\ref{tab:assume}.
+\comr{what's important here is how do we know that the model is correct. How was it checked and validated?}
 % comment on photon dominated?
 
 \begin{table}[ht]
@@ -572,30 +577,21 @@ Observing efficiency             & 95\%                                         
 
 \subsubsection{Model}
 
-The sources of optical load are the CMB, primary and secondary mirrors, aperture stop, and a low pass optical filter.  These elements 
-are shown schematically in Figure~\ref{fig:load}. 
-%We assume the primary is 15~K, the stop 6and secondary 4~K, and the low pass filter 100~mK. % for details of the thermal design see \citenum{brian_spie}.  
-%The emissivity of the mirrors depends on frequency, $\epsilon(\nu) =  \epsilon_0\sqrt{\nu / (\text{150~GHz})}$. At 150~GHz we assume an emissivity of 0.07\% 
-%\cite{planck2011_hfi_temp,planck2018_lfi_mirrors}. 
-%Emissivity of the stop and low pass filter was 1 at all frequencies.
-%; temperatures and emissivities are given in Table~\ref{tab:noise_model}. 
-%
-The total load absorbed at the bolometer is the sum of the power emitted by each element reduced by the transmission efficiency of the elements between 
-the emitting surface and the bolometer.  
-%For example, the CMB power is reduced by the optical efficiency of the entire instrument, 
-%$\eta_{opt} = \eta_{PRI}\eta_{stop}\eta_{SEC}\eta_{filter}\eta_{bolo}$, while the power emitted by the low pass filter is reduced only by $\eta_{bolo}$.
-The absorbed power is,
+The sources of optical load are the CMB, the primary and secondary mirrors, the aperture stop, and a low pass optical filter.  
+These elements are shown schematically in Figure~\ref{fig:load}. 
+The total load absorbed at the bolometer is the sum of the power emitted by each element reduced by the transmission 
+efficiency of the elements between the emitting surface and the bolometer.  
+The absorbed power is
 \begin{equation}
 \label{eq:load}
 P_{\rm abs} =  (((( P_{\rm CMB} \eta_{\rm PRI} + P_{\rm PRI} ) \eta_{\rm stop} + P_{\rm stop}(1-\eta_{\rm stop}) ) \eta_{\rm SEC} + P_{\rm SEC})\eta_{\rm filter} + P_{\rm filter}) \eta_{\rm bolo},
 \end{equation} 
-%_{i=Filter}^{CMB}
-% maybe change PRI to M1, SEC to M2 ??
-where $P_{\rm elem}$ is the in band power emitted by a given element for a single polarization and $\eta_{\rm elem}$ is the efficiency 
-of the element. %We assumed 25\% fractional bandwidth top-hat bands and throughput of $\lambda^2$. 
-Power emitted by the stop is a special case. We multiply $P_{\rm stop}$ by 
-$(1-\eta_{\rm stop})$ because $\eta_{\rm stop}$ is spillover efficiency, the fraction of the throughput which passes through the stop, therefore $(1-\eta_{\rm stop})$ 
-is the fraction of the throughput which views the stop.  
+where $P_{\rm elem}$ is the in band power emitted by a given element for a single polarization and $\eta_{\rm elem}$ is the 
+\comb{transmission?} efficiency 
+of the element. Power emitted by the stop is a special case. We multiply $P_{\rm stop}$ by 
+$(1-\eta_{\rm stop})$ because $\eta_{\rm stop}$ is the spillover efficiency, the fraction of the throughput which passes through the 
+stop. Therefore $(1-\eta_{\rm stop})$ is the fraction of the throughput which views the stop. \comr{where is a list of all the $\eta$ values?
+Are the mirror temperatures listed? }
 
 \begin{figure} [ht]
 \begin{center}
@@ -604,29 +600,34 @@ is the fraction of the throughput which views the stop.
 %\end{tabular}
 \end{center}
 \caption[load] { \label{fig:load} 
-Schematic representation of the prediction of optical load.  Power emitted by each element is modified by the efficiency of the following elements 
-and added to the total expected load.  The multichroic pixel illuminates the stop differently for each of the three bands.
-}
+Schematic representation of the prediction of optical load.  Power emitted by each element is modified by the efficiency of 
+the following elements and added to the total expected load.  The multichroic pixel illuminates the stop differently for 
+each of the three bands. }
 \end{figure} 
 %
 
-For PICO, the CMB and stop dominate the optical loading as shown in Figure~\ref{fig:popt}.  %at low frequencies while and mirror emission 
+For PICO, the CMB and stop dominate the optical loading as shown in Figure~\ref{fig:popt}.  \comr{how do I see this 
+from the figure? Is that true at all frequencies?}
+%at low frequencies while and mirror emission 
 % stop is ~1/3 of the load for 0.68 bands. 
 %is the majority above 460~GHz due to their differing temperatures, see Figure~\ref{fig:popt}. 
-The jumps in load between neighboring bands, seen in Figure~\ref{fig:popt} around 70 and 200~GHz, are due to $\eta_{\rm stop}$ changing with frequency 
-which is a consequence of using MCPs.  
-The MCP angular beam width is dependent on the wavelength and pixel diameter as,\cite{suzuki2013_thesis}
+The jumps in load between neighboring bands, seen in Figure~\ref{fig:popt} around 70 and 200~GHz, are 
+due to $\eta_{\rm stop}$ changing with frequency which is a consequence of using MCPs.  
+The MCP angular beam width \sout{is dependent} depends on the wavelength and pixel diameter as \sout{,}\cite{suzuki2013_thesis}
 \begin{equation}
 \label{eq:mcp_beam}
 \theta_{1/e^2} = \frac{2.95 \lambda}{\pi D_{\rm px}}. 
 \end{equation} 
-The edge taper, T$_e$, of the middle frequency band in each pixel is chosen to be 10~dB. For the upper and lower bands T$_e$ is calculated using 
-Equation~\ref{eq:mcp_beam}. This changing illumination of the stop is shown schematically by the dashed rays in Figure~\ref{fig:load}. 
-For each MCP, A-H, T$_e$ is 4.8, 10, and 20.7~dB for the lower, middle, and upper bands, respectively.  These 
+The edge taper, T$_e$, of the middle frequency band in each pixel is chosen to be 10~dB. For the upper and lower bands 
+T$_e$ is calculated using Equation~\ref{eq:mcp_beam}. This changing illumination of the stop is shown schematically by 
+the dashed rays in Figure~\ref{fig:load}. 
+For each MCP \comb{in pixels A-H} T$_e$ is 4.8, 10, and 20.7~dB for the lower, middle, and upper bands, respectively.  These 
 edge tapers correspond to $\eta_{\rm stop}$ of 0.68, 0.90, and 0.99.
-% meaning 32\% of the lowest band's throughput couples to the cold stop while only 1\% of the high frequency band's throughput copules to the stop.  
-The changing $\eta_{\rm stop}$ has three main effects; uneven optical load between bands, varying NEP to noise equivalent temperature (NET) conversion 
-between bands, and telescope beam size not scaling smoothly with $\lambda$.
+The changing $\eta_{\rm stop}$ has three main effects; uneven optical load between bands, varying NEP to noise 
+equivalent temperature (NET) conversion between bands \comr{this is not an independent effect}, and telescope beam 
+size not scaling smoothly with $\lambda$.
+
+\comr{SH NOW HERE}
 
 \begin{figure} [ht]
 \begin{center}
@@ -636,23 +637,11 @@ between bands, and telescope beam size not scaling smoothly with $\lambda$.
 \end{tabular}
 \end{center}
 \caption{ \label{fig:popt} \label{fig:noise} \label{fig:net} 
-Left: Expected optical loads for single polarization PICO bolometers. 
+Left: Expected optical load as a function of frequency for single polarization PICO bolometers. 
 Center: Breakdown of NEP across the PICO frequency range.  Photon noise dominates even at the lowest frequencies. 
-Right: Single detector NET, temperature sensitivity,  across the PICO bands. %\comr{could add CORE NETs here for comparison. could add zoom around 150 GHz.}
+Right: Single detector NET, temperature sensitivity \comr{what does that supposed to mean?},  across the PICO bands. 
 }
 \end{figure} 
-
-%From $P_{abs}$ we calculate the TES bolometer properties for each band.  
-%We assume a safety factor of 2, $P_{sat}/P_{abs}=2$; $P_{sat}$ is the 
-%saturation power of the bolometer.  The PICO focal plane temperature, $T_o$, of 100~mK sets an optimal superconducting transition temperature, 
-%$T_c$, of 187~mK.  We assume thermal conductivity scales as a power law, $G \propto T^n$,  with $n=2$.  The required thermal conductivity for 
-%a given bolometer is set by the $P_{sat}$,
-%any need to cite power law, G \propto T^n, assumption?
-%\begin{equation}
-%\label{eq:G}
-%G = \frac{P_{sat}}{T_c} (n+1) \frac{1}{1-\left({T_o}{T_c}\right)^{n+1} }. 
-%\end{equation} 
-%\comr{need to say anything about C? tau? no real effect for FDM. if tau too long does matter for TDM. need to look in more detail. Roger assumed C = 1 pJ/K }
 
 We consider four noise sources per bolometer; photon, phonon, TES Johnson, and readout. 
 Photon noise depends on the absorbed power\cite{richards1994}, 
