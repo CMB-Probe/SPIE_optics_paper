@@ -95,20 +95,20 @@
 
 \begin{abstract}
 
-
 The Probe of Inflation and Cosmic Origins (PICO) is a probe-class mission concept currently under study by NASA.  
 PICO will probe the physics of the Big Bang and the energy scale of inflation, constrain the sum of neutrino masses, 
 measure the growth of structure in the universe, and constrain its reionization history by making full sky maps of the 
 cosmic microwave background with sensitivity 70 times higher than the Planck space mission. With bands at 
 21-799~GHz and arcmin resolution at the highest frequencies, PICO will make polarization maps of galactic synchrotron 
 and dust emission to observe the role of Galactic magnetic fields in galactic evolution and star formation. 
-We describe the current state of the PICO instrument design.  We discuss the choice of optical system, present the 
-design of the focal plane, and give the expected noise level. 
+We describe the current state of the PICO instrument design.  We discuss the choice of optical system, which is based on 
+an open-Dragone telescope that, to our knowledge, has not been used for mm-wave astrophysical observations. 
+We also present the focal plane design, a white noise model of the instrument, and the expected noise level. 
 
 \comr{did you review the abstract? does it accurately represent the contents of the paper? Is it highlighting the unique and new 
-things you are reporting? Is it quantitative? } 
+things you are reporting? Is it quantitative? } \como{In order; yes, yes, I think so, and somewhat.}
 
-\comb{need to distinguish between Current Best Estimate and Required Sensitivity.}
+\comb{need to distinguish between Current Best Estimate and Required Sensitivity.} \como{Added one sentence on this at end of 1st paragraph of intro.  Does it need to be more prominent?}
 
 \end{abstract}
 
@@ -124,7 +124,9 @@ Currently,  NASA funded spaces missions in astronomy and astrophysics are either
 flagship missions, such as JWST, which cost roughly \$3-\$5B. 
 To study the science opportunities available at intermediate costs, NASA called for studies of `Probe' class missions with \$1B cost caps.  The Probe of Inflation 
 and Cosmic Origins (PICO) is one of these NASA funded studies.  This paper describes the status of the instrument optical design and focal plane approximately two 
-thirds of the way through the study time line.  The final PICO report will be sent to NASA at the end of 2018.
+thirds of the way through the study time line.  Values in this paper, such as component temperatures and detector noise levels,  
+are current best estimates. They are not finalized mission requirements. 
+The final PICO report will be sent to NASA at the end of 2018.
 
 Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of 
 information about the formation, evolution, and structure of the Universe.  
@@ -513,7 +515,7 @@ significant driver for the focal plane layout or overall noise budget.
 %\comr{comment somewhere in this section that these noise numbers are CBE. no margins.}
 
 We develop an end to end noise model of the PICO instrument to predict full mission sensitivity and 
-provide a metric by which to evaluate  mission design trade-offs.  This model assumes white noise
+provide a metric by which to evaluate mission design trade-offs.  This model assumes white noise
 at all frequencies. 
 %\comr{to the extent you can, state what you do, rather than what you don't do}. 
 The overall sensitivity does not include calibration uncertainties or estimates of other possible 
@@ -526,7 +528,15 @@ include total mission time to find overall mission sensitivity.\cite{suzuki2013_
 Each of these steps includes various assumptions and design decisions, 
 which are discussed in this section.  The assumptions are summarized in Table~\ref{tab:assume}.
 
-\comr{what's important here is how do we know that the model is correct. How was it checked and validated?}
+\comr{what's important here is how do we know that the model is correct. How was it checked and validated?} \como{See following.  An aside, what is the normal or natural way to 
+refer to work done by coauthors on the paper?  Saying 'we' all the time seems odd, but so does talking about work done by coauthors as if it is seperate from the 
+main work written up in this paper.}\\
+To validate our model we compare to an independent calculation done by collaborators at JPL.  The calculations agree within 1\% for individual noise terms 
+and for overall mission noise.  We also use our model to calculate CORE and LiteBIRD noise using published system parameters. The 
+results are consitent with published values.  Additionally, we compare PICO detector noise to CORE and LiteBIRD detector noise.  The 
+lower PICO noise is explained by the cold system and differing optical efficiency.  From these test we conclude that our model is correct and our assumptions 
+are reasonable.
+\como{I'm not a huge fan of this paragraph.  It is fairly wishy-washy, but is the best I can do for now.}
 
 
 \begin{table}[ht]
@@ -672,13 +682,11 @@ to 19\% at 799~GHz.
 
 
 For TDM readout, phonon and readout noise are roughly equal with TES Johnson noise being insignificant.  We also modeled 
-FDM readout.  For FDM the TES Johnson noise is higher, 2/3 of the readout NEP, but the readout 
+frequency domain multiplexing (FDM) readout.  For FDM the TES Johnson noise is higher, 2/3 of the readout NEP, but the readout 
 noise is lower.  Comparing the combined TES Johnson and readout NEPs for TDM and FDM we find essentially indentical performance 
 with total noise differing by less than 3\% across all bands.  For both systems we require a focal plane temperature, $T_o$, of 
 100~mK and a bolometer safety factor of 2 to remain photon noise dominated at the lowest bands. 
-\comr{should we have Dobbs review this?}
-
-
+\comr{should we have Dobbs review this?} \como{I don't think it is necessary. But you're more familiar with the politics of this one. Dobbs isn't a co-author, if that matters.}
 
 
 % RESULTS 
