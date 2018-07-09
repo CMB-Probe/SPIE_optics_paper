@@ -120,60 +120,47 @@ things you are reporting? Is it quantitative? } \como{In order; yes, yes, I thin
 \label{sec:intro}  
 
 
-\sout{Currently, NASA funded spaces missions in astronomy and astrophysics are either Explorer missions with \$250M cost caps or 
-flagship missions, such as JWST, which cost roughly \$3-\$5B. }
 Over the last decade NASA's astrophysics division has funded design and construction of space missions that are either Explorer-class, 
 with cost cap of $\leq \$250$M or Flagship-class that cost above \$1B. 
-To study the science opportunities available at intermediate costs, NASA initiated studies of Probe-class missions \comb{with cost window 
-between \$400M and \$1B}.  We are conducting \comb{one these studies for a mission called The Probe of Inflation and Cosmic Origins. 
-A paper by Sutin etal. in these proceedings gives an overall review of PICO and gives the scientific motivation. } 
-\comr{include proper reference}
-This paper describes the \sout{status of the instrument} \comb{design of the telescope and focal plane and gives 
-our current best estimate for the sensitivity of the instrument.} The mission study is not complete; the final report 
-is due in December 2018. Therefore, the quantitative assessments  we provide are temporary in nature and may change somewhat. 
-Even so, the design is fairly mature and we don't expect significant changes. 
+To study the science opportunities available at intermediate costs, NASA initiated studies of Probe-class missions with cost window 
+between \$400M and \$1B.  We are conducting one these studies for a mission called the Probe of Inflation and Cosmic Origins (PICO). 
+A paper by Sutin et al.\cite{brian_spie}\ in these proceedings gives an overall review of PICO and the scientific motivation.  
+This paper describes the design of the telescope and focal plane and gives 
+our current best estimate for the sensitivity of the instrument. The mission study is not complete; the final report 
+is due in December 2018. Therefore, the quantitative assessments we provide are temporary in nature and subject to revision. 
+Even so, the design is fairly mature and we do not expect significant changes. 
 Values in this paper, such as component temperatures and detector noise levels,  
 are current best estimates. They are not finalized mission requirements. 
 
-\sout{Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of 
-information about the formation, evolution, and structure of the Universe.  
-The polarization and temperature anisotropies of the cosmic microwave 
-background (CMB) encode fundamental physics information relating to the epoch of inflation, the mass of neutrinos,  
-and the number of relic light particles in the early Universe. They also contain information about the formation of 
-the first stars, galaxies, and clusters, as well as information on emission from the innermost regions of radio source jets.
-Information about the role of magnetic fields in star formation and galactic evolution is obtainable 
-by observing the polarized emission of Galactic dust, which 
-traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with 
-unprecedented polarization sensitivity 
-in 21 bands centered at 21--799~GHz.  Details of these science targets and expected constraints from PICO 
-are in a companion paper, Sutin~et~al.\cite{brian_spie} 
-In this paper we discuss the mission's optical system, focal plane, and sensitivity.}
-
-
-%\comb{old: Large scale cosmological and fundamental 
-%physics information, such as 
-%evidence of inflation, the effect of the first stars and galaxies, constraints on neutrino masses, and limits on light particles beyond 
-%the standard model, is contained in the temperature and polarization anisotropies of the cosmic microwave 
-%background (CMB). } 
+% \sout{Astrophysical observations in the  millimeter and sub-millimeter region of the electromagnetic spectrum contain a wealth of 
+% information about the formation, evolution, and structure of the Universe.  
+% The polarization and temperature anisotropies of the cosmic microwave 
+% background (CMB) encode fundamental physics information relating to the epoch of inflation, the mass of neutrinos,  
+% and the number of relic light particles in the early Universe. They also contain information about the formation of 
+% the first stars, galaxies, and clusters, as well as information on emission from the innermost regions of radio source jets.
+% Information about the role of magnetic fields in star formation and galactic evolution is obtainable 
+% by observing the polarized emission of Galactic dust, which 
+% traces magnetic fields, at high resolution. Targeting both of these regimes, PICO will survey the entire sky with 
+% unprecedented polarization sensitivity 
+% in 21 bands centered at 21--799~GHz.  Details of these science targets and expected constraints from PICO 
+% are in a companion paper, Sutin~et~al.\cite{brian_spie} 
+% In this paper we discuss the mission's optical system, focal plane, and sensitivity.}
 
 \section{MISSION AND SPACECRAFT}
 \label{sec:spacecraft}
-
-%  This could all be in the intro instead. Purpose is to show constraints on the optics to motivate decisions discussed later.  
-\comr{Change all 'mirrors' to reflectors} 
 
 PICO will conduct scientific observations for five years from an orbit around the Earth-Sun L2 Lagrange point. It has
 21 bands centered at 21--799~GHz.  The spacecraft design impacts 
 the optical design and sensitivity in two primary ways; volume constraints limit the physical size of the telescope and optical component 
 temperatures impact noise levels.  
 
-The maximum \sout{size} diameter of the spacecraft is limited by the SpaceX's Falcon 9 launch vehicle, which carries payloads up to 4.6~m in diameter. 
-This diameter limits the V-groove \comb{shields'} size, which, along with the scan strategy, defines the `shadow cone' in Figure~\ref{fig:cad}.  
+The maximum diameter of the spacecraft is limited by the SpaceX's Falcon 9 launch vehicle, which carries payloads up to 4.6~m in diameter. 
+This diameter limits the V-groove shields' size, which, along with the scan strategy, defines the `shadow cone' in Figure~\ref{fig:cad}.  
 The shadow cone is the volume protected from solar illumination, and all optical components must remain within it. The shadow cone and 
-inner V-grooves define an available volume for the telescope.  \comb{We opted not to use a deployable shield as it presented added costs 
-and risk that outweighed its benefits.} The \comb{current thermal model indicates the temperatures of the optical elements as given in Figure~\ref{fig:cad}}. 
-\comb{The primary reflector is passively cooled, while the optics box, secondary mirror, and focal plane are actively cooled; Sutin~et~al.\cite{brian_spie}
-gives more details of the thermal system.} 
+inner V-grooves define an available volume for the telescope.  We opted not to use deployable shields as they presented added costs 
+and risk which outweighed the benefits. The current thermal model indicates the temperatures of the optical elements as given in Figure~\ref{fig:cad}. 
+The primary reflector is passively cooled, while the optics box, secondary reflector, and focal plane are actively cooled; Sutin~et~al.\cite{brian_spie}
+gives more details of the thermal system. 
 
 \begin{figure} [ht]
 \begin{center}
@@ -185,11 +172,7 @@ gives more details of the thermal system.}
 \sout{Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Sutin~et~al.\cite{brian_spie}}
 The symmetry axis of the satellite precesses around the satellite-sun axis (orange arrow) with an angle of 26 deg \comr{figure is confusing; show the spin 
 axis; show the sun along the shadow cone; show the boresight explicitly; show the 26 and 69 degrees}. This precession defines the 
-shadow cone which is shown in light gray. \comr{change V-Groove to V-Groove shields}
-%\comb{%is the primary really at 15 K? hard to believe. Need to verify. 
-%To explain the idea of a 'shadow cone', need to say something 
-%about where the Sun is and how it illuminates the spacecraft such as to give this 'shadow cone'. }
-%Primary 17 K, secondary 8 K, liner 6 (may get to 4.5 K)} 
+shadow cone which is shown in light gray.
 }
 \end{figure} 
 
@@ -208,15 +191,18 @@ shadow cone which is shown in light gray. \comr{change V-Groove to V-Groove shie
 \section{OPTICAL SYSTEM}
 \label{sec:optics}
 
-\sout{The PICO telescope is a 1.4~m aperture modified open-Dragone }.  The choice of telescope design was driven by a combination of science
-requirements and the physical limits discussed in Section~\ref{sec:spacecraft}.  The science requirements are: a large diffraction 
+%% fixing tense below, above needs chekcing.
+
+%\sout{The PICO telescope is a 1.4~m aperture modified open-Dragone }.  
+The choice of telescope design was driven by a combination of science
+requirements and the physical limits discussed in Section~\ref{sec:spacecraft}.  The science requirements were: a large diffraction 
 limited field of view (DLFOV)\footnote{ We consider an area in the FOV diffraction limited when the Strehl ratio is 
 larger than 0.8.} sufficient to support $\mathcal{O}(10^4)$ detectors, arcminute resolution at 800~GHz, low 
 instrumental polarization, and low sidelobe response. Additionally, 
 the transition edge sensor bolometers baselined for PICO require a telecentric focal plane which is sufficiently flat that it 
 can be tiled by 10~cm detector wafers without reduction in optical quality. 
 
-\comb{To increase aperture efficiency and reduce sidelobes we concentrated on off-axis optical designs.}
+To increase aperture efficiency and reduce sidelobes we concentrated on off-axis optical designs.
 More than 30 years ago Dragone analyzed the 
 performance of several off-axis systems and found solutions with low cross-polarization at the center of the field 
 of view and with astigmatism, or astigmatism and coma, canceled to first order.\cite{dragone,dragone_coma,dragone1983} These
@@ -224,31 +210,23 @@ systems also had no cross-polarization at the center of the field of view.
 A number of recent CMB instruments used off-axis systems, and several 
 began the design optimization with systems based on designs by
 Dragone\cite{planck2000_optics,ACT2011_optics,SPT2008_optics,core2018_inst,LB2016_optics,parshley_ccat_spie}. 
-For PICO we began \sout{begin} \comr{ present tense? I suggest it all becomes past tense.} 
-the optimization with a \comb{two-reflector} Dragone system that to our knowledge has not been implemented in CMB instruments before. 
+For PICO we began 
+the optimization with a two-reflector Dragone system that, to our knowledge, has not been implemented in CMB instruments before. 
 We call it an `open-Dragone' because of its overall geometry and in contrast to the widely used `cross-Dragone', see Figure~\ref{fig:ray}. 
-\comb{We used a 1.4~m entrance aperture as this aperture diameter satisfied the science requirements.} \comr{note unresolved references}
+We used a 1.4~m entrance aperture as this aperture diameter satisfied the science requirements.
 
-%\comr{I am confused about the previous paragraph. It starts with a claim of a quantitative 'comparison' between a number of 
-%systems; it even presents the advantages of a particular figure of merit, but in the
-%end it is largely a set of qualitative arguments.  Here is my version of this paragraph. }
-%\como{I agree the rewritten strucutre is better.  I refined it some more.}
-
-We consider \comr{past tense please} two additional Dragone systems, a Gregorian Dragone and a cross-Dragone, and compare the 
+We considered two additional Dragone systems, a Gregorian Dragone and a cross-Dragone, and compared the 
 relative performance of all three systems in terms of DLFOV, compactness, and rejection of sidelobes.  
-Compared to the open-Dragone, the Gregorian has half the DLFOV for the same $F$-number and cannot  
-support $\mathcal{O}(10^4)$ detectors. It is therefore rejected.  
-The cross-Dragone has roughly $4\times$ the DLFOV of the open-Dragone, 
-but is more difficult to pack inside the spacecraft volume while avoiding the known sidelobes shown in Figure~\ref{fig:sidelobes}.
-We find that the largest cross-Dragone which meets the PICO volume constraints has 
-a 1.2~m aperture and an $F$-number of 2.5, while the largest open-Dragone aperture is 1.4~m with an $F$-number of 1.42. The larger 
-$F$-number of the cross-Dragone system implies a larger physical focal plane, and therefore higher mass and cost, 
+Compared to the open-Dragone, the Gregorian had half the DLFOV for the same $F$-number and could not  
+support $\mathcal{O}(10^4)$ detectors. It was therefore rejected.  
+The cross-Dragone had roughly $4\times$ the DLFOV of the open-Dragone, 
+but was more difficult to pack inside the spacecraft volume while avoiding the known sidelobes shown in Figure~\ref{fig:sidelobes}.
+We found that the largest cross-Dragone which meets the PICO volume constraints had 
+a 1.2~m aperture and an $F$-number of 2.5, while the largest open-Dragone aperture was 1.4~m with an $F$-number of 1.42. The larger 
+$F$-number of the cross-Dragone system implied a larger physical focal plane, and therefore higher mass and cost, 
 for the same number of pixels. 
-%Although the 1.2~m cross-Dragone can accommodate a larger DLFOV, we could not mitigate
-%its sidelobes without further reducing the aperture. 
-For the PICO case, we conclude that the advantages of a low $F$-number and easily baffled sidelobes make the open-Dragone a good starting  
+For the PICO case, we concluded that the advantages of a low $F$-number and easily baffled sidelobes made the open-Dragone a good starting  
 point for further optimization. 
-
 
 %A cross-Dragone will always have a larger $F$-number 
 %than an open-Dragone of the same aperture size, because the cross-Dragone focal length must be long enough that the focal plane 
@@ -266,47 +244,46 @@ point for further optimization.
 Comparison of sidelobes for a cross-Dragone (left) and an open-Dragone (right) \comr{please add labels to Figure as well}.  
 Rays are traced from the center of the focal plane toward the sky \comr{same angular opening of rays?}.
 For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles \comr{show sketch of such baffles?}.  
-However, the \comb{rays labeled} `sidelobe' and `direct view to 
-sky' in the cross-Dragone system \comb{present added challenges. The challenges can be mitigated - with a long forebaffle or larger $F$-number (see
-for example \comr{add LB reference}) - but
-increase the overall physical size of the system,} which is problematic in the PICO case.}
+However, the rays labeled `sidelobe' and `direct view to 
+sky' in the cross-Dragone system present added challenges. The challenges can be mitigated---with a long forebaffle or larger $F$-number (see
+for example Matsumrua et al.\cite{LB2016_optics}---but
+doing so increases the overall physical size of the system, which is problematic in the PICO case.}
 \end{figure} 
 
-We design \comr{past tense} the initial open Dragone following Granet's method\cite{granet2001}. 
-\comr{note tweak to the way this is presented} 
-We began with a solution with $F=1.42$, 1.4~m aperture (that was verified to satisfy the volume constraints), and a large 
-DLFOV.  We force a circular aperture stop 
-between the primary and secondary mirrors and numerically optimize its angle and position to obtain the best 
-optical performance \comr{what does that mean? do you mean the largest DLFOV?}.  The stop diameter provides an 
-effective 1.4~m aperture on the primary for the center feed. \comr{need to clarify} 
-Adding a stop in this way increases the size of the primary \comb{reflector}, because \sout{the primary is unevenly illuminated at various 
-field angles.} different field angles illuminate different areas on the reflector.
-Actively cooling the aperture stop, however, reduces detector noise, and the stop shields the 
-focal plane from stray radiation. At this stage the system still meets 
+We designed the initial open Dragone following Granet's method\cite{granet2001}. 
+We began with a solution with $F=1.42$, a 1.4~m aperture (that was verified to satisfy the volume constraints), and a large 
+DLFOV.  We forced a circular aperture stop 
+between the primary and secondary reflectors and numerically optimized its angle and position to obtain the 
+the largest DLFOV.  The stop diameter was chosen such that, for the center feed, it projected a 
+1.4~m effective aperture onto the primary. 
+Adding a stop in this way increased the size of the primary reflector, because 
+different field angles illuminated different areas on the reflector.
+Actively cooling the aperture stop, however, reduced detector noise, and the stop shielded the 
+focal plane from stray radiation. At this stage the system still met 
 the Dragone condition and is defined by the `Initial Open-Dragone' parameters in Table~\ref{tab:optics}.
 
 In his publications Dragone provides a prescription to eliminate coma
-in addition to the cancellation of astigmatism in the baseline designs.\cite{dragone_coma} The corrections 
+in addition to the cancellation of astigmatism provided by the baseline designs.\cite{dragone_coma} The corrections 
 involve adding distortions to the primary and secondary reflectors 
 which are proportional to $r^4$ where $r=0$ is at the chief ray impact point on each reflector. 
-We thus attempt to increase the DLFOV using two methods. 
+We thus attempted to increase the DLFOV using two methods. 
 
-In \comb{ `Method1'}, one of the coauthors (RH) used Zemax to add Zernike 
-polynomials to the base conics which describe the mirrors. These Zernike polynomials are offset from the symmetry axis of the conic 
+In `Method1', one of the coauthors (RH) used Zemax to add Zernike 
+polynomials to the base conics which described the reflectors. These Zernike polynomials were offset from the symmetry axis of the conic 
 by $624.2$~cm for the primary and $76.1$~cm for the secondary.  
-This places the origin of polynomials at the chief ray impact point for each mirror. 
-Inspired by the Dragone corrections, all Zernike terms up to fourth order and the first fifth order term are allowed to vary. 
-The optimization metric is minimization of the rms spot diameter at 
-the following locations: the center of the FOV, $\pm2$~deg in Y, and $\pm4$~deg in X. The center of the FOV is given a weight of 100
-while each outer point is given a weight of 1. To constrain the optimization, the X and Y 
-effective focal lengths are held fixed as is the impact point of the chief ray on the focal plane. 
-This optimization step increases the DLFOV
+This placed the origin of polynomials at the chief ray impact point for each reflector. 
+Inspired by the Dragone corrections, all Zernike terms up to fourth order and the first fifth order term were allowed to vary. 
+The optimization metric was minimization of the rms spot diameter at 
+the following locations: the center of the FOV, $\pm2$~deg in Y, and $\pm4$~deg in X. The center of the FOV was given a weight of 100
+while each outer point was given a weight of 1. To constrain the optimization, the X and Y 
+effective focal lengths were held fixed as was the impact point of the chief ray on the focal plane. 
+This optimization step increased the DLFOV
 by factors of 1.15, 2.4 and 10.5 at 21, 155 and 799~GHz, respectively. 
-We \comr{further?} improve the DLFOV at all frequencies by approximately 50\% by rerunning the optimization and including 
-a curved focal surface. A small ($\sim$4\%) additional gain in DLFOV is achieved by adding Zernike terms 
+We further increased the DLFOV by approximately 50\% at all frequencies by including a curved focal surface and rerunning the optimization.
+A small ($\sim$4\%) additional gain in DLFOV was achieved by adding Zernike terms 
 up to sixth order, allowing the secondary to focal surface distance to vary, adding a weighted constraint on the effective focal length, 
 and adding fields with weight of 0.01 to the rms spot diameter metric at $\pm7.5$~deg in Y and $+15$~deg in X. 
-These additional fields are necessary to constrain the corrections at the mirror edges.
+These additional fields were necessary to constrain the corrections at the reflector edges.
 
 % \comr{The other method by Richard has the first step of converting the conics into an on axis XY polynomial representation. Then a similar procedure is followed.  It is less well behaved during optimization.  This second Richard method is what I replicated in CodeV.}
 % \comb{is this 'other method' = method2? or is it 1b? \como{KY: My method is 1b and not discussed here.}}
@@ -333,7 +310,7 @@ Raytrace (left) and Strehl~$=0.8$ contours (right) for the PICO optical design.
 \hline
 \multicolumn{5}{|c||}{PICO optical system}                                    & \multicolumn{2}{c|}{Initial Open-Dragone$^b$}     \\ \hline
                           & Primary           & Secondary    & \multicolumn{2}{c||}{Telescope parameters$^b$} & \multicolumn{2}{c|}{Fundamental design parameters}  \\
-Mirror size$^a$ (cm)      & $270 \times 205$ & $160 \times 158$ & Aperture (cm)           & 140      & Aperture (cm)                  & 140   \\
+Reflector size$^a$ (cm)      & $270 \times 205$ & $160 \times 158$ & Aperture (cm)           & 140      & Aperture (cm)                  & 140   \\
 Radius of curvature (cm)  & $\infty$         & 136.6             & $F$-number             & 1.42     & $\theta_0$ (deg)           & 90    \\
 Conic constant, $k$       & 0                 & -0.926            & h (cm)                    & 624.2    & $\theta_e$ (deg)           & 20    \\
 Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (deg)            & 74.2     & $\theta_p$ (deg)           & 140   \\
@@ -350,17 +327,19 @@ Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (de
 23rd Zernike Coefficient (cm) & -201.6            & -3.2              &                           &          & Secondary, $e$                 &  1.802  \\
 24th Zernike Coefficient (cm) & -127.4            & -1.9              &                           &          &                                &       \\
 25th Zernike Coefficient (cm) & -55.0             & 0.1               &                           &          &                                &       \\\hline
-\multicolumn{7}{l}{\footnotesize  $^a$ The maximum physical size of the mirrors.}\\
+\multicolumn{7}{l}{\footnotesize  $^a$ The maximum physical size of the reflectors.}\\
 \multicolumn{7}{l}{\footnotesize  $^b$ Telescope parameters follow the definitions in Granet 2001.\cite{granet2001}} \\
 \end{tabular}
 \end{adjustbox}
 \end{table}
 
+%%% currently here on edits and tense (KARL)
+
 %To increase the optical performance we use CodeV to numerically optimize the system.  
 In \comb{`Method2'} another coauthor (JM) uses \comr{why is JM doing stuff in the present, while RH had done
 stuff in the past? please do all in the past} CodeV and allows more of the geometric 
 parameters of the system to vary.  To adjust the 
-mirror shapes, we add Zernike polynomial corrections to the conic surfaces which define the two mirrors.
+reflector shapes, we add Zernike polynomial corrections to the conic surfaces which define the two reflectors.
 The Zernike polynomials are defined on the same coordinates as the base conics.  
 We vary the 4th and 9th-13th terms of the Zernike polynomials. We allow the focal surface curvature 
 and focal surface to secondary distance L$_s$ to vary.  The primary-secondary distance L$_m$, primary offset $h$, 
@@ -369,7 +348,7 @@ metric is the rms spot diameter across the field of view, with weighted constrai
 maintaining the X- and Y-focal lengths.  We add Lagrange constraints 
 to enforce beam clearances and place an upper limit on overall system size.  Once the optimization converges to 
 an acceptable optical system, we add higher order Zernike terms, 19th-25th, and refine 
-the mirror shapes using the same metric and constraints. 
+the reflector shapes using the same metric and constraints. 
 The current PICO optical design is from the \comb{Method2} optimization procedure.
 
 Figure~\ref{fig:compare} shows that Method2 greatly increases \comr{present tense} the DLFOV relative to the initial open-Dragone design.  
@@ -405,8 +384,8 @@ within 0.12~deg across the entire FOV.
 \caption { \label{fig:compare} 
 Comparison between the open-Dragone optimized using method two and the initial open-Dragone.  
 The ray traces (left) are aligned at the chief ray impact point on the primary. 
-The \comb{final optical system, optimized with Method2 (red rays, solid mirrors),} is smaller in the vertical direction 
-than the unoptimized version \comr{original dragone or Method1?} (blue rays, dash-dot mirrors). The overlaid Strehl~$=0.8$ contours 
+The \comb{final optical system, optimized with Method2 (red rays, solid reflectors),} is smaller in the vertical direction 
+than the unoptimized version \comr{original dragone or Method1?} (blue rays, dash-dot reflectors). The overlaid Strehl~$=0.8$ contours 
 (right) show the improvement at all frequencies in the optimized (solid lines) system over the unoptimized (dash-dot lines) system. 
 \comr{same question? Perhaps show all three options?}
 }
@@ -527,7 +506,7 @@ optical efficiency.  From these test we conclude that our model is correct and o
 %                                 &                                                  \\
 Throughput                       & single moded, $\lambda^2$          \\
 Fractional Bandwidth             & 25\%                                             \\
-Mirror emissivity                & $\epsilon = \epsilon_0\sqrt{\nu/\text{150~GHz}}, \epsilon_0 = 0.07\%$ \\
+Reflector emissivity             & $\epsilon = \epsilon_0\sqrt{\nu/\text{150~GHz}}, \epsilon_0 = 0.07\%$ \\
 Aperture stop emissivity         & 1                                                \\
 Low pass filter reflection loss  & 8\%                                                \\
 Low pass filter absorption loss$^a$  & frequency dependent, 0.2\%--2.8\%             \\
@@ -560,7 +539,7 @@ Observing efficiency             & 95\%                                         
 
 \subsubsection{Model}
 
-The sources of optical load are the CMB, the primary and secondary mirrors, the aperture stop, and low pass filters.  
+The sources of optical load are the CMB, the primary and secondary reflectors, the aperture stop, and low pass filters.  
 These elements are shown schematically in Figure~\ref{fig:load}. 
 The total load absorbed at the bolometer is the sum of the power emitted by each element reduced by the transmission 
 efficiency of the elements between the emitting surface and the bolometer.  
@@ -639,9 +618,9 @@ of frequency are shown in Figure~\ref{fig:noise}; the \comb{combined value is gi
 
 \sout{For PICO} The primary \comb{contributor to noise}  is the optical load.  The CMB and stop account for the majority of the optical load 
 at all frequencies. Even at 800~GHz the CMB and stop
-account for 12\% more power than the mirrors;  \comr{show components in the Figure?} \comb{see the left panel 
+account for 12\% more power than the reflectors;  \comr{show components in the Figure?} \comb{see the left panel 
 of Figure~\ref{fig:popt}.}
-\comr{is the following consistent with the previous sentence?} The load from the mirrors is greatest at 799~GHz where it is 47\% of the total 
+\comr{is the following consistent with the previous sentence?} The load from the reflectors is greatest at 799~GHz where it is 47\% of the total 
 optical load. The CMB provides more than half the load 
 in the middle and upper bands of the multichroic pixels, but the stop dominates the load in the lowest band of each pixel.  
 Load from the stop in the lowest band of each pixel ranges from 1.2 times the CMB load at 21~GHz to a maximum of 4.7 
@@ -729,8 +708,8 @@ Total &     &      &       &         & 12996 & 0.46   & 0.65 &   \\
 \comr{SH Here} 
 \section{CONCLUSIONS/SUMMARY}
 
-The PICO optical system is a simple two mirror open-Dragone which we numerically optimize to maximize the DLFOV.  The addition of a 
-cold aperture stop and cold mirrors minimize optical load and reduce noise.  The focal plane takes advantage of the large DLFOV and MCP 
+The PICO optical system is a simple two reflector open-Dragone which we numerically optimize to maximize the DLFOV.  The addition of a 
+cold aperture stop and cold reflectors minimize optical load and reduce noise.  The focal plane takes advantage of the large DLFOV and MCP 
 technology to implement 12996 polarization sensitive detectors in 21 bands from 21-799~GHz.  When combining all bands, our instrument 
 noise model predicts full mission polarization map depth of 0.62~$\mu$K$_{\rm CMB}$-arcmin.
 
