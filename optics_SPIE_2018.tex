@@ -333,46 +333,42 @@ Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (de
 \end{adjustbox}
 \end{table}
 
-%%% currently here on edits and tense (KARL)
 
 %To increase the optical performance we use CodeV to numerically optimize the system.  
-In \comb{`Method2'} another coauthor (JM) uses \comr{why is JM doing stuff in the present, while RH had done
-stuff in the past? please do all in the past} CodeV and allows more of the geometric 
-parameters of the system to vary.  To adjust the 
-reflector shapes, we add Zernike polynomial corrections to the conic surfaces which define the two reflectors.
-The Zernike polynomials are defined on the same coordinates as the base conics.  
-We vary the 4th and 9th-13th terms of the Zernike polynomials. We allow the focal surface curvature 
+In `Method2' another coauthor (JM) used 
+%\comr{why is JM doing stuff in the present, while RH had done stuff in the past? please do all in the past} 
+CodeV and allowed additional geometric parameters of the system to vary.  To adjust the 
+reflector shapes, we added Zernike polynomial corrections to the conic surfaces which defined the two reflectors.
+The Zernike polynomials were defined in the same coordinate systems as the base conics.  
+We varied the 4th and 9th-13th Zernike coefficients. We allowed the focal surface curvature 
 and focal surface to secondary distance L$_s$ to vary.  The primary-secondary distance L$_m$, primary offset $h$, 
-and the primary and secondary rotation angles, $\alpha$ and $\beta$, are varied as well.  The optimization 
-metric is the rms spot diameter across the field of view, with weighted constraints requiring telecentricity and 
-maintaining the X- and Y-focal lengths.  We add Lagrange constraints 
-to enforce beam clearances and place an upper limit on overall system size.  Once the optimization converges to 
-an acceptable optical system, we add higher order Zernike terms, 19th-25th, and refine 
+and the primary and secondary rotation angles, $\alpha$ and $\beta$, were varied as well.  The optimization 
+metric was the rms spot diameter across the field of view, with weighted constraints requiring telecentricity and 
+maintaining the X- and Y-focal lengths.  We added Lagrange constraints 
+to enforce beam clearances and place an upper limit on overall system size.  Once the optimization converged to 
+an acceptable optical system, we added higher order Zernike terms, 19th-25th, and refined 
 the reflector shapes using the same metric and constraints. 
-The current PICO optical design is from the \comb{Method2} optimization procedure.
+The current PICO optical design is from the Method2 optimization procedure.  % Tense of this sentence is odd. "The design is" makes sense in terms of the paper structure, just as I would say 'Figure 1 shows'.  However in 5 yrs "The design is" will certainly be an incorrect statement.  Including 'current' avoids this somewhat by qualifying the status of the design.
 
-Figure~\ref{fig:compare} shows that Method2 greatly increases \comr{present tense} the DLFOV relative to the initial open-Dragone design.  
-The DLFOV is increased \comr{past tense} by factors of 1.9, 3.8, 4.3, and 4.6 at 21, 129, 155, and 799~GHz, respectively.  
+Figure~\ref{fig:compare} shows that Method2 greatly increased the DLFOV relative to the initial open-Dragone design.  
+The DLFOV increased by factors of 1.9, 3.8, 4.3, and 4.6 at 21, 129, 155, and 799~GHz, respectively.  
 %\comr{what is the improvement relative to the RH approach?}
-The most important gain is \comb{at frequencies of }129 and 155~GHz \comb{for which we use the extra area} to add 
-\sout{many} more C and D pixels, see Figure~\ref{fig:bands} and Section~\ref{sec:focalplane}. \comb{These are the bands 
-that are} most sensitive to the CMB. 
-\sout{Being able to pack} Adding \sout{100s} hundreds of C and D pixels into the focal plane \sout{is what allows} 
-\comb{gives} PICO \sout{to reach}  unprecedented levels of CMB sensitivity. 
-\comr{one word replaced 5 (always a good thing). What is allowed or not allowed is not interesting. Write on what you do or have.}
-Compared to Method1 \sout{the first optimization method, the second} Method2 gives a somewhat better performance at the lower 
-frequencies with 1.11 and 1.15 times larger DLFOV at 21 and 155~GHz, respectively.
-Method2 gives a smaller DLFOV at 799~GHz, only 0.3 times that of Method1's area, but the DLFOV still satisfies our science 
-requirements. \sout{sufficient for the number of 799~GHz detectors we require}. 
-Figure~\ref{fig:compare} also shows \comb{that} with Method2 the overall telescope volume \comb{is reduced, giving more 
-physical margin relative to the shadow cone.} 
-\sout{allowing it to fit more easily within the shadow cone. }
+The most important gain was at frequencies of 129 and 155~GHz. We used this extra area to add 
+more C and D pixels, see Figure~\ref{fig:bands} and Section~\ref{sec:focalplane}. The C and D pixels contained the bands 
+most sensitive to the CMB, and adding hundreds of these pixels into the focal plane  
+gave PICO unprecedented levels of CMB sensitivity. 
+Method2 gave somewhat better performance at lower 
+frequencies with a DLFOV 1.11 and 1.15 times larger than Method1 at 21 and 155~GHz, respectively.
+At 799~GHz Method2 gave DLFOV only 0.3 times that of Method1's area, but the DLFOV still satisfied our science 
+requirements. 
+Figure~\ref{fig:compare} also shows that Method2 reduced the overall telescope volume and gave more 
+physical margin relative to the shadow cone.
 
 The geometric parameters of the PICO optical system are given in Table~\ref{tab:optics}. The 
-system is diffraction limited for 799~GHz at the center of the field of view. At 155~GHz the 
-DLFOV is 82.4~deg$^2$ and the total throughput for all frequencies \comr{?? you really mean at 20 GHz, no?} is 910 cm$^2$sr. 
+system was diffraction limited for 799~GHz at the center of the field of view. At 155~GHz the 
+DLFOV was 82.4~deg$^2$ and the total throughput at 20~GHz was 910 cm$^2$sr. 
 Figure~\ref{fig:strehl} shows Strehl of 0.8 contours for all pixel types.
-The slightly concave focal surface, which has a radius of curvature of 4.55~m, is telecentric to 
+The slightly concave focal surface, which had a radius of curvature of 4.55~m, was telecentric to 
 within 0.12~deg across the entire FOV.
 
 \begin{figure} [ht]
@@ -391,12 +387,13 @@ than the unoptimized version \comr{original dragone or Method1?} (blue rays, das
 }
 \end{figure} 
 
-An additional benefit of the optimization is the concave focal surface. The open-Dragone's focal surface is naturally curved.  Matching this 
-curvature reduces defocus and increases the DLFOV as well as increasing telecentricity.  The unoptimized system is telecentric to within 
-2.5~deg while the optimized version is telecentric to within 0.12~deg. If the focal surface is too strongly curved tiling it with flat detector 
-wafers would result in large defocus at the edges of these wafers.  This is not the case for PICO. The focal surface radius of curvature, 4.55~m, 
-results in a defocus of 0.1~mm for the edge of a 10~cm wafer. 
+An additional benefit of the optimization was the concave focal surface. The open-Dragone's focal surface is naturally curved.  Matching this 
+curvature reduced defocus, increased the DLFOV, and increased telecentricity.  The unoptimized system was telecentric to within 
+2.5~deg while the optimized version was telecentric to within 0.12~deg. If the focal surface was too strongly curved tiling it with flat detector 
+wafers would result in large defocus at the edges of these wafers.  This was not the case for PICO. The focal surface radius of curvature, 4.55~m, 
+resulted in a defocus of 0.1~mm at the edge of a 10~cm wafer. 
 
+%%% currently here on edits and tense (KARL)  have ignored some captions.
 
 
 \section{FOCAL PLANE}
