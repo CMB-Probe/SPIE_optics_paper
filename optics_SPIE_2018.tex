@@ -167,10 +167,8 @@ gives more details of the thermal system.
 %\end{tabular}
 \end{center}
 \caption { \label{fig:cad} 
-\sout{Mechanical design of the PICO satellite. Components relevant to this paper are labeled, for other details see Sutin~et~al.\cite{brian_spie}}
-The symmetry axis of the satellite precesses around the satellite-sun axis (orange arrow) with an angle of 26 deg \comr{figure is confusing; show the spin 
-axis; show the sun along the shadow cone; show the boresight explicitly; show the 26 and 69 degrees}. This precession defines the 
-shadow cone which is shown in light gray.
+The spin axis of the satellite precesses around the satellite-sun axis (orange arrow) with an angle of 26 deg.
+This precession defines the shadow cone shown in light gray.
 }
 \end{figure} 
 
@@ -194,8 +192,8 @@ requirements and the physical limits discussed in Section~\ref{sec:spacecraft}. 
 limited field of view (DLFOV)\footnote{ We consider an area in the FOV diffraction limited when the Strehl ratio is 
 larger than 0.8.} sufficient to support $\mathcal{O}(10^4)$ detectors, arcminute resolution at 800~GHz, low 
 instrumental polarization, and low sidelobe response. Additionally, 
-the transition edge sensor bolometers baselined for PICO require a telecentric focal plane which is sufficiently flat that it 
-can be tiled by 10~cm detector wafers without reduction in optical quality. 
+the transition edge sensor bolometers baselined for PICO required a telecentric focal plane which was sufficiently flat that it 
+could be tiled by 10~cm detector wafers without reduction in optical quality. 
 
 To increase aperture efficiency and reduce sidelobes we concentrated on off-axis optical designs.
 More than 30 years ago Dragone analyzed the 
@@ -216,7 +214,7 @@ Compared to the open-Dragone, the Gregorian had half the DLFOV for the same $F$-
 support $\mathcal{O}(10^4)$ detectors. It was therefore rejected.  
 The cross-Dragone had roughly $4\times$ the DLFOV of the open-Dragone, 
 but was more difficult to pack inside the spacecraft volume while avoiding the known sidelobes shown in Figure~\ref{fig:sidelobes}.
-We found that the largest cross-Dragone which meets the PICO volume constraints had 
+We found the largest cross-Dragone which met the PICO volume constraints had 
 a 1.2~m aperture and an $F$-number of 2.5, while the largest open-Dragone aperture was 1.4~m with an $F$-number of 1.42. The larger 
 $F$-number of the cross-Dragone system implied a larger physical focal plane, and therefore higher mass and cost, 
 for the same number of pixels. 
@@ -236,13 +234,13 @@ point for further optimization.
 %\end{tabular}
 \end{center}
 \caption { \label{fig:sidelobes} 
-Comparison of sidelobes for a cross-Dragone (left) and an open-Dragone (right) \comr{please add labels to Figure as well}.  
-Rays are traced from the center of the focal plane toward the sky \comr{same angular opening of rays?}.
-For both systems spillover around the secondary is straightforward to mitigate with absorptive baffles \comr{show sketch of such baffles?}.  
+Comparison of sidelobes for a cross-Dragone (left) and an open-Dragone (right).  
+Rays were traced from the center of the focal plane toward the sky.
+For both systems spillover around the secondary was straightforward to mitigate with absorptive baffles.  
 However, the rays labeled `sidelobe' and `direct view to 
-sky' in the cross-Dragone system present added challenges. The challenges can be mitigated---with a long forebaffle or larger $F$-number (see
-for example Matsumrua et al.\cite{LB2016_optics}---but
-doing so increases the overall physical size of the system, which is problematic in the PICO case.}
+sky' in the cross-Dragone system presented added challenges. Those challenges could be mitigated---with a long forebaffle or larger $F$-number (see
+for example Matsumrua et al.\cite{LB2016_optics})---but
+doing so increased the overall physical size of the system, which was problematic in the PICO case.}
 \end{figure} 
 
 We designed the initial open Dragone following Granet's method\cite{granet2001}. 
@@ -297,7 +295,7 @@ Raytrace (left) and Strehl~$=0.8$ contours (right) for the PICO optical design.
 
 \begin{table}[ht]
 \centering
-\caption{Telescope geometric parameters  \comr{ADD F\# to Table} \label{tab:optics}}
+\caption{Telescope geometric parameters  \label{tab:optics}}
 
 \begin{adjustbox}{width=1.05\textwidth}
 \hspace{-1cm}
@@ -373,12 +371,11 @@ within 0.12~deg across the entire FOV.
 %\end{tabular}
 \end{center}
 \caption { \label{fig:compare} 
-Comparison between the open-Dragone optimized using method two and the initial open-Dragone.  
+Comparison between the Method2 open-Dragone and the initial open-Dragone.  
 The ray traces (left) are aligned at the chief ray impact point on the primary. 
-The \comb{final optical system, optimized with Method2 (red rays, solid reflectors),} is smaller in the vertical direction 
-than the unoptimized version \comr{original dragone or Method1?} (blue rays, dash-dot reflectors). The overlaid Strehl~$=0.8$ contours 
-(right) show the improvement at all frequencies in the optimized (solid lines) system over the unoptimized (dash-dot lines) system. 
-\comr{same question? Perhaps show all three options?}
+The final optical system, optimized with Method2 (red rays, solid reflectors), was smaller in the vertical direction 
+than the initial open-Dragone (blue rays, dash-dot reflectors). The overlaid Strehl~$=0.8$ contours 
+(right) show the improvement achieved with Method2 at all frequencies (solid lines) vs the initial open-Dragone (dash-dot lines) system. 
 }
 \end{figure} 
 
@@ -400,8 +397,8 @@ having a large DLFOV and using multichroic pixels (MCPs)\cite{Suzuki2014_samps,d
 The MCP architecture assumed for PICO had three bands per pixel with two single polarization transition 
 edge sensor (TES) bolometers per band and therefore six bolometers per pixel. 
 We assumed the MCPs were coupled to free space using lenslets and sinuous antennae \cite{Suzuki2014_samps}, 
-but the pixel sizes, numbers, and spacing will not change significantly 
-if horn or phased array coupling is used instead.
+but the pixel sizes, numbers, and spacing would not change significantly 
+if horn or phased array coupling was used instead.
 
 PICO had 21 overlapping bands with centers spanning the range 21--799~GHz. The bands were divided amongst 
 nine pixel types labeled A to I; see Figure~\ref{fig:bands}. 
@@ -440,28 +437,30 @@ band of each pixel. This gave an edge taper, $T_e$, on the stop of 10~dB for the
 \begin{figure} [ht]
 \begin{center}
 %\begin{tabular}{c} %% tabular useful for creating an array of images 
-\includegraphics[height=7.5cm]{version3_focal_plane.png}
+%\includegraphics[height=7.5cm]{version3_focal_plane.png}
+\includegraphics[height=7.5cm]{version3_focal_plane_wQU.png}
 %\end{tabular}
 \end{center}
-\caption { \label{fig:focal_plane} 
-PICO focal plane layout with Strehl~$=0.8$ contours for each pixel type. The pixel and Strehl contour colors match the band colors, A-I, 
-in Figure~\ref{fig:bands} }
+\caption { \label{fig:focal_plane} \label{fig:QU} 
+Left: PICO focal plane layout with Strehl~$=0.8$ contours for each pixel type. The pixel and Strehl contour colors match the band colors, A-I, 
+in Figure~\ref{fig:bands}. 
+Right: Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) for an example wafer.}
 \end{figure} 
 
 Differencing detectors sensitive to orthogonal polarization states will enable each pixel to make a measurement of 
 a particular Stokes parameter. Pixels sensitive to the $U$ Stokes parameter were rotated by 45~deg relative to those
 that were sensitive to $Q$. This Q/U measurement was in the instrument reference frame with the $x$-axis parallel to the scan 
-direction; see Figure~\ref{fig:QU}.  \comr{combine Figures 6 and 7 together?}
+direction; see Figure~\ref{fig:QU}.
 
-\begin{figure} [ht]
-\begin{center}
-%\begin{tabular}{c} %% tabular useful for creating an array of images 
-\includegraphics[height=4cm]{QU_wafer.png}
-%\end{tabular}
-\end{center}
-\caption { \label{fig:QU} 
-Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) for an example wafer.}
-\end{figure}
+% \begin{figure} [ht]
+% \begin{center}
+% %\begin{tabular}{c} %% tabular useful for creating an array of images 
+% \includegraphics[height=4cm]{QU_wafer.png}
+% %\end{tabular}
+% \end{center}
+% \caption { \label{fig:QU} 
+% Layout of pixels sensitive to Stokes Q (black crosses) and Stokes U (red exes) for an example wafer.}
+% \end{figure}
 
 The PICO focal plane readout was designed around $\times$128 time domain multiplexing (TDM), but this choice was not a 
 significant driver for the focal plane layout or overall noise budget. 
@@ -486,10 +485,10 @@ To validate our model we compared two independent calculations using codes that 
 CMB instruments.  The calculations agreed within 1\% for individual noise terms 
 and for overall mission noise.  We also used our model to calculate CORE and LiteBIRD noise from their published system parameters. The 
 results were consistent with published values when similar assumptions were used.  
-\comr{move these to later; let's talk on the phone} 
+\comr{move these to later; let's talk on the phone.} \como{Where else makes sense for this comparison that has few details? I think here or nowhere is most reasonable.}
 %Additionally, we compare PICO detector noise to CORE and LiteBIRD detector noise.  The lower PICO noise is explained by the cold system and differing 
 %optical efficiency.  
-From these test we concluded that our model was correct and our assumptions were reasonable.
+From these tests we concluded our model was correct and our assumptions were reasonable.
 
 \begin{table}[ht]
 \centering
@@ -611,7 +610,7 @@ Figure~\ref{fig:noise} as a function of frequency; the combined values are given
 
 The primary contributor to noise was the optical load. The CMB and stop accounted for the majority of the optical load 
 at all frequencies. Even at 800~GHz the CMB and stop
-accounted for 12\% more power than the reflectors;  \comr{show components in the Figure?} \como{This is not really feasible in the availible time. We can just quote the numbers and remove `see the left . . .'}
+accounted for 12\% more power than the reflectors;  \comr{show components in the Figure?} \como{This is not really feasible in the availible time. We can just quote the numbers and remove `see the left . . .'.  Or leave as is.}
 see the left panel of Figure~\ref{fig:popt}.
 \comr{is the following consistent with the previous sentence?} \como{Yes. (fraction from CMB + stop) / (fraction from reflector) = 53/47 = 1.12} 
 The load from the reflectors was greatest at 799~GHz where it was 47\% of the total 
