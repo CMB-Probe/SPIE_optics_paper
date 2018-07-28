@@ -614,14 +614,9 @@ Figure~\ref{fig:noise} as a function of frequency; the combined values are given
 
 The primary contributor to noise is the optical load; see Figure~\ref{fig:popt}. 
 The CMB and stop account for the majority of the optical load 
-at all frequencies. Even at 800~GHz the CMB and stop
-account for 12\% more power than the reflectors;  \comr{show components in the Figure?} 
-\como{This is not really feasible in the availible time. We can just quote the numbers and remove `see the left . . .'.  Or leave as is.}
-see the left panel of Figure~\ref{fig:popt}.
-\comr{is the following consistent with the previous sentence?} \como{Yes. (fraction from CMB + stop) / (fraction from reflector) = 53/47 = 1.12} 
-\comr{Hmm... I'd say 6\% more power not 12\%; also my guess is that it has nothing to do with the CMB, just the stop temperature}
-The load from the reflectors is greatest at 799~GHz where it is 47\% of the total 
-optical load. The CMB gives more than half the load 
+at all frequencies. Even at 800~GHz the 6.5~K stop
+contributes 53\% of the total radiative power compared to 47\% coming from the mirrors.  
+The CMB gives more than half the load 
 in the middle and upper bands of the multichroic pixels, but the stop dominates the load in the lowest band of each pixel.  
 Load from the stop in the lowest band of each pixel ranges from 1.2 times the CMB load at 21~GHz to a maximum of 4.7 
 times the CMB load at 223~GHz. 
@@ -650,8 +645,9 @@ and aperture illumination efficiency as a function of frequency.
 
 \subsection{Combined  array noise}
 
-Using single detector NEPs from Section~\ref{sec:det_noise} and the detector counts from Section~\ref{sec:focalplane} we 
-calculate the combined NEP of the detector array for each band.  Combining $N$ detectors reduces uncorrelated noise by $\sqrt{N}$. 
+Using single detector NEPs from Section~\ref{sec:det_noise}, the detector counts from Section~\ref{sec:focalplane}, and 90\% yield for 
+each frequency band (see Table~\ref{tab:assume}) we 
+calculate the combined NEP of the detector array for each band.  Combining $N$ detectors reduces uncorrelated noise by $\sqrt{N}$.  
 This scaling does not hold for Bose photon noise. 
 For the lowest band of each MCP the pixel spacing is $0.4$F$\lambda$ and thus the pixels oversample the point spread function 
 leading to correlated photon noise between pixels.
@@ -670,8 +666,7 @@ Numerical values for the NET are given in the second to last column in Table~\re
 Assuming evenly weighted observations 
 of the full sky, 5 years of mission duration, and 95\% efficiency, we calculate full mission map sensitivities in polarization; see the 
 final column in Table~\ref{tab:noise}. 
-Combining all bands gives a total CMB map depth for the entire PICO mission of 0.62~$\mu$K$_{\rm CMB}$-arcmin. \comr{the table 
-say 0.65!!}
+Combining all bands gives a total CMB map depth for the entire PICO mission of 0.65~$\mu$K$_{\rm CMB}$-arcmin. 
 
 \begin{table}[ht]
 \centering
