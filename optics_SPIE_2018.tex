@@ -7,10 +7,10 @@
 
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%\usepackage[colorlinks=true, allcolors=blue]{hyperref}
 % user added packages
-\usepackage{xcolor}
-\usepackage{adjustbox}
+%\usepackage{xcolor}
+%\usepackage{adjustbox}
 \usepackage{ulem}
 %\usepackage{natbib}
 
@@ -34,7 +34,7 @@
 \author[b]{Marcelo Alvarez}  % University of California Berkeley, USA
 \author[c]{Nicholas Battaglia}  %  Princeton
 \author[d]{Jamie Bock}       % Caltech
-\author[e]{Jullian Borrill}  % LBNL
+\author[e]{Julian Borrill}  % LBNL
 \author[f]{David Chuss}  % Villanova  University, USA
 \author[g]{Brendan Crill}    % JPL
 \author[h]{Jacques Delabrouille}  % APC
@@ -292,41 +292,44 @@ These additional fields were necessary to constrain the corrections at the refle
 %\end{tabular}
 \end{center}
 \caption { \label{fig:ray} \label{fig:strehl} 
-Raytrace (left) and Strehl~$=0.8$ contours (right) for the PICO optical design.
-}
+Raytrace (left) and Strehl~$=0.8$ contours (right) for the PICO optical design. }
+\vspace{0.2in}
 \end{figure} 
 
 \begin{table}[ht]
 \centering
-\caption{Telescope geometric parameters  \label{tab:optics}}
-
-\begin{adjustbox}{width=1.05\textwidth}
-\hspace{-1cm}
+\caption{\bf{Telescope geometric parameters  \label{tab:optics}}}
+\resizebox{\textwidth}{!}{
+%\begin{adjustbox}{width=1.0\textwidth}
+%\hspace{-1cm}
 \begin{tabular}{|l|llll||ll|}
 \hline
 \multicolumn{5}{|c||}{PICO optical system}                                    & \multicolumn{2}{c|}{Initial Open-Dragone$^b$}     \\ \hline
-                          & Primary           & Secondary    & \multicolumn{2}{c||}{Telescope parameters$^b$} & \multicolumn{2}{c|}{Fundamental design parameters}  \\
+                          & Primary           & Secondary    & \multicolumn{2}{c||}{Telescope parameters$^b$} & \multicolumn{2}{c|}{Design parameters}  \\
 Reflector size$^a$ (cm)      & $270 \times 205$ & $160 \times 158$ & Aperture (cm)           & 140      & Aperture (cm)                  & 140   \\
 Radius of curvature (cm)  & $\infty$         & 136.6             & $F$-number             & 1.42     & $\theta_0$ (deg)           & 90    \\
 Conic constant, $k$       & 0                 & -0.926            & h (cm)                    & 624.2    & $\theta_e$ (deg)           & 20    \\
 Normalization radius (cm) & 524.8             & 194.1             & $\alpha$ (deg)            & 74.2     & $\theta_p$ (deg)           & 140   \\
-4th Zernike Coefficient (cm)  & 2018.4            & -61.1             & $\beta$  (deg)            &  62.3    & L$_m$ (cm)                     & 240   \\
-9th Zernike Coefficient (cm)  & -37.0             & 16.7              & L$_m$ (cm)                &   229.3  &                                &         \\
-10th Zernike Coefficient (cm) & -2919.8           & -15.1             & L$_s$ (cm)                &   140.5  & \multicolumn{2}{c|}{Derived parameters} \\ 
-11th Zernike Coefficient (cm) & -1292.7           & 22.3              &                           &          & $F$-number                     & 1.42  \\   
-12th Zernike Coefficient (cm) & 120.6             & -3.8             &   \multicolumn{2}{c||}{Focal Surface}  & h (cm)                         & 624.2 \\   
-13th Zernike Coefficient (cm) & -74.5             & 4.9               & Ellipse major axes (cm)   & 69 x 45  & $\alpha$ (deg)                 & 38.6  \\   
-19th Zernike Coefficient (cm) & -75.8             & 3.4               & Ellipse major axes (deg)  & 19 x 13  & $\beta$  (deg)                 & 101.4 \\   
-20th Zernike Coefficient (cm) & -398.9            & 6.3               & Radius of curvature (cm)  & 455      & L$_s$ (cm)                     & 122.2 \\   
-21st Zernike Coefficient (cm) & -319.5            & 23.3              &                           &          & Primary, $f$ (cm)              & 312.1 \\   
-22nd Zernike Coefficient (cm) & -276.6            & -8.5              &                           &          & Secondary, $a$ (cm)            & 131   \\   
-23rd Zernike Coefficient (cm) & -201.6            & -3.2              &                           &          & Secondary, $e$                 &  1.802  \\
-24th Zernike Coefficient (cm) & -127.4            & -1.9              &                           &          &                                &       \\
-25th Zernike Coefficient (cm) & -55.0             & 0.1               &                           &          &                                &       \\\hline
+4th ZC$^{c}$ (cm)  & 2018.4            & -61.1             & $\beta$  (deg)            &  62.3    & L$_m$ (cm)                     & 240   \\
+9th ZC (cm)  & -37.0             & 16.7              & L$_m$ (cm)                &   229.3  &                                &         \\
+10th ZC (cm) & -2919.8           & -15.1             & L$_s$ (cm)                &   140.5  & \multicolumn{2}{c|}{Derived parameters} \\ 
+11th ZC (cm) & -1292.7           & 22.3              &                           &          & $F$-number                     & 1.42  \\   
+12th ZC (cm) & 120.6             & -3.8             &   \multicolumn{2}{c||}{Focal Surface}  & h (cm)                         & 624.2 \\   
+13th ZC  (cm) & -74.5             & 4.9               & Ellipse major axes (cm)   & 69 x 45  & $\alpha$ (deg)                 & 38.6  \\   
+19th ZC (cm) & -75.8             & 3.4               & Ellipse major axes (deg)  & 19 x 13  & $\beta$  (deg)                 & 101.4 \\   
+20th ZC (cm) & -398.9            & 6.3               & Radius of curvature (cm)  & 455      & L$_s$ (cm)                     & 122.2 \\   
+21st ZC (cm) & -319.5            & 23.3              &                           &          & Primary, $f$ (cm)              & 312.1 \\   
+22nd ZC (cm) & -276.6            & -8.5              &                           &          & Secondary, $a$ (cm)            & 131   \\   
+23rd ZC (cm) & -201.6            & -3.2              &                           &          & Secondary, $e$                 &  1.802  \\
+24th ZC (cm) & -127.4            & -1.9              &                           &          &                                &       \\
+25th ZC (cm) & -55.0             & 0.1               &                           &          &                                &       \\\hline
 \multicolumn{7}{l}{\footnotesize  $^a$ The maximum physical size of the reflectors.}\\
 \multicolumn{7}{l}{\footnotesize  $^b$ Telescope parameters follow the definitions in Granet 2001.\cite{granet2001}} \\
+\multicolumn{7}{l}{\footnotesize  $^c$ ZC = Zernike Coefficient} \\
 \end{tabular}
-\end{adjustbox}
+}
+%\end{resizebox}{width=1.0\textwidth}
+%\end{adjustbox}
 \end{table}
 
 
